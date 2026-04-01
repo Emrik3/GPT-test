@@ -11,4 +11,5 @@ training_params:
   compile: True
 
 dataset:
-  name: "tiny_shakespeare"  
+  name: "tiny_shakespeare"
+  # data_dir: "/path/to/your/data/"  # optional: overrides DATA_DIR env variable
