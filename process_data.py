@@ -1,5 +1,6 @@
 import os
 import argparse
+import urllib.request
 import numpy as np
 import tiktoken
 from datasets import load_dataset
@@ -10,9 +11,9 @@ datadict = {
     "fineweb10B" : ["HuggingFaceFW/fineweb", "sample-10BT"],
     "fineweb_edu10B" : ["HuggingFaceFW/fineweb-edu", "sample-10BT"],
     "tiny_shakespeare" : ["tiny_shakespeare", ""],
-    "wikitext" : ["wikitext", "wikitext-103-v1"]    
+    "wikitext" : ["wikitext", "wikitext-103-v1"]
 }
-DATA_DIR = "/mnt/ceph/users/cmodi/huggingface/"
+DATA_DIR = "data"
 
 # parse command line arguments
 parser = argparse.ArgumentParser(description="Preprocessing hugging face datasets")
@@ -30,17 +31,28 @@ os.makedirs(dataset_path, exist_ok=True)
 print("Data will be saved in the path : ", dataset_path)
 
 # download dataset
-dataset = load_dataset(hf_path, name=remote_name, trust_remote_code=True)
+#dataset = load_dataset(hf_path, name=remote_name, trust_remote_code=True)
 
 # Process and save it
 if name == "tiny_shakespeare":
-    dataset['val'] = dataset['test'][0]
-    dataset['train'] = dataset['train'][0]
-    for split, shard_index in ['val', 0], ['train', 1]:
+    raw_url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+    raw_path = os.path.join(dataset_path, "input.txt")
+    if not os.path.exists(raw_path):
+        print("Downloading tiny_shakespeare from GitHub...")
+        urllib.request.urlretrieve(raw_url, raw_path)
+    with open(raw_path, 'r') as f:
+        text = f.read()
+    n = int(len(text) * 0.9)
+    dataset = {
+        'train': {'text': text[:n]},
+        'val':   {'text': text[n:]}
+    }
+
+    for split, shard_index in [('val', 0), ('train', 1)]:
         filename = os.path.join(dataset_path, f"{split}_{shard_index:06d}.bin")
         tokens = tokenize(dataset[split], enc)
         write_datafile(filename, tokens)
-    
+
 elif name == "wikitext":
     dataset['val'] = {'text' : ''.join(t for t in dataset['test']['text'])}
     dataset['train'] =  {'text' : ''.join(t for t in dataset['train']['text'])}
@@ -53,5 +65,5 @@ elif name == "wikitext":
 
 elif 'fineweb' in name:
     process_and_save_docs(dataset['train'], dataset_path, encoding=enc, shard_size=args.shard_size, nprocs=args.nprocs)
-    
+
 print(f"{name} data processed and saved in {dataset_path}")
