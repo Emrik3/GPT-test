@@ -209,7 +209,7 @@ def get_scheduler(
     Main function mapping to a learning rate scheduler.
     """
     # if not specified, use constant step sizes
-    name = config.get("name", "constant")
+    name = config.get("lr_schedule", "constant")
 
     if name == "constant":
         lr_fun = lambda epoch: 1  # this value is multiplied with initial lr
