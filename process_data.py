@@ -12,7 +12,7 @@ datadict = {
     "tiny_shakespeare" : ["tiny_shakespeare", ""],
     "wikitext" : ["wikitext", "wikitext-103-v1"]    
 }
-DATA_DIR = "/mnt/ceph/users/cmodi/huggingface/"
+DEFAULT_DATA_DIR = "/mnt/ceph/users/cmodi/huggingface/"
 
 # parse command line arguments
 parser = argparse.ArgumentParser(description="Preprocessing hugging face datasets")
@@ -20,12 +20,13 @@ parser.add_argument("--name", type=str, help="Name of the dataset")
 parser.add_argument("-s", "--shard_size", type=int, default=10**8, help="Size of each shard in tokens")
 parser.add_argument("-t", "--tokenizer", type=str, default="gpt2", help="tokenizer to use")
 parser.add_argument("-n", "--nprocs", type=int, default=0, help="number of processes, default N-2")
+parser.add_argument("--data_dir", type=str, default=DEFAULT_DATA_DIR, help="Directory to save processed data")
 args = parser.parse_args()
 
 name = args.name
 hf_path, remote_name = datadict[name]
 enc = tiktoken.get_encoding(args.tokenizer)
-dataset_path = DATA_DIR + f'/{name}-{args.tokenizer}/'
+dataset_path = os.path.join(args.data_dir, f'{name}-{args.tokenizer}')
 os.makedirs(dataset_path, exist_ok=True)
 print("Data will be saved in the path : ", dataset_path)
 
