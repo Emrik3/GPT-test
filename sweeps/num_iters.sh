@@ -1,5 +1,5 @@
-WANDB="+logging_params.wandb.project=polar-express" 
-COMMON="+training_data=fineweb hydra.job.name=\"ns-steps\""
+WANDB="+logging_params.wandb.project=polar-express"
+COMMON="+training_data=shakespeare hydra.job.name=\"ns-steps\""
 MUON="optimizer_params.name=muon"
 
 for lr in 0.005; do

@@ -7,12 +7,6 @@ optimizer_params:
     lr_schedule: warm-up-cosine
     warm_up_fraction: 0.1
 
-  - name: muon-you
-    lr: [0.005, 0.01, 0.05]
-    weight_decay: 0.1
-    lr_schedule: warm-up-cosine
-    warm_up_fraction: 0.1
-
   - name: muon-jordan
     lr: [0.005, 0.01, 0.05]
     weight_decay: 0.1

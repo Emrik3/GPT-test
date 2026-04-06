@@ -3,11 +3,15 @@
 
 # This code snippet is a modified version adapted from the following GitHub repository:
 # https://github.com/KellerJordan/Muon/blob/master/muon.py
-import torch
-from functools import partial
 import math
 import warnings
-from gptopt.optim.polar_express import PolarExpress, FastApplyPolarExpress
+from functools import partial
+
+import torch
+
+from gptopt.optim.mach_polar import MachPolar
+from gptopt.optim.polar_express import FastApplyPolarExpress, PolarExpress
+
 
 @torch.compile
 def jiacheng(G, steps):
@@ -16,12 +20,12 @@ def jiacheng(G, steps):
     """
     assert len(G.shape) >= 2
     abc_list = [
-        (3955/1024, -8306/1024, 5008/1024),
-        (3735/1024, -6681/1024, 3463/1024),
-        (3799/1024, -6499/1024, 3211/1024),
-        (4019/1024, -6385/1024, 2906/1024),
-        (2677/1024, -3029/1024, 1162/1024),
-        (2172/1024, -1833/1024,  682/1024)
+        (3955 / 1024, -8306 / 1024, 5008 / 1024),
+        (3735 / 1024, -6681 / 1024, 3463 / 1024),
+        (3799 / 1024, -6499 / 1024, 3211 / 1024),
+        (4019 / 1024, -6385 / 1024, 2906 / 1024),
+        (2677 / 1024, -3029 / 1024, 1162 / 1024),
+        (2172 / 1024, -1833 / 1024, 682 / 1024),
     ]
     X = G.bfloat16()
     if G.size(0) > G.size(1):
@@ -42,6 +46,7 @@ def jiacheng(G, steps):
         X = X.mT
     return X
 
+
 @torch.compile
 def zeropower_via_newtonschulz5(G, steps):
     """
@@ -54,7 +59,7 @@ def zeropower_via_newtonschulz5(G, steps):
     performance at all relative to UV^T, where USV^T = G is the SVD.
     """
     assert len(G.shape) >= 2
-    a, b, c = (3.4445, -4.7750, 2.0315) 
+    a, b, c = (3.4445, -4.7750, 2.0315)
     X = G.bfloat16()
     if G.size(0) > G.size(1):
         X = X.mT
@@ -83,8 +88,11 @@ def svd_exact_polar(G, _, cutoff=None, reverse=False):
     if cutoff is None:
         return (U @ Vh).to(G.dtype)
     else:
-        Sigma = ((Sigma / Sigma.max()) >= cutoff).to(G.dtype)  # zero out small singular values
-        if reverse: Sigma = 2*Sigma - 1
+        Sigma = ((Sigma / Sigma.max()) >= cutoff).to(
+            G.dtype
+        )  # zero out small singular values
+        if reverse:
+            Sigma = 2 * Sigma - 1
         return (U @ torch.diag(Sigma) @ Vh).to(G.dtype)
 
 
@@ -116,43 +124,48 @@ class Muon(torch.optim.Optimizer):
         nheads: The number of heads, needed if split_heads is True.
         polar_args: A dictionary of additional arguments to pass to the polar factorization method.
     """
-    def __init__(self,
-                 named_params,
-                 lr=1e-3,
-                 weight_decay=0.1,
-                 momentum=0.95,
-                 nesterov=True,
-                 ns_steps=5,
-                 rms_scaling=True,
-                 nuclear_scaling=False,
-                 polar_method="Keller",
-                 adamw_betas=(0.95, 0.95),
-                 adamw_eps=1e-8,
-                 split_heads=False,
-                 nheads=None,
-                 polar_args={},
-                ):
+
+    def __init__(
+        self,
+        named_params,
+        lr=1e-3,
+        weight_decay=0.1,
+        momentum=0.95,
+        nesterov=True,
+        ns_steps=5,
+        rms_scaling=True,
+        nuclear_scaling=False,
+        polar_method="Keller",
+        adamw_betas=(0.95, 0.95),
+        adamw_eps=1e-8,
+        split_heads=False,
+        nheads=None,
+        polar_args={},
+    ):
         """
         Arguments:
             polar_method: The name of the polar factorization method to use (e.g., "NewtonSchultz", "Keller", "Pole") where PolE = PolarExpress
         """
         defaults = dict(
-                lr=lr,
-                weight_decay=weight_decay,
-                momentum=momentum,
-                nesterov=nesterov,
-                ns_steps=ns_steps,
-                rms_scaling=rms_scaling,
-                nuclear_scaling=nuclear_scaling,
-                adamw_betas=adamw_betas,
-                adamw_eps=adamw_eps,
+            lr=lr,
+            weight_decay=weight_decay,
+            momentum=momentum,
+            nesterov=nesterov,
+            ns_steps=ns_steps,
+            rms_scaling=rms_scaling,
+            nuclear_scaling=nuclear_scaling,
+            adamw_betas=adamw_betas,
+            adamw_eps=adamw_eps,
         )
-        
+
         # print("EMBED TOKENS AND LM_HEAD ARE NOT HANDLED CORRECTLY FOR MUON, THEY SHOULD BE WITH ADAMW.")
         muon_params, muon_params_names = [], []
         adamw_params, adamw_params_names = [], []
         for name, p in named_params:
-            if p.ndim >= 2 and not any(excluded in name for excluded in ["embeddings", "embed_tokens", "wte", "lm_head", "wpe"]):
+            if p.ndim >= 2 and not any(
+                excluded in name
+                for excluded in ["embeddings", "embed_tokens", "wte", "lm_head", "wpe"]
+            ):
                 muon_params.append(p)
                 muon_params_names.append(name)
             else:
@@ -165,11 +178,12 @@ class Muon(torch.optim.Optimizer):
             assert nheads is not None, "nheads must be specified if split_heads is True"
             self.nheads = nheads
         super().__init__(params, defaults)
-        
+
         # Sort parameters into those for which we will use Muon, and those for which we will not
         # Use Muon for every parameter in muon_params which is >= 2D and doesn't look like an embedding or head layer
         for p, p_name in zip(muon_params, muon_params_names):
-            if (self.split_heads == False): assert p.ndim == 2, p.ndim
+            if self.split_heads == False:
+                assert p.ndim == 2, p.ndim
             self.state[p]["use_muon"] = True
             if p_name.endswith("attn.c_attn.weight"):
                 self.state[p]["is_W_QKV"] = True
@@ -181,7 +195,9 @@ class Muon(torch.optim.Optimizer):
             self.state[p]["use_muon"] = False
 
         # Instantiate the polar factorization method
-        self.polar_factorizer = self._initialize_polar_factorizer(polar_method, polar_args)
+        self.polar_factorizer = self._initialize_polar_factorizer(
+            polar_method, polar_args
+        )
 
     def _initialize_polar_factorizer(self, polar_method, polar_args):
         """Initialize the polar factorization method based on the provided name and parameters."""
@@ -190,15 +206,23 @@ class Muon(torch.optim.Optimizer):
         elif polar_method == "Jiacheng":
             return jiacheng
         elif polar_method == "polarexpress":
-            return PolarExpress 
+            return PolarExpress
+        elif polar_method == "machpolar":
+            return MachPolar
         elif polar_method == "fast_polarexpress":
             return partial(FastApplyPolarExpress, restart_interval=3, shift_eps=1e-3)
         elif polar_method == "svd-exact":
-            return partial(svd_exact_polar, cutoff=polar_args.get("svd_cutoff", None), reverse=polar_args.get("svd_reverse", False))
+            return partial(
+                svd_exact_polar,
+                cutoff=polar_args.get("svd_cutoff", None),
+                reverse=polar_args.get("svd_reverse", False),
+            )
         else:
             raise ValueError(f"Unknown polar method: {polar_method}")
 
-    def adjust_lr_for_muon(self, lr, rms_scaling, nuclear_scaling, param_shape, grad, grad_sign):
+    def adjust_lr_for_muon(
+        self, lr, rms_scaling, nuclear_scaling, param_shape, grad, grad_sign
+    ):
         scale = 1.0
         if rms_scaling:
             fan_out, fan_in = param_shape[:2]
@@ -209,16 +233,16 @@ class Muon(torch.optim.Optimizer):
 
     def step(self, closure=None):
         """Perform a single optimization step.
-            Args:
-            closure (Callable, optional): A closure that reevaluates the model
-                and returns the loss.
-"""
+        Args:
+        closure (Callable, optional): A closure that reevaluates the model
+            and returns the loss.
+        """
 
         loss = None
         if closure is not None:
             with torch.enable_grad():
                 loss = closure()
-                        
+
         for group in self.param_groups:
             ############################
             #           Muon           #
@@ -236,7 +260,7 @@ class Muon(torch.optim.Optimizer):
                     continue
 
                 assert g is not None
-                
+
                 # calc update
                 state = self.state[p]
                 if "momentum_buffer" not in state:
@@ -249,19 +273,23 @@ class Muon(torch.optim.Optimizer):
                     g = buf
 
                 old_shape = g.shape
-                if (self.split_heads == True):
+                if self.split_heads == True:
                     if self.state[p].get("is_W_QKV", False):
                         # For W_QKV, we split the gradients into 3 pieces with nheads subpieces and process them separately
                         # print("before", g.shape, self.nheads)
-                        g = g.reshape(3 * self.nheads, g.shape[0] // (3 * self.nheads), g.shape[1])
+                        g = g.reshape(
+                            3 * self.nheads, g.shape[0] // (3 * self.nheads), g.shape[1]
+                        )
                         # print("after", g.shape)
                     elif self.state[p].get("is_W_O", False):
                         # print("before", g.shape, self.nheads)
                         # NOTE: This transposing doesn't seem necessary but I guess it's nice for consistency?
-                        g = g.reshape(g.shape[0], self.nheads, g.shape[1] // self.nheads).transpose(0, 1)
+                        g = g.reshape(
+                            g.shape[0], self.nheads, g.shape[1] // self.nheads
+                        ).transpose(0, 1)
                         # print("after", g.shape)
                         # For W_O, we split the gradients into 3 heads and process them separately
-                elif (self.split_heads == "partial"):
+                elif self.split_heads == "partial":
                     if self.state[p].get("is_W_QKV", False):
                         # For W_QKV, we split the gradients into W_Q, W_K and W_V and process them separately
                         g = g.reshape(3, g.shape[0] // 3, g.shape[1])
@@ -283,21 +311,21 @@ class Muon(torch.optim.Optimizer):
                     group["nuclear_scaling"],
                     p.shape,
                     g.bfloat16(),  # convert to float16 to be compatible with u
-                    u
+                    u,
                 )
-                
+
                 # apply weight decay
                 p.data.mul_(1 - lr * weight_decay)
-                
+
                 # apply update
                 p.data.add_(u, alpha=-adjusted_lr)
-                
+
             ############################
             #       AdamW backup       #
             ############################
 
             params = [p for p in group["params"] if not self.state[p]["use_muon"]]
-            lr = group['lr']
+            lr = group["lr"]
             beta1, beta2 = group["adamw_betas"]
             eps = group["adamw_eps"]
             weight_decay = group["weight_decay"]
@@ -325,8 +353,5 @@ class Muon(torch.optim.Optimizer):
                 scale = bias_correction1 / bias_correction2**0.5
                 p.data.mul_(1 - lr * weight_decay)
                 p.data.add_(g, alpha=-lr / scale)
-                    
+
         return loss
-
-
-

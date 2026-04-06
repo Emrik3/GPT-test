@@ -153,7 +153,6 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "rms_scaling": opt_config.get("rms_scaling", False),
             "nuclear_scaling": opt_config.get("nuclear_scaling", False),
             "polar_method": "Jiacheng",
-            "polar_params": opt_config.get("polar_params", {}),
         }
     elif name == "muon-jordan":
         opt_obj = Muon
@@ -167,7 +166,6 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "rms_scaling": opt_config.get("rms_scaling", False),
             "nuclear_scaling": opt_config.get("nuclear_scaling", False),
             "polar_method": "Keller",
-            "polar_params": opt_config.get("polar_params", {}),
         }
     elif name == "muon-polarexpress":
         opt_obj = Muon
@@ -180,7 +178,6 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "ns_steps": opt_config.get("ns_steps", 5),
             "rms_scaling": opt_config.get("rms_scaling", True),
             "polar_method": "polarexpress",
-            "polar_params": opt_config.get("polar_params", {}),
         }
     elif name == "muon-machpolar":
         opt_obj = Muon
@@ -193,7 +190,6 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "ns_steps": opt_config.get("ns_steps", 3),
             "rms_scaling": opt_config.get("rms_scaling", True),
             "polar_method": "machpolar",
-            "polar_params": opt_config.get("polar_params", {}),
         }
 
     else:
@@ -209,7 +205,7 @@ def get_scheduler(
     Main function mapping to a learning rate scheduler.
     """
     # if not specified, use constant step sizes
-    name = config.get("name", "constant")
+    name = config.get("lr_scheduler", "constant")
 
     if name == "constant":
         lr_fun = lambda epoch: 1  # this value is multiplied with initial lr
