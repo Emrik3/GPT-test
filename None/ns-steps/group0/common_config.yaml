@@ -1,0 +1,23 @@
+gpt_model:
+  flash_attention: true
+  n_embd: 768
+  n_head: 12
+  n_layer: 12
+  vocab_size: 50257
+lr_schedule:
+  name: constant-linear
+  warm_up_fraction: 0.4
+training_data:
+  dataset:
+    name: tiny_shakespeare
+  training_params:
+    autocast: true
+    batch_size: 2
+    compile: true
+    context_length: 512
+    gradnorm: 1.0
+    mixed_precision: bfloat16
+    num_epochs: 1
+    tensorcore_precision: high
+    tokens_processed: 2048
+weight_decay: 0.1
