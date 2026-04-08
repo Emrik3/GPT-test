@@ -59,7 +59,7 @@ import torch
     ),
 ]"""
 
-# 17,17,17
+# 17,17,5
 co = [
     (
         [
@@ -99,32 +99,15 @@ co = [
             1.00000000e00,
         ],
     ),
-    (
-        [
-            [1.62992507e01, -1.09165807e01],
-            [3.79130325e00, -1.20918536e01, -8.44971299e00],
-            [2.04438607e00, -2.30355479e00, -3.02265517e00, -1.78983106e00],
-        ],
-        [
-            [5.24600604e00, -1.62986125e01],
-            [2.41105188e01, -1.04430341e01, -7.06863589e00],
-            [-7.56679623e00, 4.75054075e00, 2.06561878e00, 1.86435561e00],
-        ],
-        [
-            -5.36337617e-03,
-            2.07934129e-02,
-            -5.29262448e-02,
-            -1.00000000e00,
-            1.00000000e00,
-        ],
-    ),
+    (2.64972986, -1.93611987, 0.43470742),
 ]
 
 # safety factor for numerical stability (but exclude last polynomial)
 
-for i in range(len(co)):
+for i in range(len(co) - 1):
     for j in range(len(co[i][2])):
         co[i][2][j] /= 1.01 ** (j + 2)
+
 
 """coeffs_list = [
     (a / 1.01, b / 1.01**3, c / 1.01**5) for (a, b, c) in coeffs_list[:-1]
@@ -140,7 +123,12 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
     X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
     n = X.shape[0]
     t = 0
-    for m in [3, 3, 3]:
+    if steps == 1:
+        m_list = [3]
+    else:
+        m_list = [3, 3]
+
+    for m in m_list:
         A = co[t][0]
         B = co[t][1]
         c = co[t][2]
@@ -158,6 +146,10 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
             out[i + 2] = c[i] * (out1 @ out2)
 
         X = torch.sum(out, dim=0) @ X
+    if steps == 3:
+        A = X @ X.mT
+        B = co[2][1] * A + co[2][2] * A @ A
+        X = co[2][0] * X + B @ X
     if G.size(-2) > G.size(-1):
         X = X.mT
     return X

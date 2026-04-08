@@ -1,8 +1,9 @@
-from itertools import chain, islice, repeat
-import torch
 import os
-import warnings
 import uuid
+import warnings
+from itertools import chain, islice, repeat
+
+import torch
 
 # # How to generate these lists:
 # from itertools import islice
@@ -22,34 +23,39 @@ coeffs_list = [
     (1.875, -1.25, 0.375),  # subsequent coeffs equal this numerically
 ]
 # safety factor for numerical stability (but exclude last polynomial)
-coeffs_list = [(a / 1.01, b / 1.01**3, c / 1.01**5)
-                for (a, b, c) in coeffs_list[:-1]] + [coeffs_list[-1]]
+coeffs_list = [
+    (a / 1.01, b / 1.01**3, c / 1.01**5) for (a, b, c) in coeffs_list[:-1]
+] + [coeffs_list[-1]]
+
 
 @torch.compile
 def PolarExpress(G: torch.Tensor, steps: int) -> torch.Tensor:
     assert G.ndim >= 2
     X = G.bfloat16()  # for speed
-    if G.size(-2) > G.size(-1): X = X.mT  # this reduces FLOPs
-    X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 +1e-7)
-    hs = coeffs_list[:steps] + list( 
-        repeat(coeffs_list[-1], steps - len(coeffs_list)))
+    if G.size(-2) > G.size(-1):
+        X = X.mT  # this reduces FLOPs
+    X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
+    hs = coeffs_list[:steps] + list(repeat(coeffs_list[-1], steps - len(coeffs_list)))
     for a, b, c in hs:
         A = X @ X.mT
         B = b * A + c * A @ A
         X = a * X + B @ X  # X <- aX + bX^3 + cX^5
-    if G.size(-2) > G.size(-1): X = X.mT
+    if G.size(-2) > G.size(-1):
+        X = X.mT
     return X
 
 
 @torch.compile
-def FastApplyPolarExpress(G: torch.Tensor, steps: int, restart_interval: int, shift_eps: float = 0) -> torch.Tensor:
+def FastApplyPolarExpress(
+    G: torch.Tensor, steps: int, restart_interval: int, shift_eps: float = 0
+) -> torch.Tensor:
     assert G.ndim >= 2
     X = G.double()
-    if G.size(-2) > G.size(-1): X = X.mT  # this reduces FLOPs
+    if G.size(-2) > G.size(-1):
+        X = X.mT  # this reduces FLOPs
     X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.02 + 1e-7)
-    hs = coeffs_list[:steps] + list( 
-        repeat(coeffs_list[-1], steps - len(coeffs_list)))
-    hs = [(a * .99, b * .99, c * .99) for (a, b, c) in hs]  # safety factor
+    hs = coeffs_list[:steps] + list(repeat(coeffs_list[-1], steps - len(coeffs_list)))
+    hs = [(a * 0.99, b * 0.99, c * 0.99) for (a, b, c) in hs]  # safety factor
     I = torch.eye(X.shape[-2], device=X.device, dtype=X.dtype)
     Y = X @ X.mT + shift_eps * I  # numerical stability
     Q = I.clone()
@@ -59,7 +65,7 @@ def FastApplyPolarExpress(G: torch.Tensor, steps: int, restart_interval: int, sh
             Y = X @ X.mT
             Q = I.clone()
         R = Q.mT @ Y @ Q
-        Q = Q @ (a*I + R @ (b*I + c*R))  # Q <- Q(aI + bR + cR^2)
+        Q = Q @ (a * I + R @ (b * I + c * R))  # Q <- Q(aI + bR + cR^2)
         # if verbose:
         #     print("-"*20)
         #     print(iter)
@@ -69,10 +75,13 @@ def FastApplyPolarExpress(G: torch.Tensor, steps: int, restart_interval: int, sh
         #     print((Q - Q.T).norm().item())
         #     print(torch.linalg.norm((Q @ X).double(), ord=2).item())
     X = Q @ X
-    if (X.norm(dim=(-2, -1), keepdim=False) > 5 * I.shape[0]).any() or not (torch.isfinite(X).all()):
+    if (X.norm(dim=(-2, -1), keepdim=False) > 5 * I.shape[0]).any() or not (
+        torch.isfinite(X).all()
+    ):
         warnings.warn("X.norm() is unusually large. Saving G to disk.")
         os.makedirs("bad_G", exist_ok=True)
         filename = f"bad_G_{uuid.uuid4().hex}.pt"
         torch.save(G, os.path.join("bad_G", filename))
-    if G.size(-2) > G.size(-1): X = X.mT
+    if G.size(-2) > G.size(-1):
+        X = X.mT
     return X
