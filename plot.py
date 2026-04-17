@@ -328,7 +328,7 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/test_run/2026-04-06"
+    results_folder = "outputs/slurm_logs"
     lims = dict(y_top_lim_lrs=10, y_top_vs_time=6.8, y_bottom_lim_lrs=5.1)
     exclude_runs = ["logs_jobid_29220878.json", "logs_jobid_f1cda670.json"]
     outputs = load_output_folder(results_folder, exclude_runs=exclude_runs)
