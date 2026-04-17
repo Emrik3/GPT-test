@@ -1,0 +1,45 @@
+This job can be monitored from: https://job.c3se.chalmers.se/alvis/6429832
+Lmod has detected the following error: The following module(s) are unknown:
+"python"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "python"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Exception:
+Traceback (most recent call last):
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/commands/install.py", line 294, in run
+    with self._build_session(options) as session:
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/basecommand.py", line 69, in _build_session
+    if options.cache_dir else None
+  File "/usr/lib64/python3.6/posixpath.py", line 80, in join
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not int
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib64/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/__main__.py", line 19, in <module>
+    sys.exit(pip.main())
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/__init__.py", line 247, in main
+    return command.main(cmd_args)
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/basecommand.py", line 251, in main
+    timeout=min(5, options.timeout)) as session:
+  File "/cephyr/users/emrike/Alvis/GPT-test/.venv/lib64/python3.6/site-packages/pip/basecommand.py", line 69, in _build_session
+    if options.cache_dir else None
+  File "/usr/lib64/python3.6/posixpath.py", line 80, in join
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not int
+/tmp/slurmd/job6429832/slurm_script: line 20: torchrun: command not found
+
+real	0m0.263s
+user	0m0.000s
+sys	0m0.000s
