@@ -14,14 +14,14 @@ plt.rc("text", usetex=True)
 
 # ── Load gradient matrix ──────────────────────────────────────────────────────
 grads = torch.load("h3_c_attn_grads.pt", weights_only=True)  # shape: (3, 768, 2304)
-G = grads[0].float()  # take first step, shape (768, 2304)
+G = grads[2].float()  # take first step, shape (768, 2304)
 
 # ── Exact polar factor via SVD ────────────────────────────────────────────────
 U_exact = svd_exact_polar(G, 1)  # shape (768, 2304)
 norm_exact = U_exact.norm(p="fro").item()
 
 # ── Sweep over number of steps ────────────────────────────────────────────────
-max_steps = 20
+max_steps = 10
 steps_range = list(range(1, max_steps + 1))
 mults_per_step = 3  # each iteration costs 3 matrix multiplications
 

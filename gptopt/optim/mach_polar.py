@@ -5,13 +5,6 @@ from itertools import chain, islice, repeat
 
 import torch
 
-# # How to generate these lists:
-# from itertools import islice
-# from matsign.methods import OursFixedL, Ours
-# hs = list(OursFixedL(l=1e-3, cushion=1e-1, center_squred_svs=False, max_iters=10)(1e-3))  # centered
-# hs = list(islice(Ours(cushion=1e-1, center_squred_svs=False).uncentered_sequence(1e-3), 10))  # uncentered
-# [tuple(float(x) for x in h.coef) for h in hs]
-
 # 17, 17, 9
 """co = [
     (
@@ -123,10 +116,8 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
     X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
     n = X.shape[0]
     t = 0
-    if steps == 1:
-        m_list = [3]
-    else:
-        m_list = [3, 3]
+
+    m_list = [3, 3]
 
     for m in m_list:
         A = co[t][0]
@@ -146,10 +137,10 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
             out[i + 2] = c[i] * (out1 @ out2)
 
         X = torch.sum(out, dim=0) @ X
-    if steps == 3:
-        A = X @ X.mT
-        B = co[2][1] * A + co[2][2] * A @ A
-        X = co[2][0] * X + B @ X
+
+    A = X @ X.mT
+    B = co[2][1] * A + co[2][2] * A @ A
+    X = co[2][0] * X + B @ X
     if G.size(-2) > G.size(-1):
         X = X.mT
     return X
