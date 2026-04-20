@@ -81,7 +81,7 @@ def main(config: DictConfig):
     print()
     if master_process:
         print(
-            f"Training with optimizer {opt_config['name']}, polar method {opt_config['args']['polar_method']} and learning rate {opt_config['args']['lr']}"
+            f"Training with optimizer {opt_config['name']} and learning rate {opt_config['args']['lr']}"
         )
 
     # Generate hash for the current optimizer configuration
