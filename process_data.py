@@ -10,6 +10,7 @@ from gptopt.data_utils import process_and_save_docs, tokenize, write_datafile
 
 ## Dict to map local data name to huggingface path and name
 datadict = {
+    "fineweb1B": ["HuggingFaceFW/fineweb", "sample-1BT"],
     "fineweb10B": ["HuggingFaceFW/fineweb", "sample-10BT"],
     "fineweb_edu10B": ["HuggingFaceFW/fineweb-edu", "sample-10BT"],
     "tiny_shakespeare": ["tiny_shakespeare", ""],
@@ -39,7 +40,7 @@ os.makedirs(dataset_path, exist_ok=True)
 print("Data will be saved in the path : ", dataset_path)
 
 # download dataset
-dataset = load_dataset(hf_path, name=remote_name, trust_remote_code=True)
+dataset = load_dataset(hf_path, name=remote_name)
 
 # Process and save it
 if name == "tiny_shakespeare":
