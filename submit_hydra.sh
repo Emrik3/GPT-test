@@ -12,7 +12,6 @@ sbatch <<EOF
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH --account=naiss2025-22-762
 
-module load python
 export OMP_NUM_THREADS=1
 
 # Activate environment
