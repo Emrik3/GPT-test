@@ -11,4 +11,4 @@ training_params:
   compile: True
 
 dataset:
-  name: "finewebmini"
+  name: "fineweb1B"
