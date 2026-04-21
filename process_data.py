@@ -39,7 +39,7 @@ os.makedirs(dataset_path, exist_ok=True)
 print("Data will be saved in the path : ", dataset_path)
 
 # download dataset
-dataset = load_dataset(hf_path, name=remote_name, trust_remote_code=True)
+dataset = load_dataset(hf_path, name=remote_name, streaming=True)
 
 # Process and save it
 if name == "tiny_shakespeare":

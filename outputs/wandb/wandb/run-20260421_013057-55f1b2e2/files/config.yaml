@@ -1,0 +1,176 @@
+_wandb:
+    value:
+        cli_version: 0.26.0
+        e:
+            a41mzmesnj5ejrco144th75t509gf5dk:
+                args:
+                    - -cn
+                    - test_hydra
+                    - +training_data=fineweb
+                    - gpt_model=gpt-small
+                    - hydra.job.name=main_run
+                    - optimizer_params.name=muon
+                    - +optimizer_params.args.ns_steps=5
+                    - +optimizer_params.args.polar_method=polarexpress
+                    - optimizer_params.args.lr=0.02
+                    - optimizer_params.args.weight_decay=0.0
+                    - +logging_params.wandb.project=polar-express
+                codePath: run_hydra.py
+                codePathLocal: run_hydra.py
+                cpu_count: 64
+                cpu_count_logical: 64
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "18843648000"
+                        used: "11143376896"
+                email: emrikerikson@gmail.com
+                executable: /cephyr/users/emrike/Alvis/GPT-test/.venv/bin/python3
+                git:
+                    commit: 21b3b065a7ce5e12a1a2be8c813d88570eb10512
+                    remote: https://github.com/Emrik3/GPT-test.git
+                gpu: NVIDIA A100-SXM4-40GB
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-65302679-0757-6a65-b9eb-c535b7e990e8
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-0503e65f-9def-8518-a0d1-0d9e2cfc5e1a
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-c5d27e13-c444-ba55-52f5-bad5e4566af7
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-d9475619-6934-b887-7181-2f2b5f2728e4
+                host: alvis3-16
+                memory:
+                    total: "269549375488"
+                os: Linux-4.18.0-553.109.1.el8_10.x86_64-x86_64-with-glibc2.28
+                program: /cephyr/users/emrike/Alvis/GPT-test/run_hydra.py
+                python: CPython 3.13.5
+                root: ./outputs/wandb
+                slurm:
+                    cluster_name: alvis
+                    conf: /tmp/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "64"
+                    gpus_on_node: "4"
+                    gpus_per_node: A100:4
+                    gtids: "0"
+                    job_account: naiss2025-22-762
+                    job_cpus_per_node: "64"
+                    job_end_time: "1776799836"
+                    job_gid: "10229047"
+                    job_gpus: 0,1,2,3
+                    job_id: "6453033"
+                    job_name: test_hydra
+                    job_nodelist: alvis3-16
+                    job_num_nodes: "1"
+                    job_partition: alvis
+                    job_qos: normal
+                    job_start_time: "1776727835"
+                    job_uid: "10229047"
+                    job_user: emrike
+                    jobid: "6453033"
+                    localid: "0"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: alvis3-16
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /cephyr/users/emrike/Alvis/GPT-test
+                    submit_host: alvis2
+                    task_pid: "76626"
+                    tasks_per_node: "4"
+                    topology_addr: ib-root1.ib-sw03.alvis3-16
+                    topology_addr_pattern: switch.switch.node
+                startedAt: "2026-04-20T23:30:57.503436Z"
+                writerId: a41mzmesnj5ejrco144th75t509gf5dk
+        m: []
+        python_version: 3.13.5
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 50
+                - 53
+                - 71
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 50
+                - 53
+                - 71
+            "3":
+                - 2
+                - 14
+                - 15
+                - 16
+            "4": 3.13.5
+            "5": 0.26.0
+            "6": 5.5.4
+            "12": 0.26.0
+            "13": linux-x86_64
+gpt_model:
+    value:
+        flash_attention: true
+        n_embd: 768
+        n_head: 12
+        n_layer: 12
+        vocab_size: 50257
+logging_params:
+    value:
+        keep_last: 2
+        load_ckpt_step: 0
+        log_step: 50
+        save_checkpoint: false
+        save_ckpt_step: 500
+        val_step: 50
+        val_tokens_processed: 524288
+        wandb:
+            dir: ./outputs/wandb
+            project: polar-express
+lr_schedule:
+    value:
+        name: constant-linear
+        warm_up_fraction: 0.4
+optimizer_params:
+    value:
+        args:
+            lr: 0.02
+            nheads: 12
+            ns_steps: 5
+            polar_method: polarexpress
+            weight_decay: 0
+        name: muon
+training_data:
+    value:
+        dataset:
+            name: fineweb1B
+        training_params:
+            autocast: true
+            batch_size: 32
+            compile: true
+            context_length: 1024
+            gradnorm: 1
+            mixed_precision: bfloat16
+            num_epochs: 1
+            tensorcore_precision: high
+            tokens_processed: 524288
+world_size:
+    value: 4
