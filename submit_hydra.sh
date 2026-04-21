@@ -8,7 +8,7 @@ sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
 #SBATCH --gpus-per-node=A100:4
-#SBATCH --time=20:00:00
+#SBATCH --time=03:00:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH --account=naiss2025-22-762
 
