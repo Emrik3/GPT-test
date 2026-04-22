@@ -1,0 +1,241 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 16 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+Saved 3 gradient(s), shape=torch.Size([2304, 768])
+Step 400 of 30512.
+Time taken : 2738.3ms | Tokens/s : 191.5k | Loss : 7.166
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:44: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(
+Validation Loss: 7.2379469871521
+Step 800 of 30512.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 6.326
+Validation Loss: 6.306351661682129
+Step 1200 of 30512.
+Time taken : 2746.2ms | Tokens/s : 190.9k | Loss : 5.963
+Validation Loss: 6.003025054931641
+Step 1600 of 30512.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 5.707
+Validation Loss: 5.686756610870361
+Step 2000 of 30512.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 5.542
+Validation Loss: 5.5202836990356445
+Step 2400 of 30512.
+Time taken : 2745.6ms | Tokens/s : 191.0k | Loss : 5.371
+Validation Loss: 5.335984706878662
+Step 2800 of 30512.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 5.165
+Validation Loss: 5.143293380737305
+Step 3200 of 30512.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 4.992
+Validation Loss: 5.013322830200195
+Step 3600 of 30512.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 4.910
+Validation Loss: 4.953686714172363
+Step 4000 of 30512.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 4.793
+Validation Loss: 4.763544082641602
+Step 4400 of 30512.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 4.692
+Validation Loss: 4.745842456817627
+Step 4800 of 30512.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 4.584
+Validation Loss: 4.497503280639648
+Step 5200 of 30512.
+Time taken : 2754.4ms | Tokens/s : 190.3k | Loss : 4.479
+Validation Loss: 4.479069232940674
+Step 5600 of 30512.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 4.442
+Validation Loss: 4.400113582611084
+Step 6000 of 30512.
+Time taken : 2751.7ms | Tokens/s : 190.5k | Loss : 4.344
+Validation Loss: 4.354299545288086
+Step 6400 of 30512.
+Time taken : 2751.6ms | Tokens/s : 190.5k | Loss : 4.415
+Validation Loss: 4.357612609863281
+Step 6800 of 30512.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 4.325
+Validation Loss: 4.2345709800720215
+Step 7200 of 30512.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 4.286
+Validation Loss: 4.216547012329102
+Step 7600 of 30512.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 4.186
+Validation Loss: 4.161285877227783
+Step 8000 of 30512.
+Time taken : 2751.6ms | Tokens/s : 190.5k | Loss : 4.198
+Validation Loss: 4.157445430755615
+Step 8400 of 30512.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 4.159
+Validation Loss: 4.124587059020996
+Step 8800 of 30512.
+Time taken : 2752.4ms | Tokens/s : 190.5k | Loss : 4.125
+Validation Loss: 4.164883136749268
+Step 9200 of 30512.
+Time taken : 2752.0ms | Tokens/s : 190.5k | Loss : 4.091
+Validation Loss: 4.0835113525390625
+Step 9600 of 30512.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 4.080
+Validation Loss: 4.035058498382568
+Step 10000 of 30512.
+Time taken : 2753.1ms | Tokens/s : 190.4k | Loss : 4.172
+Validation Loss: 4.047089576721191
+Step 10400 of 30512.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 4.012
+Validation Loss: 4.099605560302734
+Step 10800 of 30512.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 4.056
+Validation Loss: 4.01344108581543
+Step 11200 of 30512.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 4.003
+Validation Loss: 4.000494480133057
+Step 11600 of 30512.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.970
+Validation Loss: 4.036379337310791
+Step 12000 of 30512.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 4.004
+Validation Loss: 4.03654670715332
+Step 12400 of 30512.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.927
+Validation Loss: 3.995879650115967
+Step 12800 of 30512.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.919
+Validation Loss: 3.945286273956299
+Step 13200 of 30512.
+Time taken : 2752.4ms | Tokens/s : 190.5k | Loss : 3.853
+Validation Loss: 3.883669853210449
+Step 13600 of 30512.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.848
+Validation Loss: 3.9542713165283203
+Step 14000 of 30512.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.967
+Validation Loss: 3.9784247875213623
+Step 14400 of 30512.
+Time taken : 2751.8ms | Tokens/s : 190.5k | Loss : 3.932
+Validation Loss: 3.896111488342285
+Step 14800 of 30512.
+Time taken : 2751.4ms | Tokens/s : 190.5k | Loss : 3.894
+Validation Loss: 3.8846421241760254
+Step 15200 of 30512.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.904
+Validation Loss: 3.8156142234802246
+Step 15600 of 30512.
+Time taken : 2751.9ms | Tokens/s : 190.5k | Loss : 3.840
+Validation Loss: 3.9127235412597656
+Step 16000 of 30512.
+Time taken : 2751.9ms | Tokens/s : 190.5k | Loss : 3.873
+Validation Loss: 3.836103916168213
+Step 16400 of 30512.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.828
+Validation Loss: 3.8285739421844482
+Step 16800 of 30512.
+Time taken : 2752.9ms | Tokens/s : 190.4k | Loss : 3.818
+Validation Loss: 3.8385066986083984
+Step 17200 of 30512.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.841
+Validation Loss: 3.8236589431762695
+Step 17600 of 30512.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.792
+Validation Loss: 3.9398350715637207
+Step 18000 of 30512.
+Time taken : 2751.5ms | Tokens/s : 190.5k | Loss : 3.838
+Validation Loss: 3.8521056175231934
+Step 18400 of 30512.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.808
+Validation Loss: 3.8053040504455566
+Step 18800 of 30512.
+Time taken : 2752.0ms | Tokens/s : 190.5k | Loss : 3.839
+Validation Loss: 3.7891244888305664
+Step 19200 of 30512.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.760
+Validation Loss: 3.85642409324646
+Step 19600 of 30512.
+Time taken : 2751.6ms | Tokens/s : 190.5k | Loss : 3.809
+Validation Loss: 3.7539939880371094
+Step 20000 of 30512.
+Time taken : 2752.1ms | Tokens/s : 190.5k | Loss : 3.791
+Validation Loss: 3.762324571609497
+Step 20400 of 30512.
+Time taken : 2751.3ms | Tokens/s : 190.6k | Loss : 3.755
+Validation Loss: 3.771253824234009
+Step 20800 of 30512.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.728
+Validation Loss: 3.740365743637085
+Step 21200 of 30512.
+Time taken : 2751.7ms | Tokens/s : 190.5k | Loss : 3.747
+Validation Loss: 3.7672080993652344
+Step 21600 of 30512.
+Time taken : 2751.2ms | Tokens/s : 190.6k | Loss : 3.755
+Validation Loss: 3.789867639541626
+Step 22000 of 30512.
+Time taken : 2751.9ms | Tokens/s : 190.5k | Loss : 3.768
+Validation Loss: 3.7248330116271973
+Step 22400 of 30512.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.726
+Validation Loss: 3.7048630714416504
+Step 22800 of 30512.
+Time taken : 2752.9ms | Tokens/s : 190.4k | Loss : 3.664
+Validation Loss: 3.7518858909606934
+Step 23200 of 30512.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.656
+Validation Loss: 3.719336986541748
+Step 23600 of 30512.
+Time taken : 2751.6ms | Tokens/s : 190.5k | Loss : 3.719
+Validation Loss: 3.6912810802459717
+Step 24000 of 30512.
+Time taken : 2752.1ms | Tokens/s : 190.5k | Loss : 3.665
+Validation Loss: 3.8039426803588867
+Step 24400 of 30512.
+Time taken : 2752.1ms | Tokens/s : 190.5k | Loss : 3.751
+Validation Loss: 3.7346701622009277
+Step 24800 of 30512.
+Time taken : 2752.8ms | Tokens/s : 190.5k | Loss : 3.856
+Validation Loss: 3.6458778381347656
+Step 25200 of 30512.
+Time taken : 2753.3ms | Tokens/s : 190.4k | Loss : 3.770
+Validation Loss: 3.6843676567077637
+Step 25600 of 30512.
+Time taken : 2753.7ms | Tokens/s : 190.4k | Loss : 3.728
+Validation Loss: 3.678248643875122
+Step 26000 of 30512.
+Time taken : 2751.4ms | Tokens/s : 190.6k | Loss : 3.654
+Validation Loss: 3.719172477722168
+Step 26400 of 30512.
+Time taken : 2752.1ms | Tokens/s : 190.5k | Loss : 3.648
+Validation Loss: 3.725290298461914
+Step 26800 of 30512.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.719
+Validation Loss: 3.7739672660827637
+Step 27200 of 30512.
+Time taken : 2753.8ms | Tokens/s : 190.4k | Loss : 3.663
+Validation Loss: 4.0083699226379395
+Step 27600 of 30512.
+Time taken : 2751.7ms | Tokens/s : 190.5k | Loss : 3.677
+Validation Loss: 3.6366469860076904
+Step 28000 of 30512.
+Time taken : 2752.9ms | Tokens/s : 190.4k | Loss : 3.691
+Validation Loss: 3.6680493354797363
+Step 28400 of 30512.
+Time taken : 2752.9ms | Tokens/s : 190.5k | Loss : 3.773
+Validation Loss: 3.61833119392395
+Step 28800 of 30512.
+Time taken : 2752.3ms | Tokens/s : 190.5k | Loss : 3.619
+Validation Loss: 3.708354949951172
+Step 29200 of 30512.
+Time taken : 2753.9ms | Tokens/s : 190.4k | Loss : 3.615
+Validation Loss: 3.5530447959899902
+Step 29600 of 30512.
+Time taken : 2751.5ms | Tokens/s : 190.5k | Loss : 3.677
+Validation Loss: 3.665775775909424
+Step 30000 of 30512.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.672
+Validation Loss: 3.658221960067749
+Step 30400 of 30512.
+Time taken : 2752.7ms | Tokens/s : 190.5k | Loss : 3.627
+Validation Loss: 3.7057812213897705
+Rank 0 reached end of train dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+In rank: 0, epoch 1, Train Loss: 3.618814468383789
+In rank: 0, time taken for epoch 1 :  5361.234833478928
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.664952039718628
+In rank: 0, epoch 1, Validation Loss: 3.664952039718628

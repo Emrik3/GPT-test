@@ -1,0 +1,150 @@
+_wandb:
+    value:
+        cli_version: 0.26.0
+        e:
+            nfein4om32z9yl3q7zw4seef58vta3ls:
+                args:
+                    - --config
+                    - configs/gpt-Large-fine1B.yaml
+                codePath: run.py
+                codePathLocal: run.py
+                cpu_count: 64
+                cpu_count_logical: 64
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "18843648000"
+                        used: "11294355456"
+                email: emrikerikson@gmail.com
+                executable: /cephyr/users/emrike/Alvis/GPT-test/.venv/bin/python3
+                git:
+                    commit: 816888507f57c37d21156bca9afc16540f93263d
+                    remote: https://github.com/Emrik3/GPT-test.git
+                gpu: NVIDIA A100-SXM4-40GB
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-3f676213-50eb-8699-5ceb-bc54cadff64e
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-d7f571d4-8cf7-7871-bff1-e8204e94280d
+                host: alvis3-25
+                memory:
+                    total: "269549404160"
+                os: Linux-4.18.0-553.109.1.el8_10.x86_64-x86_64-with-glibc2.28
+                program: /cephyr/users/emrike/Alvis/GPT-test/run.py
+                python: CPython 3.13.5
+                root: outputs/wandb
+                slurm:
+                    cluster_name: alvis
+                    conf: /tmp/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "32"
+                    gpus_on_node: "2"
+                    gpus_per_node: A100:2
+                    gtids: "0"
+                    job_account: naiss2025-22-762
+                    job_cpus_per_node: "32"
+                    job_end_time: "1776794292"
+                    job_gid: "10229047"
+                    job_gpus: 0,2
+                    job_id: "6461633"
+                    job_name: gpt-Large-fine1B
+                    job_nodelist: alvis3-25
+                    job_num_nodes: "1"
+                    job_partition: alvis
+                    job_qos: normal
+                    job_start_time: "1776776291"
+                    job_uid: "10229047"
+                    job_user: emrike
+                    jobid: "6461633"
+                    localid: "0"
+                    mem_per_node: "124992"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: alvis3-25
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /cephyr/users/emrike/Alvis/GPT-test
+                    submit_host: alvis2
+                    task_pid: "219380"
+                    tasks_per_node: "1"
+                    topology_addr: ib-root1.ib-sw04.alvis3-25
+                    topology_addr_pattern: switch.switch.node
+                startedAt: "2026-04-21T12:58:44.771197Z"
+                writerId: nfein4om32z9yl3q7zw4seef58vta3ls
+        m: []
+        python_version: 3.13.5
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+                - 71
+            "2":
+                - 1
+                - 5
+                - 11
+                - 49
+                - 53
+                - 71
+            "3":
+                - 2
+                - 16
+            "4": 3.13.5
+            "5": 0.26.0
+            "6": 5.5.4
+            "12": 0.26.0
+            "13": linux-x86_64
+dataset:
+    value:
+        name: fineweb1B
+gpt_model:
+    value:
+        flash_attention: true
+        n_embd: 1280
+        n_head: 20
+        n_layer: 36
+        vocab_size: 50257
+logging_params:
+    value:
+        ckpt_dir: outputs/checkpoints
+        keep_last: 2
+        load_ckpt_step: 0
+        log_step: 50
+        results_dir: outputs/results
+        save_ckpt_step: 500
+        val_step: 500
+        val_tokens_processed: 8388608
+        wandb:
+            dir: outputs/wandb
+            project: polar-express
+one_optimizer_params:
+    value:
+        lr: 5e-05
+        lr_schedule: constant-linear
+        name: adamw
+        warm_up_fraction: 0.4
+        weight_decay: 0.1
+training_params:
+    value:
+        autocast: true
+        batch_size: 16
+        compile: true
+        context_length: 1024
+        gradnorm: 1
+        mixed_precision: bfloat16
+        num_epochs: 1
+        tensorcore_precision: high
+        tokens_processed: 524288
+        val_tokens_processed: 8388608
+world_size:
+    value: 2
