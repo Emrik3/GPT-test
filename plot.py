@@ -324,11 +324,11 @@ if __name__ == "__main__":
     # parser = argparse.ArgumentParser(description='Plotting gpt_distill outputs.')
     # parser.add_argument('--results_folder', type=str, nargs='?', help='Path to results folder', default=None)
 
-    # results_folder = "outputs/hydra-results/main_run"
+    # results_folder = "outputs/hydra-results/test_run17179"
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/main_run/"
+    results_folder = "outputs/hydra-results/main_run_test/"
     lims = dict(y_top_lim_lrs=4, y_top_vs_time=4.5, y_bottom_lim_lrs=3.5)
     exclude_runs = ["logs_jobid_29220878.json", "logs_jobid_f1cda670.json"]
     outputs = load_output_folder(results_folder, exclude_runs=exclude_runs)
