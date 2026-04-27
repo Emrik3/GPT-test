@@ -1,0 +1,87 @@
+{
+  "os": "Linux-4.18.0-553.109.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "CPython 3.13.5",
+  "startedAt": "2026-04-27T13:12:11.405273Z",
+  "args": [
+    "-cn",
+    "test_hydra",
+    "+training_data=shakespeare",
+    "optimizer_params.name=muon",
+    "+optimizer_params.args.ns_steps=5",
+    "+optimizer_params.args.polar_method=machpolar",
+    "+logging_params.wandb.project=polar-express"
+  ],
+  "program": "/cephyr/users/emrike/Alvis/GPT-test/run_hydra.py",
+  "codePath": "run_hydra.py",
+  "codePathLocal": "run_hydra.py",
+  "git": {
+    "remote": "https://github.com/Emrik3/GPT-test.git",
+    "commit": "f434098888b57aa2eb57da68037f6c892c9508d9"
+  },
+  "email": "emrikerikson@gmail.com",
+  "root": "./outputs/wandb",
+  "host": "alvis2-14",
+  "executable": "/cephyr/users/emrike/Alvis/GPT-test/.venv/bin/python3",
+  "cpu_count": 32,
+  "cpu_count_logical": 32,
+  "gpu": "Tesla T4",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "18843648000",
+      "used": "12238049280"
+    }
+  },
+  "memory": {
+    "total": "607814852608"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla T4",
+      "memoryTotal": "16106127360",
+      "cudaCores": 2560,
+      "architecture": "Turing",
+      "uuid": "GPU-d6b47ed4-d920-53ae-9ec6-036a514ef2df"
+    }
+  ],
+  "cudaVersion": "13.1",
+  "slurm": {
+    "cluster_name": "alvis",
+    "conf": "/tmp/slurmd/conf-cache/slurm.conf",
+    "cpus_on_node": "4",
+    "gpus_on_node": "1",
+    "gpus_per_node": "T4:1",
+    "gtids": "0",
+    "job_account": "naiss2025-22-762",
+    "job_cpus_per_node": "4",
+    "job_end_time": "1777302704",
+    "job_gid": "10229047",
+    "job_gpus": "5",
+    "job_id": "6511571",
+    "job_name": "test_hydra",
+    "job_nodelist": "alvis2-14",
+    "job_num_nodes": "1",
+    "job_partition": "alvis",
+    "job_qos": "normal",
+    "job_start_time": "1777295502",
+    "job_uid": "10229047",
+    "job_user": "emrike",
+    "jobid": "6511571",
+    "localid": "0",
+    "mem_per_node": "71760",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "alvis2-14",
+    "oom_kill_step": "0",
+    "prio_process": "0",
+    "procid": "0",
+    "script_context": "prolog_task",
+    "submit_dir": "/cephyr/users/emrike/Alvis/GPT-test",
+    "submit_host": "alvis2",
+    "task_pid": "2526506",
+    "tasks_per_node": "1",
+    "topology_addr": "ib-root.ib-sw02.alvis2-14",
+    "topology_addr_pattern": "switch.switch.node"
+  },
+  "writerId": "nbamfmqkduaajrmmmlnr008cykv85ryg"
+}
