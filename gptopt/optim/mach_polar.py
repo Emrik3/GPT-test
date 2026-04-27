@@ -13,7 +13,7 @@ import torch
 # [tuple(float(x) for x in h.coef) for h in hs]
 
 # 17, 17, 17
-co = [
+"""co = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -71,7 +71,7 @@ co = [
             1.00000000e00,
         ],
     ),
-]
+]"""
 
 # 17, 17, 9
 """co = [
@@ -121,7 +121,7 @@ co = [
 ]"""
 
 # 17,17,5
-"""co = [
+co = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -161,7 +161,7 @@ co = [
         ],
     ),
     (2.64972986, -1.93611987, 0.43470742),
-]"""
+]
 
 # safety factor for numerical stability (but exclude last polynomial)
 
