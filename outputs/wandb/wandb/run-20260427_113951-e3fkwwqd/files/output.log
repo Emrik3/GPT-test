@@ -1,0 +1,3 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 16 steps
+Epoch 1 of 1
