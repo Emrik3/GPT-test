@@ -7,7 +7,7 @@ mkdir -p outputs/slurm_logs
 sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
-#SBATCH --gpus-per-node=T4:1
+#SBATCH --gpus-per-node=T4:1 # -C 2xV100 # For 2x RAM?
 #SBATCH --time=02:00:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH --account=naiss2025-22-762

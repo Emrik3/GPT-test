@@ -206,9 +206,9 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
 
         X = torch.sum(out, dim=0) @ X
 
-        A = X @ X.mT
-        B = co[2][1] * A + co[2][2] * A @ A
-        X = co[2][0] * X + B @ X
+    A = X @ X.mT
+    B = co[2][1] * A + co[2][2] * A @ A
+    X = co[2][0] * X + B @ X
     if G.size(-2) > G.size(-1):
         X = X.mT
     return X
