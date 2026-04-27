@@ -1,0 +1,223 @@
+This job can be monitored from: https://job.c3se.chalmers.se/alvis/6511737
+Obtaining file:///cephyr/users/emrike/Alvis/GPT-test
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (2.11.0)
+Requirement already satisfied: pandas in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (3.0.2)
+Requirement already satisfied: matplotlib in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (3.10.8)
+Requirement already satisfied: scikit-learn in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.8.0)
+Requirement already satisfied: requests in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (2.33.1)
+Requirement already satisfied: transformers in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (5.5.4)
+Requirement already satisfied: datasets in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (4.8.4)
+Requirement already satisfied: accelerate in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.13.0)
+Requirement already satisfied: tiktoken in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.12.0)
+Requirement already satisfied: zstandard in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.25.0)
+Requirement already satisfied: wandb in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.26.0)
+Requirement already satisfied: hydra-core in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.3.2)
+Requirement already satisfied: numpy>=1.17 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (2.4.4)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (26.1)
+Requirement already satisfied: psutil in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (7.2.2)
+Requirement already satisfied: pyyaml in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (6.0.3)
+Requirement already satisfied: huggingface_hub>=0.21.0 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (1.11.0)
+Requirement already satisfied: safetensors>=0.4.3 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (0.7.0)
+Requirement already satisfied: filelock>=3.10.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (3.29.0)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.3 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.4.3)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.28.1)
+Requirement already satisfied: tqdm>=4.42.1 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.67.3)
+Requirement already satisfied: typer in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.24.1)
+Requirement already satisfied: typing-extensions>=4.1.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.15.0)
+Requirement already satisfied: anyio in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.13.0)
+Requirement already satisfied: certifi in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.0.9)
+Requirement already satisfied: idna in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (3.11)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.16.0)
+Requirement already satisfied: setuptools<82 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (81.0.0)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.6.1)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.1.6)
+Requirement already satisfied: cuda-toolkit==13.0.2 in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.2)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (13.2.0)
+Requirement already satisfied: nvidia-cudnn-cu13==9.19.0.56 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (9.19.0.56)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.0 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (0.8.0)
+Requirement already satisfied: nvidia-nccl-cu13==2.28.9 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (2.28.9)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.4.5)
+Requirement already satisfied: triton==3.6.0 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.6.0)
+Requirement already satisfied: nvidia-cublas==13.1.0.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.1.0.3)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.6.3.3)
+Requirement already satisfied: nvidia-nvjitlink==13.0.88.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.88)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.85)
+Requirement already satisfied: cuda-pathfinder~=1.1 in ./.venv/lib/python3.13/site-packages (from cuda-bindings<14,>=13.0.3->torch->gptopt==0.1) (1.5.3)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.13/site-packages (from sympy>=1.13.3->torch->gptopt==0.1) (1.3.0)
+Requirement already satisfied: pyarrow>=21.0.0 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (23.0.1)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (0.4.1)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.20 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (0.70.19)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.13/site-packages (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (3.13.5)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.23.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.13/site-packages (from requests->gptopt==0.1) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in ./.venv/lib/python3.13/site-packages (from requests->gptopt==0.1) (2.6.3)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in ./.venv/lib/python3.13/site-packages (from hydra-core->gptopt==0.1) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in ./.venv/lib/python3.13/site-packages (from hydra-core->gptopt==0.1) (4.9.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.13/site-packages (from jinja2->torch->gptopt==0.1) (3.0.3)
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (1.5.0)
+Requirement already satisfied: pillow>=8 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (12.2.0)
+Requirement already satisfied: pyparsing>=3 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.13/site-packages (from python-dateutil>=2.7->matplotlib->gptopt==0.1) (1.17.0)
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (1.17.1)
+Requirement already satisfied: joblib>=1.3.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (1.5.3)
+Requirement already satisfied: threadpoolctl>=3.2.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (3.6.0)
+Requirement already satisfied: regex>=2022.1.18 in ./.venv/lib/python3.13/site-packages (from tiktoken->gptopt==0.1) (2026.4.4)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in ./.venv/lib/python3.13/site-packages (from transformers->gptopt==0.1) (0.22.2)
+Requirement already satisfied: click>=8.2.1 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (8.3.2)
+Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (15.0.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.13/site-packages (from rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.13/site-packages (from rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.1.2)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (3.1.46)
+Requirement already satisfied: platformdirs in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (4.9.6)
+Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,<8,>4.21.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (7.34.1)
+Requirement already satisfied: pydantic<3 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (2.13.2)
+Requirement already satisfied: sentry-sdk>=2.0.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (2.58.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.2 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (2.46.2)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.4.2)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv/lib/python3.13/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (5.0.3)
+Building wheels for collected packages: gptopt
+  Building editable for gptopt (pyproject.toml): started
+  Building editable for gptopt (pyproject.toml): finished with status 'done'
+  Created wheel for gptopt: filename=gptopt-0.1-0.editable-py3-none-any.whl size=2690 sha256=96a9e91fa19dcc879cd9e60a7677bfc7933dcbeb498eca9508e9b14b05608590
+  Stored in directory: /local/tmp.6511737/pip-ephem-wheel-cache-oydwi7kf/wheels/23/16/1d/8e9e42c8cbd78b35b46cdc79d9a135bf5dfe98abbce5dd655b
+Successfully built gptopt
+Installing collected packages: gptopt
+  Attempting uninstall: gptopt
+    WARNING: Ignoring invalid distribution ~ptopt (/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages)
+    WARNING: Skipping gptopt as it is not installed.
+Successfully installed gptopt-0.1
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+Using device: cuda:0
+Loading configuration from test_hydra
+Training on dataset tiny_shakespeare
+Load data from data/tiny_shakespeare-gpt2/
+Initialized train dataloader in 0 at :  {'rank': 0, 'position': 0, 'shard': 0}
+Initialized val dataloader in 0 at :  {'rank': 0, 'position': 0, 'shard': 0}
+Length of train dataset : 0.3 million tokens
+Length of validation dataset : 0.0 million tokens
+Total number of iterations : 147
+
+Training with optimizer muon, polar method Keller and learning rate 0.02
+Compiling model
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /cephyr/users/emrike/Alvis/.netrc.
+wandb: Currently logged in as: emrikerikson (emrikerikson-kth-royal-institute-of-technology) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run bf8a78ec
+wandb: Tracking run with wandb version 0.26.0
+wandb: Run data is saved locally in outputs/wandb/wandb/run-20260427_154535-bf8a78ec
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run deep-firebrand-365
+wandb: ⭐️ View project at https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express
+wandb: 🚀 View run at https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express/runs/bf8a78ec
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 2 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+[rank0]:W0427 15:45:43.155000 214734 .venv/lib/python3.13/site-packages/torch/_inductor/utils.py:1731] [0/0] Not enough SMs to use max_autotune_gemm mode
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+Saved 3 gradient(s), shape=torch.Size([2304, 768])
+Step 50 of 294.
+Time taken : 1256.7ms | Tokens/s : 1.6k | Loss : 10.564
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:44: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 10.228277206420898
+Step 100 of 294.
+Time taken : 1283.0ms | Tokens/s : 1.6k | Loss : 6.891
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 7.280354022979736
+Step 150 of 294.
+Time taken : 1315.2ms | Tokens/s : 1.6k | Loss : 5.834
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 6.276293754577637
+Step 200 of 294.
+Time taken : 1335.6ms | Tokens/s : 1.5k | Loss : 5.296
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 6.238010406494141
+Step 250 of 294.
+Time taken : 1355.0ms | Tokens/s : 1.5k | Loss : 5.996
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 5.93628454208374
+Rank 0 reached end of train dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+In rank: 0, epoch 1, Train Loss: 5.4971513748168945
+In rank: 0, time taken for epoch 1 :  224.14263892173767
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 5.616758346557617
+In rank: 0, epoch 1, Validation Loss: 5.616758346557617
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading wandb-summary.json
+wandb: 
+wandb: Run history:
+wandb: train/grad_norm █▆▇▃▂▂▂▃▂▂▂▂▃▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/loss ▃▆██▆▅▄▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▂▁▂▂▁▁▁▁
+wandb:      train/lr_0 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/step ▁▁▁▁▁▂▂▂▂▂▂▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇███
+wandb: train/step_time █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        val/loss █▄▂▂▁▁
+wandb:        val/step ▁▂▄▅▇█
+wandb: 
+wandb: Run summary:
+wandb: train/grad_norm 1.02317
+wandb:      train/loss 5.49715
+wandb:      train/lr_0 0.02
+wandb:      train/step 295
+wandb: train/step_time 1.37674
+wandb:        val/loss 5.61676
+wandb:        val/step 295
+wandb: 
+wandb: 🚀 View run deep-firebrand-365 at: https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express/runs/bf8a78ec
+wandb: ⭐️ View project at: https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: outputs/wandb/wandb/run-20260427_154535-bf8a78ec/logs
+Saved output to /cephyr/users/emrike/Alvis/GPT-test/outputs/hydra-results/test_run/2026-04-27/15-45-32.284560/logs_jobid_bf8a78ec.json
+
+real	4m8.858s
+user	2m14.217s
+sys	1m50.208s
