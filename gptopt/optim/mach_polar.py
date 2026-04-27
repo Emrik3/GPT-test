@@ -185,7 +185,7 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
     n = X.shape[0]
     t = 0
 
-    m_list = [3, 3, 3]
+    m_list = [3, 3]
 
     for m in m_list:
         A = co[t][0]
@@ -205,10 +205,10 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
             out[i + 2] = c[i] * (out1 @ out2)
 
         X = torch.sum(out, dim=0) @ X
-    """
+
         A = X @ X.mT
         B = co[2][1] * A + co[2][2] * A @ A
-        X = co[2][0] * X + B @ X"""
+        X = co[2][0] * X + B @ X
     if G.size(-2) > G.size(-1):
         X = X.mT
     return X
