@@ -14,39 +14,39 @@ plt.rc("text", usetex=True)
 
 # ── Load gradient matrix ──────────────────────────────────────────────────────
 grads = torch.load("h3_c_attn_grads.pt", weights_only=True)  # shape: (3, 768, 2304)
-G = grads[2].float()  # take first step, shape (768, 2304)
+G = grads[2].bfloat16()  # take first step, shape (768, 2304)
 
 # ── Exact polar factor via SVD ────────────────────────────────────────────────
 U_exact = svd_exact_polar(G, 1)  # shape (768, 2304)
 norm_exact = U_exact.norm(p="fro").item()
 
 # ── Sweep over number of steps ────────────────────────────────────────────────
-max_steps = 10
+max_steps = 5
 steps_range = list(range(1, max_steps + 1))
 mults_per_step = 3  # each iteration costs 3 matrix multiplications
 
-errors_zeropower = []
-errors_polarexpress = []
-errors_machpolar = []
+errors_zeropower = [1]
+errors_polarexpress = [1]
+errors_machpolar = [1]
 
 for ns in steps_range:
     print(ns)
     # ZeroPower (Newton-Schulz)
     U_zp = zeropower_via_newtonschulz5(G, steps=ns)
-    errors_zeropower.append((U_zp - U_exact).norm(p="fro").item() / norm_exact)
+    errors_zeropower.append((U_zp - U_exact).norm(p=2).item() / norm_exact)
 
     # PolarExpress
     U_pe = PolarExpress(G, steps=ns)
-    errors_polarexpress.append((U_pe - U_exact).norm(p="fro").item() / norm_exact)
+    errors_polarexpress.append((U_pe - U_exact).norm(p=2).item() / norm_exact)
 
     # MachPolar
     if ns >= 4:
         continue
     U_mp = MachPolar(G, steps=ns)
-    errors_machpolar.append((U_mp - U_exact).norm(p="fro").item() / norm_exact)
+    errors_machpolar.append((U_mp - U_exact).norm(p=2).item() / norm_exact)
 
-x = [s * mults_per_step for s in steps_range]  # matrix multiplications on x-axis
-xMach = [5, 10, 15]  # matrix multiplications on x-axis
+x = [0, 3, 6, 9, 12, 15]  # matrix multiplications on x-axis
+xMach = [0, 5, 10, 15]  # matrix multiplications on x-axis
 
 # ── Plot ──────────────────────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(5, 4))
@@ -57,7 +57,7 @@ ax.plot(xMach, errors_machpolar, label=r"MachPolar", color="#8A2BE2", linewidth=
 
 ax.set_yscale("log")
 ax.set_xlabel(r"Matrix Multiplications", fontsize=12)
-ax.set_ylabel(r"Frobenius Error $\|U - U_{\mathrm{exact}}\|_F$", fontsize=12)
+ax.set_ylabel(r"Spectral error", fontsize=12)
 ax.legend(fontsize=10)
 ax.grid(axis="both", lw=0.2, ls="--", zorder=0)
 
