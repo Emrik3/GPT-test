@@ -1,0 +1,111 @@
+{
+  "os": "Linux-4.18.0-553.109.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "CPython 3.13.5",
+  "startedAt": "2026-04-27T19:51:19.060187Z",
+  "args": [
+    "-cn",
+    "test_hydra",
+    "+training_data=fineweb",
+    "gpt_model=gpt-small",
+    "hydra.job.name=main_run",
+    "optimizer_params.name=muon",
+    "+optimizer_params.args.ns_steps=5",
+    "+optimizer_params.args.polar_method=polarexpress",
+    "optimizer_params.args.lr=0.005",
+    "optimizer_params.args.weight_decay=0.0",
+    "+logging_params.wandb.project=polar-express"
+  ],
+  "program": "/cephyr/users/emrike/Alvis/GPT-test/run_hydra.py",
+  "codePath": "run_hydra.py",
+  "codePathLocal": "run_hydra.py",
+  "git": {
+    "remote": "https://github.com/Emrik3/GPT-test.git",
+    "commit": "c089c4e9f8b5585c9fc3b2f0269c6470f435f268"
+  },
+  "email": "emrikerikson@gmail.com",
+  "root": "./outputs/wandb",
+  "host": "alvis4-01",
+  "executable": "/cephyr/users/emrike/Alvis/GPT-test/.venv/bin/python3",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "18843648000",
+      "used": "12144947200"
+    }
+  },
+  "memory": {
+    "total": "540132114432"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-b96bec73-5be6-8db9-9b66-ff22cfe6d101"
+    },
+    {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-2c725693-fc6f-691a-a12b-b1c3a598b4c2"
+    },
+    {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-d1380452-8966-4752-702a-9cb59b5da025"
+    },
+    {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-b2f2f9a9-21e9-f8a4-ece1-a717a32e7bcf"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "slurm": {
+    "cluster_name": "alvis",
+    "conf": "/tmp/slurmd/conf-cache/slurm.conf",
+    "cpus_on_node": "64",
+    "gpus_on_node": "4",
+    "gpus_per_node": "A100:4",
+    "gtids": "0",
+    "job_account": "naiss2025-22-762",
+    "job_cpus_per_node": "64",
+    "job_end_time": "1777337448",
+    "job_gid": "10229047",
+    "job_gpus": "0,1,2,3",
+    "job_id": "6512109",
+    "job_name": "test_hydra",
+    "job_nodelist": "alvis4-01",
+    "job_num_nodes": "1",
+    "job_partition": "alvis",
+    "job_qos": "normal",
+    "job_start_time": "1777319446",
+    "job_uid": "10229047",
+    "job_user": "emrike",
+    "jobid": "6512109",
+    "localid": "0",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "alvis4-01",
+    "oom_kill_step": "0",
+    "prio_process": "0",
+    "procid": "0",
+    "script_context": "prolog_task",
+    "submit_dir": "/cephyr/users/emrike/Alvis/GPT-test",
+    "submit_host": "alvis2",
+    "task_pid": "30696",
+    "tasks_per_node": "4",
+    "topology_addr": "ib-root1.ib-sw05.alvis4-01",
+    "topology_addr_pattern": "switch.switch.node"
+  },
+  "writerId": "v1ojge4tkbtpvejqn63to0t9lpneg25y"
+}
