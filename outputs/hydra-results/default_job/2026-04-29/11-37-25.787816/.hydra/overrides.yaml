@@ -1,0 +1,3 @@
+- +training_data=shakespeare
+- optimizer_params.name=adamw
+- +logging_params.wandb.project=polar-express
