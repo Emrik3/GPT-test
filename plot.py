@@ -130,7 +130,7 @@ def main(
         smoothen_dict(output["logs"], num_points=100, beta=0.05)
 
     colormap = {
-        "sgd-m": "#B3CBB9",
+        "MachPolar": "#B3CBB9",
         "sgd-sch": "#B3CBB9",
         "adam": "#00518F",
         "adamw": "#00518F",  # Oragne'#FF6B35',
@@ -142,7 +142,7 @@ def main(
     }
     linestylemap = {
         "momo": None,
-        "sgd-m": None,
+        "MachPolar": None,
         "sgd-sch": "--",
         "muon-PolarExp": None,
         "adam": None,
@@ -325,7 +325,7 @@ if __name__ == "__main__":
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
     results_folder = "outputs/hydra-results/default_job/2026-04-29"
-    lims = dict(y_top_lim_lrs=10, y_top_vs_time=3.6, y_bottom_lim_lrs=3.2)
+    lims = dict(y_top_lim_lrs=10)
     exclude_runs = ["logs_jobid_29220878.json", "logs_jobid_f1cda670.json"]
     outputs = load_output_folder(results_folder, exclude_runs=exclude_runs)
     print("Total num experiments:", len(outputs))
