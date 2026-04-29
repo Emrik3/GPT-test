@@ -165,9 +165,15 @@ co5 = [
 
 # safety factor for numerical stability (but exclude last polynomial)
 
-for i in range(len(co) - 1):
-    for j in range(len(co[i][2])):
-        co[i][2][j] /= 1.01 ** (j + 2)
+for i in range(len(co5) - 1):
+    for j in range(len(co5[i][2])):
+        co5[i][2][j] /= 1.01 ** (j + 2)
+for i in range(len(co9) - 1):
+    for j in range(len(co9[i][2])):
+        co9[i][2][j] /= 1.01 ** (j + 2)
+for i in range(len(co17) - 1):
+    for j in range(len(co17[i][2])):
+        co17[i][2][j] /= 1.01 ** (j + 2)
 
 
 """coeffs_list = [
@@ -177,12 +183,14 @@ for i in range(len(co) - 1):
 
 @torch.compile
 def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
+    co = co5
+    m_list = [3,3,1]
     if steps == 17:
         co = co17
+        m_list = [3,3,3]
     elif steps == 9:
         co = co9
-    else:
-        co = co5
+        m_list = [3,3,2]
     assert G.ndim >= 2
     X = G.bfloat16()  # for speed
     if G.size(-2) > G.size(-1):
@@ -190,14 +198,14 @@ def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
     X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
     n = X.shape[0]
     t = 0
-    if steps == 1:
-        m_list = [3]
-    elif steps == 2:
-        m_list = [3, 3]
-    else:
-        m_list = [3, 3, 2]
 
     for m in m_list:
+        if m == 1:
+            A = X @ X.mT
+            B = co[2][1] * A + co[2][2] * A @ A
+            X = co[2][0] * X + B @ X
+            continue
+
         A = co[t][0]
         B = co[t][1]
         c = co[t][2]

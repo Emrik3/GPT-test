@@ -1,0 +1,16 @@
+{"time":"2026-04-29T10:43:25.371299815+02:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-04-29T10:43:25.374504993+02:00","level":"INFO","msg":"stream: starting","core version":"0.26.0"}
+{"time":"2026-04-29T10:43:25.691518702+02:00","level":"INFO","msg":"stream: created new stream","id":"10a0b8c8"}
+{"time":"2026-04-29T10:43:25.691562703+02:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-04-29T10:43:25.691777304+02:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-04-29T10:43:25.691785392+02:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-04-29T10:43:25.69178105+02:00","level":"INFO","msg":"writer: started","stream_id":"10a0b8c8"}
+{"time":"2026-04-29T10:43:27.49910067+02:00","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-04-29T10:43:35.975920696+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:43:42.49986878+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":0,"history_lines":4,"events_offset":0,"events_lines":2,"console_offset":1,"console_lines":17,"uploaded_len":2}
+{"time":"2026-04-29T10:43:52.600478959+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:43:57.499457986+02:00","level":"INFO","msg":"filestream: sending request","total_files":3,"history_offset":4,"history_lines":12,"events_offset":2,"events_lines":2}
+{"time":"2026-04-29T10:43:58.76083704+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:44:12.499938365+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":16,"history_lines":9,"events_offset":4,"events_lines":2,"console_offset":18,"console_lines":5}
+{"time":"2026-04-29T10:44:14.644642377+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:44:27.499740299+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":25,"history_lines":12,"events_offset":6,"events_lines":2,"console_offset":23,"console_lines":1}

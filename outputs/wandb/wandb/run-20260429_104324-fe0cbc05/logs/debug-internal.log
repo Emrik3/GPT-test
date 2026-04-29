@@ -1,0 +1,17 @@
+{"time":"2026-04-29T10:43:24.442733081+02:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-04-29T10:43:24.446476693+02:00","level":"INFO","msg":"stream: starting","core version":"0.26.0"}
+{"time":"2026-04-29T10:43:24.7537181+02:00","level":"INFO","msg":"stream: created new stream","id":"fe0cbc05"}
+{"time":"2026-04-29T10:43:24.753820781+02:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-04-29T10:43:24.754071351+02:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-04-29T10:43:24.754075378+02:00","level":"INFO","msg":"writer: started","stream_id":"fe0cbc05"}
+{"time":"2026-04-29T10:43:24.754080004+02:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-04-29T10:43:26.330459859+02:00","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-04-29T10:43:27.80253282+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:43:41.331438783+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":0,"history_lines":4,"events_offset":0,"events_lines":2,"console_offset":1,"console_lines":17,"uploaded_len":2}
+{"time":"2026-04-29T10:43:42.301502151+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:43:56.331315473+02:00","level":"INFO","msg":"filestream: sending request","total_files":3,"history_offset":4,"history_lines":12,"events_offset":2,"events_lines":2}
+{"time":"2026-04-29T10:43:57.023360198+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:44:11.330513931+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":16,"history_lines":9,"events_offset":4,"events_lines":2,"console_offset":18,"console_lines":4}
+{"time":"2026-04-29T10:44:12.002452528+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-29T10:44:26.330794742+02:00","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":25,"history_lines":12,"events_offset":6,"events_lines":2,"console_offset":22,"console_lines":2}
+{"time":"2026-04-29T10:44:27.149047745+02:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}

@@ -1,0 +1,24 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 2 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+[rank0]:W0429 10:43:39.272000 584454 .venv/lib/python3.13/site-packages/torch/_inductor/utils.py:1731] [0/0] Not enough SMs to use max_autotune_gemm mode
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+Saved 3 gradient(s), shape=torch.Size([2304, 768])
+Step 50 of 294.
+Time taken : 1314.3ms | Tokens/s : 1.6k | Loss : 22.845
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:44: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 23.347936630249023
