@@ -6,7 +6,7 @@ from itertools import chain, islice, repeat
 import torch
 
 # 17, 17, 17
-"""co = [
+co = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -64,7 +64,7 @@ import torch
             1.00000000e00,
         ],
     ),
-]"""
+]
 
 # 17, 17, 9
 """co = [
