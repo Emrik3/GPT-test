@@ -6,7 +6,7 @@ from itertools import chain, islice, repeat
 import torch
 
 # 17, 17, 17
-co = [
+co17 = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -67,7 +67,7 @@ co = [
 ]
 
 # 17, 17, 9
-"""co = [
+co9 = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -111,10 +111,10 @@ co = [
         [[1.33726249, -0.96757271], [-6.2348802, 0.38265358, 0.0163027]],
         [-1.48495011, -0.04376982, 1.0, -1.0],
     ),
-]"""
+]
 
 # 17,17,5
-co = [
+co5 = [
     (
         [
             [8.19006284e00, -1.13414979e01],
@@ -158,10 +158,17 @@ co = [
 
 # safety factor for numerical stability (but exclude last polynomial)
 
-for i in range(len(co) - 1):
-    for j in range(len(co[i][2])):
-        co[i][2][j] /= 1.01 ** (j + 2)
+for i in range(len(co5) - 1):
+    for j in range(len(co5[i][2])):
+        co5[i][2][j] /= 1.01 ** (j + 2)
 
+for i in range(len(co9) - 1):
+    for j in range(len(co9[i][2])):
+        co9[i][2][j] /= 1.01 ** (j + 2)
+
+for i in range(len(co17) - 1):
+    for j in range(len(co17[i][2])):
+        co17[i][2][j] /= 1.01 ** (j + 2)
 
 """coeffs_list = [
     (a / 1.01, b / 1.01**3, c / 1.01**5) for (a, b, c) in coeffs_list[:-1]
@@ -169,7 +176,82 @@ for i in range(len(co) - 1):
 
 
 @torch.compile
-def MachPolar(G: torch.Tensor, steps: int) -> torch.Tensor:
+def MachPolar17(G: torch.Tensor, steps: int) -> torch.Tensor:
+    co = co17
+    assert G.ndim >= 2
+    X = G.bfloat16()  # for speed
+    if G.size(-2) > G.size(-1):
+        X = X.mT  # this reduces FLOPs
+    X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
+    n = X.shape[0]
+    t = 0
+
+    m_list = [3, 3, 3]
+
+    for m in m_list:
+        A = co[t][0]
+        B = co[t][1]
+        c = co[t][2]
+        t += 1
+        out = torch.zeros(m + 2, n, n, dtype=X.dtype, device=X.device)
+        out[0] = torch.eye(n, dtype=X.dtype, device=X.device)  # "1" as identity matrix
+        out[1] = X @ X.mT
+        for i in range(m):
+            out1 = torch.zeros(n, n, dtype=X.dtype, device=X.device)
+            out2 = torch.zeros(n, n, dtype=X.dtype, device=X.device)
+            for j in range(len(A[i])):
+                out1 = out1 + A[i][j] * out[j]
+                out2 = out2 + B[i][j] * out[j]
+
+            out[i + 2] = c[i] * (out1 @ out2)
+
+        X = torch.sum(out, dim=0) @ X
+
+    if G.size(-2) > G.size(-1):
+        X = X.mT
+    return X
+
+
+@torch.compile
+def MachPolar9(G: torch.Tensor, steps: int) -> torch.Tensor:
+    co = co9
+    assert G.ndim >= 2
+    X = G.bfloat16()  # for speed
+    if G.size(-2) > G.size(-1):
+        X = X.mT  # this reduces FLOPs
+    X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
+    n = X.shape[0]
+    t = 0
+
+    m_list = [3, 3, 2]
+
+    for m in m_list:
+        A = co[t][0]
+        B = co[t][1]
+        c = co[t][2]
+        t += 1
+        out = torch.zeros(m + 2, n, n, dtype=X.dtype, device=X.device)
+        out[0] = torch.eye(n, dtype=X.dtype, device=X.device)  # "1" as identity matrix
+        out[1] = X @ X.mT
+        for i in range(m):
+            out1 = torch.zeros(n, n, dtype=X.dtype, device=X.device)
+            out2 = torch.zeros(n, n, dtype=X.dtype, device=X.device)
+            for j in range(len(A[i])):
+                out1 = out1 + A[i][j] * out[j]
+                out2 = out2 + B[i][j] * out[j]
+
+            out[i + 2] = c[i] * (out1 @ out2)
+
+        X = torch.sum(out, dim=0) @ X
+
+    if G.size(-2) > G.size(-1):
+        X = X.mT
+    return X
+
+
+@torch.compile
+def MachPolar5(G: torch.Tensor, steps: int) -> torch.Tensor:
+    co = co5
     assert G.ndim >= 2
     X = G.bfloat16()  # for speed
     if G.size(-2) > G.size(-1):

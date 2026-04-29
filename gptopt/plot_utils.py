@@ -26,7 +26,9 @@ def get_lr_and_name(output):
             "Keller": "Jordan",
             "Jiacheng": "You",
             "polarexpress": "PolarExp",
-            "machpolar": "MachPolar",
+            "machpolar5": "MachPolar5",
+            "machpolar9": "MachPolar9",
+            "machpolar17": "MachPolar17",
         }
         if polar_method in translate:
             polar_method = translate[polar_method]

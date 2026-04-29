@@ -130,7 +130,9 @@ def main(
         smoothen_dict(output["logs"], num_points=100, beta=0.05)
 
     colormap = {
-        "MachPolar": "#B3CBB9",
+        "MachPolar5": "#B3CBB9",
+        "MachPolar9": "#00518F",
+        "MachPolar17": "#FF6B35",
         "sgd-sch": "#B3CBB9",
         "adam": "#00518F",
         "adamw": "#00518F",  # Oragne'#FF6B35',
@@ -142,7 +144,9 @@ def main(
     }
     linestylemap = {
         "momo": None,
-        "MachPolar": None,
+        "MachPolar5": None,
+        "MachPolar9": None,
+        "MachPolar17": None,
         "sgd-sch": "--",
         "muon-PolarExp": None,
         "adam": None,
