@@ -1,0 +1,465 @@
+This job can be monitored from: https://job.c3se.chalmers.se/alvis/6535076
+Lmod has detected the following error: The following module(s) are unknown:
+"python"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "python"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Obtaining file:///cephyr/users/emrike/Alvis/GPT-test
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (2.11.0)
+Requirement already satisfied: pandas in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (3.0.2)
+Requirement already satisfied: matplotlib in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (3.10.8)
+Requirement already satisfied: scikit-learn in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.8.0)
+Requirement already satisfied: requests in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (2.33.1)
+Requirement already satisfied: transformers in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (5.5.4)
+Requirement already satisfied: datasets in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (4.8.4)
+Requirement already satisfied: accelerate in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.13.0)
+Requirement already satisfied: tiktoken in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.12.0)
+Requirement already satisfied: zstandard in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.25.0)
+Requirement already satisfied: wandb in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (0.26.0)
+Requirement already satisfied: hydra-core in ./.venv/lib/python3.13/site-packages (from gptopt==0.1) (1.3.2)
+Requirement already satisfied: numpy>=1.17 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (2.4.4)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (26.1)
+Requirement already satisfied: psutil in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (7.2.2)
+Requirement already satisfied: pyyaml in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (6.0.3)
+Requirement already satisfied: huggingface_hub>=0.21.0 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (1.11.0)
+Requirement already satisfied: safetensors>=0.4.3 in ./.venv/lib/python3.13/site-packages (from accelerate->gptopt==0.1) (0.7.0)
+Requirement already satisfied: filelock>=3.10.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (3.29.0)
+Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.3 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.4.3)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.28.1)
+Requirement already satisfied: tqdm>=4.42.1 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.67.3)
+Requirement already satisfied: typer in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.24.1)
+Requirement already satisfied: typing-extensions>=4.1.0 in ./.venv/lib/python3.13/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.15.0)
+Requirement already satisfied: anyio in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.13.0)
+Requirement already satisfied: certifi in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.0.9)
+Requirement already satisfied: idna in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (3.11)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.16.0)
+Requirement already satisfied: setuptools<82 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (81.0.0)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.6.1)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.1.6)
+Requirement already satisfied: cuda-toolkit==13.0.2 in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.2)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (13.2.0)
+Requirement already satisfied: nvidia-cudnn-cu13==9.19.0.56 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (9.19.0.56)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.0 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (0.8.0)
+Requirement already satisfied: nvidia-nccl-cu13==2.28.9 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (2.28.9)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.4.5)
+Requirement already satisfied: triton==3.6.0 in ./.venv/lib/python3.13/site-packages (from torch->gptopt==0.1) (3.6.0)
+Requirement already satisfied: nvidia-cublas==13.1.0.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.1.0.3)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.0.0.61)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (12.6.3.3)
+Requirement already satisfied: nvidia-nvjitlink==13.0.88.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.88)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.88)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.2; platform_system == "Linux"->torch->gptopt==0.1) (13.0.85)
+Requirement already satisfied: cuda-pathfinder~=1.1 in ./.venv/lib/python3.13/site-packages (from cuda-bindings<14,>=13.0.3->torch->gptopt==0.1) (1.5.3)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.13/site-packages (from sympy>=1.13.3->torch->gptopt==0.1) (1.3.0)
+Requirement already satisfied: pyarrow>=21.0.0 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (23.0.1)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (0.4.1)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.20 in ./.venv/lib/python3.13/site-packages (from datasets->gptopt==0.1) (0.70.19)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.13/site-packages (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (3.13.5)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->gptopt==0.1) (1.23.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.13/site-packages (from requests->gptopt==0.1) (3.4.7)
+Requirement already satisfied: urllib3<3,>=1.26 in ./.venv/lib/python3.13/site-packages (from requests->gptopt==0.1) (2.6.3)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in ./.venv/lib/python3.13/site-packages (from hydra-core->gptopt==0.1) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in ./.venv/lib/python3.13/site-packages (from hydra-core->gptopt==0.1) (4.9.3)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.13/site-packages (from jinja2->torch->gptopt==0.1) (3.0.3)
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (1.5.0)
+Requirement already satisfied: pillow>=8 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (12.2.0)
+Requirement already satisfied: pyparsing>=3 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in ./.venv/lib/python3.13/site-packages (from matplotlib->gptopt==0.1) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.13/site-packages (from python-dateutil>=2.7->matplotlib->gptopt==0.1) (1.17.0)
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (1.17.1)
+Requirement already satisfied: joblib>=1.3.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (1.5.3)
+Requirement already satisfied: threadpoolctl>=3.2.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn->gptopt==0.1) (3.6.0)
+Requirement already satisfied: regex>=2022.1.18 in ./.venv/lib/python3.13/site-packages (from tiktoken->gptopt==0.1) (2026.4.4)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in ./.venv/lib/python3.13/site-packages (from transformers->gptopt==0.1) (0.22.2)
+Requirement already satisfied: click>=8.2.1 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (8.3.2)
+Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (15.0.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./.venv/lib/python3.13/site-packages (from typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.13/site-packages (from rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.13/site-packages (from rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (0.1.2)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (3.1.46)
+Requirement already satisfied: platformdirs in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (4.9.6)
+Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,<8,>4.21.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (7.34.1)
+Requirement already satisfied: pydantic<3 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (2.13.2)
+Requirement already satisfied: sentry-sdk>=2.0.0 in ./.venv/lib/python3.13/site-packages (from wandb->gptopt==0.1) (2.58.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.7.0)
+Requirement already satisfied: pydantic-core==2.46.2 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (2.46.2)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.13/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.4.2)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv/lib/python3.13/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv/lib/python3.13/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (5.0.3)
+Building wheels for collected packages: gptopt
+  Building editable for gptopt (pyproject.toml): started
+  Building editable for gptopt (pyproject.toml): finished with status 'done'
+  Created wheel for gptopt: filename=gptopt-0.1-0.editable-py3-none-any.whl size=2690 sha256=8c4783f7e5cef44a0d9479bfc15ae327fce0b84bf645cff26b03cfa8953d816c
+  Stored in directory: /local/tmp.6535076/pip-ephem-wheel-cache-9ar17bec/wheels/23/16/1d/8e9e42c8cbd78b35b46cdc79d9a135bf5dfe98abbce5dd655b
+Successfully built gptopt
+Installing collected packages: gptopt
+  Attempting uninstall: gptopt
+    Found existing installation: gptopt 0.1
+    Uninstalling gptopt-0.1:
+      Successfully uninstalled gptopt-0.1
+Successfully installed gptopt-0.1
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+Using device: cuda:3
+Using device: cuda:2
+Using device: cuda:0
+Loading configuration from test_hydra
+Training on dataset fineweb1B
+Using device: cuda:1
+Load data from data/fineweb1B-gpt2/
+Initialized train dataloader in 3 at :  {'rank': 3, 'position': 98304, 'shard': 0}
+Initialized val dataloader in 3 at :  {'rank': 3, 'position': 98304, 'shard': 0}
+
+Initialized train dataloader in 2 at :  {'rank': 2, 'position': 65536, 'shard': 0}
+Initialized train dataloader in 0 at :  {'rank': 0, 'position': 0, 'shard': 0}
+Initialized train dataloader in 1 at :  {'rank': 1, 'position': 32768, 'shard': 0}
+Initialized val dataloader in 2 at :  {'rank': 2, 'position': 65536, 'shard': 0}
+
+Initialized val dataloader in 0 at :  {'rank': 0, 'position': 0, 'shard': 0}
+Length of train dataset : 1000.0 million tokens
+Length of validation dataset : 100.0 million tokens
+Total number of iterations : 1907
+
+Training with optimizer muon and learning rate 0.002
+Initialized val dataloader in 1 at :  {'rank': 1, 'position': 32768, 'shard': 0}
+
+Compiling model
+Will not save checkpoints as no directory is specified
+Will not save checkpoints as no directory is specified
+Will not save checkpoints as no directory is specified
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /cephyr/users/emrike/Alvis/.netrc.
+wandb: Currently logged in as: emrikerikson (emrikerikson-kth-royal-institute-of-technology) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run e279af21
+wandb: Tracking run with wandb version 0.26.0
+wandb: Run data is saved locally in outputs/wandb/wandb/run-20260429_210244-e279af21
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run quiet-shadow-474
+wandb: ⭐️ View project at https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express
+wandb: 🚀 View run at https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express/runs/e279af21
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 4 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+Step 100 of 7628.
+Time taken : 722.6ms | Tokens/s : 725.6k | Loss : 6.863
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+Validation Loss: 6.913544654846191
+Step 200 of 7628.
+Time taken : 723.5ms | Tokens/s : 724.6k | Loss : 6.184
+Validation Loss: 6.188047885894775
+Step 300 of 7628.
+Time taken : 723.1ms | Tokens/s : 725.1k | Loss : 5.894
+Validation Loss: 5.925782203674316
+Step 400 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.3k | Loss : 5.703
+Validation Loss: 5.6882853507995605
+Step 500 of 7628.
+Time taken : 724.8ms | Tokens/s : 723.4k | Loss : 5.599
+Validation Loss: 5.59312629699707
+Step 600 of 7628.
+Time taken : 723.9ms | Tokens/s : 724.3k | Loss : 5.521
+Validation Loss: 5.497328758239746
+Step 700 of 7628.
+Time taken : 724.0ms | Tokens/s : 724.2k | Loss : 5.412
+Validation Loss: 5.396091461181641
+Step 800 of 7628.
+Time taken : 723.3ms | Tokens/s : 724.9k | Loss : 5.440
+Validation Loss: 5.310873031616211
+Step 900 of 7628.
+Time taken : 724.0ms | Tokens/s : 724.1k | Loss : 5.194
+Validation Loss: 5.247677803039551
+Step 1000 of 7628.
+Time taken : 723.5ms | Tokens/s : 724.7k | Loss : 5.113
+Validation Loss: 5.074611186981201
+Step 1100 of 7628.
+Time taken : 723.9ms | Tokens/s : 724.3k | Loss : 4.987
+Validation Loss: 5.07021951675415
+Step 1200 of 7628.
+Time taken : 723.6ms | Tokens/s : 724.6k | Loss : 4.913
+Validation Loss: 4.860817909240723
+Step 1300 of 7628.
+Time taken : 724.4ms | Tokens/s : 723.7k | Loss : 4.917
+Validation Loss: 4.859985828399658
+Step 1400 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.1k | Loss : 4.715
+Validation Loss: 4.771088600158691
+Step 1500 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.8k | Loss : 4.724
+Validation Loss: 4.715171813964844
+Step 1600 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.8k | Loss : 4.588
+Validation Loss: 4.679924964904785
+Step 1700 of 7628.
+Time taken : 723.9ms | Tokens/s : 724.2k | Loss : 4.625
+Validation Loss: 4.535778522491455
+Step 1800 of 7628.
+Time taken : 724.4ms | Tokens/s : 723.7k | Loss : 4.546
+Validation Loss: 4.5110650062561035
+Step 1900 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.6k | Loss : 4.548
+Validation Loss: 4.432909965515137
+Step 2000 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.3k | Loss : 4.451
+Validation Loss: 4.394976615905762
+Step 2100 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.4k | Loss : 4.325
+Validation Loss: 4.335685729980469
+Step 2200 of 7628.
+Time taken : 724.4ms | Tokens/s : 723.8k | Loss : 4.276
+Validation Loss: 4.356077671051025
+Step 2300 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.0k | Loss : 4.269
+Validation Loss: 4.267484664916992
+Step 2400 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.7k | Loss : 4.209
+Validation Loss: 4.194647789001465
+Step 2500 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.4k | Loss : 4.254
+Validation Loss: 4.215847969055176
+Step 2600 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.7k | Loss : 4.204
+Validation Loss: 4.246108531951904
+Step 2700 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.3k | Loss : 4.123
+Validation Loss: 4.1647443771362305
+Step 2800 of 7628.
+Time taken : 723.5ms | Tokens/s : 724.6k | Loss : 4.180
+Validation Loss: 4.13810920715332
+Step 2900 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.1k | Loss : 4.071
+Validation Loss: 4.174020767211914
+Step 3000 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.9k | Loss : 4.054
+Validation Loss: 4.169243812561035
+Step 3100 of 7628.
+Time taken : 725.2ms | Tokens/s : 723.0k | Loss : 4.148
+Validation Loss: 4.125880241394043
+Step 3200 of 7628.
+Time taken : 724.9ms | Tokens/s : 723.3k | Loss : 4.158
+Validation Loss: 4.074954986572266
+Step 3300 of 7628.
+Time taken : 724.2ms | Tokens/s : 724.0k | Loss : 3.997
+Validation Loss: 3.9989171028137207
+Step 3400 of 7628.
+Time taken : 724.7ms | Tokens/s : 723.5k | Loss : 4.048
+Validation Loss: 4.068972587585449
+Step 3500 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.4k | Loss : 3.903
+Validation Loss: 4.085443019866943
+Step 3600 of 7628.
+Time taken : 724.0ms | Tokens/s : 724.1k | Loss : 4.074
+Validation Loss: 4.010448455810547
+Step 3700 of 7628.
+Time taken : 724.2ms | Tokens/s : 724.0k | Loss : 3.947
+Validation Loss: 3.9919216632843018
+Step 3800 of 7628.
+Time taken : 724.6ms | Tokens/s : 723.6k | Loss : 3.955
+Validation Loss: 3.9208290576934814
+Step 3900 of 7628.
+Time taken : 723.7ms | Tokens/s : 724.4k | Loss : 4.040
+Validation Loss: 4.013158798217773
+Step 4000 of 7628.
+Time taken : 724.2ms | Tokens/s : 723.9k | Loss : 3.993
+Validation Loss: 3.9347314834594727
+Step 4100 of 7628.
+Time taken : 724.4ms | Tokens/s : 723.7k | Loss : 3.946
+Validation Loss: 3.914109945297241
+Step 4200 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.8k | Loss : 3.903
+Validation Loss: 3.927535057067871
+Step 4300 of 7628.
+Time taken : 725.4ms | Tokens/s : 722.8k | Loss : 3.849
+Validation Loss: 3.90690279006958
+Step 4400 of 7628.
+Time taken : 724.8ms | Tokens/s : 723.3k | Loss : 3.939
+Validation Loss: 4.018759250640869
+Step 4500 of 7628.
+Time taken : 723.7ms | Tokens/s : 724.5k | Loss : 3.850
+Validation Loss: 3.936561107635498
+Step 4600 of 7628.
+Time taken : 725.0ms | Tokens/s : 723.1k | Loss : 3.974
+Validation Loss: 3.89255690574646
+Step 4700 of 7628.
+Time taken : 725.2ms | Tokens/s : 723.0k | Loss : 3.944
+Validation Loss: 3.8629047870635986
+Step 4800 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.9k | Loss : 3.867
+Validation Loss: 3.9269585609436035
+Step 4900 of 7628.
+Time taken : 725.3ms | Tokens/s : 722.9k | Loss : 3.828
+Validation Loss: 3.822139263153076
+Step 5000 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.0k | Loss : 3.878
+Validation Loss: 3.8238604068756104
+Step 5100 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.6k | Loss : 3.877
+Validation Loss: 3.832854747772217
+Step 5200 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.9k | Loss : 3.813
+Validation Loss: 3.799166679382324
+Step 5300 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.6k | Loss : 3.814
+Validation Loss: 3.824978828430176
+Step 5400 of 7628.
+Time taken : 724.2ms | Tokens/s : 724.0k | Loss : 3.854
+Validation Loss: 3.8579392433166504
+Step 5500 of 7628.
+Time taken : 723.4ms | Tokens/s : 724.8k | Loss : 3.852
+Validation Loss: 3.7866063117980957
+Step 5600 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.4k | Loss : 3.796
+Validation Loss: 3.7673325538635254
+Step 5700 of 7628.
+Time taken : 724.4ms | Tokens/s : 723.7k | Loss : 3.802
+Validation Loss: 3.809230327606201
+Step 5800 of 7628.
+Time taken : 724.7ms | Tokens/s : 723.5k | Loss : 3.714
+Validation Loss: 3.772087812423706
+Step 5900 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.0k | Loss : 3.849
+Validation Loss: 3.743192195892334
+Step 6000 of 7628.
+Time taken : 724.6ms | Tokens/s : 723.6k | Loss : 3.771
+Validation Loss: 3.8533761501312256
+Step 6100 of 7628.
+Time taken : 865.4ms | Tokens/s : 605.8k | Loss : 3.734
+Validation Loss: 3.7869882583618164
+Step 6200 of 7628.
+Time taken : 723.2ms | Tokens/s : 725.0k | Loss : 3.740
+Validation Loss: 3.692314624786377
+Step 6300 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.7k | Loss : 3.730
+Validation Loss: 3.730114698410034
+Step 6400 of 7628.
+Time taken : 723.4ms | Tokens/s : 724.7k | Loss : 3.707
+Validation Loss: 3.724536418914795
+Step 6500 of 7628.
+Time taken : 723.7ms | Tokens/s : 724.5k | Loss : 3.718
+Validation Loss: 3.760051727294922
+Step 6600 of 7628.
+Time taken : 724.8ms | Tokens/s : 723.4k | Loss : 3.763
+Validation Loss: 3.7679014205932617
+Step 6700 of 7628.
+Time taken : 724.1ms | Tokens/s : 724.1k | Loss : 3.976
+Validation Loss: 3.8190860748291016
+Step 6800 of 7628.
+Time taken : 724.7ms | Tokens/s : 723.4k | Loss : 3.719
+Validation Loss: 4.031510829925537
+Step 6900 of 7628.
+Time taken : 724.3ms | Tokens/s : 723.9k | Loss : 3.765
+Validation Loss: 3.687859296798706
+Step 7000 of 7628.
+Time taken : 723.9ms | Tokens/s : 724.3k | Loss : 3.717
+Validation Loss: 3.7147603034973145
+Step 7100 of 7628.
+Time taken : 725.2ms | Tokens/s : 722.9k | Loss : 3.717
+Validation Loss: 3.661998748779297
+Step 7200 of 7628.
+Time taken : 724.8ms | Tokens/s : 723.3k | Loss : 3.782
+Validation Loss: 3.755307197570801
+Step 7300 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.7k | Loss : 3.701
+Validation Loss: 3.5998125076293945
+Step 7400 of 7628.
+Time taken : 723.8ms | Tokens/s : 724.3k | Loss : 3.688
+Validation Loss: 3.7100706100463867
+Step 7500 of 7628.
+Time taken : 724.5ms | Tokens/s : 723.7k | Loss : 3.775
+Validation Loss: 3.7106642723083496
+Step 7600 of 7628.
+Time taken : 724.0ms | Tokens/s : 724.2k | Loss : 3.768
+Validation Loss: 3.7514662742614746
+Rank 0 reached end of train dataloader. Resetting to : Rank 3 reached end of train dataloader. Resetting to : Rank 2 reached end of train dataloader. Resetting to : Rank 1 reached end of train dataloader. Resetting to :   {'rank': 3, 'position': 98304, 'shard': 0}
+{'rank': 2, 'position': 65536, 'shard': 0}
+In rank: 3, epoch 1, Train Loss: 3.663689374923706In rank: 2, epoch 1, Train Loss: 3.663689374923706
+ 
+In rank: 3, time taken for epoch 1 : {'rank': 1, 'position': 32768, 'shard': 0}In rank: 2, time taken for epoch 1 :  
+ 1446.7802076339722
+1446.7759475708008 In rank: 1, epoch 1, Train Loss: 3.663689374923706
+
+In rank: 1, time taken for epoch 1 :  1446.7771847248077{'rank': 0, 'position': 0, 'shard': 0}
+
+In rank: 0, epoch 1, Train Loss: 3.663689374923706
+In rank: 0, time taken for epoch 1 :  1444.6185085773468
+Rank 1 reached end of val dataloader. Resetting to :  {'rank': 1, 'position': 32768, 'shard': 0}
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Rank 3 reached end of val dataloader. Resetting to :  {'rank': 3, 'position': 98304, 'shard': 0}
+Rank 2 reached end of val dataloader. Resetting to :  {'rank': 2, 'position': 65536, 'shard': 0}
+Validation Loss: 3.714496612548828In rank: 2, epoch 1, Validation Loss: 3.714496612548828In rank: 3, epoch 1, Validation Loss: 3.714496612548828In rank: 1, epoch 1, Validation Loss: 3.714496612548828
+
+
+
+In rank: 0, epoch 1, Validation Loss: 3.714496612548828
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb: train/grad_norm ▇▆█▃▂▂▃▃▃▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/loss ██▇▆▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁▂▁▁▁
+wandb:      train/lr_0 ███████████████████▇▇▇▆▆▅▅▅▄▄▄▄▃▃▂▂▂▁▁▁▁
+wandb:      train/step ▁▁▁▁▁▁▂▂▂▂▂▂▃▃▃▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇████
+wandb: train/step_time ▂▁▄▂▄▄▄▅▃▄▄▅▇▅▄▇▆▆▅▄▅▆█▃▄▆▂▅▅▅▃▃▅▄▄▄▃▃▃▂
+wandb:        val/loss █▆▆▅▅▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▂▁▁▁
+wandb:        val/step ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇████
+wandb: 
+wandb: Run summary:
+wandb: train/grad_norm 0.61731
+wandb:      train/loss 3.66369
+wandb:      train/lr_0 0.0002
+wandb:      train/step 7621
+wandb: train/step_time 0.72502
+wandb:        val/loss 3.7145
+wandb:        val/step 7621
+wandb: 
+wandb: 🚀 View run quiet-shadow-474 at: https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express/runs/e279af21
+wandb: ⭐️ View project at: https://wandb.ai/emrikerikson-kth-royal-institute-of-technology/polar-express
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: outputs/wandb/wandb/run-20260429_210244-e279af21/logs
+Saved output to /cephyr/users/emrike/Alvis/GPT-test/outputs/hydra-results/main_run/2026-04-29/21-02-41.046134/logs_jobid_e279af21.json
+
+real	25m10.162s
+user	60m20.361s
+sys	40m43.621s
