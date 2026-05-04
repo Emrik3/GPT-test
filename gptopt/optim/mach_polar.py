@@ -156,6 +156,18 @@ co5 = [
     (2.64972986, -1.93611987, 0.43470742),
 ]
 
+for i in range(len(co17) - 1):
+    for j in range(len(co17[i][2])):
+        co17[i][2][j] /= 1.01 ** (j + 2)
+
+for i in range(len(co9) - 1):
+    for j in range(len(co9[i][2])):
+        co9[i][2][j] /= 1.01 ** (j + 2)
+
+for i in range(len(co5) - 1):
+    for j in range(len(co5[i][2])):
+        co5[i][2][j] /= 1.01 ** (j + 2)
+
 """coeffs_list = [
     (a / 1.01, b / 1.01**3, c / 1.01**5) for (a, b, c) in coeffs_list[:-1]
 ] + [coeffs_list[-1]]"""
