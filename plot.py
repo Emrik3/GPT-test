@@ -130,9 +130,10 @@ def main(
         smoothen_dict(output["logs"], num_points=100, beta=0.05)
 
     colormap = {
-        "MachPolar5": "#B3CBB9",
-        "MachPolar9": "#00518F",
+        "MachPolar5": None,
+        "MachPolar9": None,
         "MachPolar17": "#FF6B35",
+        "MachPolar172": None,
         "sgd-sch": "#B3CBB9",
         "adam": "#00518F",
         "adamw": "#00518F",  # Oragne'#FF6B35',
@@ -147,6 +148,7 @@ def main(
         "MachPolar5": None,
         "MachPolar9": None,
         "MachPolar17": None,
+        "MachPolar172": None,
         "sgd-sch": "--",
         "muon-PolarExp": None,
         "adam": None,
@@ -245,8 +247,10 @@ def main(
     ax.set_xlabel("Epoch", fontsize=10)  # Set x-axis label font size
     ax.set_ylabel("Validation Loss", fontsize=10)
     # Set the upper bound
-    # ax.legend(loc='lower center', bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
-    # ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=10)  # Legend placed next to the figure
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
+    ax.legend(
+        loc="center left", bbox_to_anchor=(1, 0.5), fontsize=10
+    )  # Legend placed next to the figure
     # ax.set_yscale('log')
     # ax.set_xscale('log')
     fig.subplots_adjust(
@@ -276,8 +280,10 @@ def main(
     ax.tick_params(axis="both", which="major", labelsize=8)  # Set tick label font size
     ax.set_xlabel("Time (s)", fontsize=10)  # Set x-axis label font size
     ax.set_ylabel("Loss", fontsize=10)
-    # ax.legend(loc='lower center', bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
-    # ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=10)  # Legend placed next to the figure
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
+    ax.legend(
+        loc="center left", bbox_to_anchor=(1, 0.5), fontsize=10
+    )  # Legend placed next to the figure
     # ax.set_yscale('log')
     # ax.set_xscale('log')
     fig.subplots_adjust(
@@ -328,9 +334,16 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/default_job/2026-04-29"
-    lims = dict(y_top_lim_lrs=10)
-    exclude_runs = ["logs_jobid_29220878.json", "logs_jobid_f1cda670.json"]
+    results_folder = "outputs/hydra-results/default_job/2026-05-04"
+    lims = dict(y_top_lim_lrs=4, y_top_vs_time=4.5)
+    exclude_runs = [
+        "logs_jobid_87335a44.json",
+        "logs_jobid_e279af21.json",
+        "logs_jobid_1b192fba.json",
+        "logs_jobid_41c4f70d.json",
+        "logs_jobid_4975d367.json",
+        "logs_jobid_fd0e0465.json",
+    ]
     outputs = load_output_folder(results_folder, exclude_runs=exclude_runs)
     print("Total num experiments:", len(outputs))
 
