@@ -1,0 +1,2359 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 16 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+Step 400 of 312832.
+Time taken : 2732.9ms | Tokens/s : 191.8k | Loss : 7.220
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+Validation Loss: 7.252569198608398
+Step 800 of 312832.
+Time taken : 2744.1ms | Tokens/s : 191.1k | Loss : 6.369
+Validation Loss: 6.309562683105469
+Step 1200 of 312832.
+Time taken : 2743.8ms | Tokens/s : 191.1k | Loss : 5.951
+Validation Loss: 5.980807781219482
+Step 1600 of 312832.
+Time taken : 2744.5ms | Tokens/s : 191.0k | Loss : 5.704
+Validation Loss: 5.68275260925293
+Step 2000 of 312832.
+Time taken : 2744.9ms | Tokens/s : 191.0k | Loss : 5.522
+Validation Loss: 5.5053935050964355
+Step 2400 of 312832.
+Time taken : 2743.1ms | Tokens/s : 191.1k | Loss : 5.353
+Validation Loss: 5.322204113006592
+Step 2800 of 312832.
+Time taken : 2745.2ms | Tokens/s : 191.0k | Loss : 5.151
+Validation Loss: 5.129534721374512
+Step 3200 of 312832.
+Time taken : 2744.9ms | Tokens/s : 191.0k | Loss : 5.042
+Validation Loss: 4.997303485870361
+Step 3600 of 312832.
+Time taken : 2742.4ms | Tokens/s : 191.2k | Loss : 4.896
+Validation Loss: 4.932666301727295
+Step 4000 of 312832.
+Time taken : 2744.5ms | Tokens/s : 191.0k | Loss : 4.802
+Validation Loss: 4.753499507904053
+Step 4400 of 312832.
+Time taken : 2744.6ms | Tokens/s : 191.0k | Loss : 4.636
+Validation Loss: 4.7453436851501465
+Step 4800 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 4.599
+Validation Loss: 4.504027843475342
+Step 5200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 4.518
+Validation Loss: 4.480253219604492
+Step 5600 of 312832.
+Time taken : 2744.5ms | Tokens/s : 191.0k | Loss : 4.342
+Validation Loss: 4.3955397605896
+Step 6000 of 312832.
+Time taken : 2745.5ms | Tokens/s : 191.0k | Loss : 4.378
+Validation Loss: 4.352136135101318
+Step 6400 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 4.283
+Validation Loss: 4.350560188293457
+Step 6800 of 312832.
+Time taken : 2745.5ms | Tokens/s : 191.0k | Loss : 4.260
+Validation Loss: 4.216904640197754
+Step 7200 of 312832.
+Time taken : 2745.2ms | Tokens/s : 191.0k | Loss : 4.238
+Validation Loss: 4.2101359367370605
+Step 7600 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 4.193
+Validation Loss: 4.154664516448975
+Step 8000 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 4.220
+Validation Loss: 4.154544830322266
+Step 8400 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 4.105
+Validation Loss: 4.113757133483887
+Step 8800 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 4.085
+Validation Loss: 4.151142597198486
+Step 9200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 4.183
+Validation Loss: 4.075932025909424
+Step 9600 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 4.066
+Validation Loss: 4.019880294799805
+Step 10000 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 4.058
+Validation Loss: 4.042089939117432
+Step 10400 of 312832.
+Time taken : 2745.6ms | Tokens/s : 191.0k | Loss : 4.044
+Validation Loss: 4.084551811218262
+Step 10800 of 312832.
+Time taken : 2745.3ms | Tokens/s : 191.0k | Loss : 4.012
+Validation Loss: 4.005080699920654
+Step 11200 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 4.000
+Validation Loss: 3.9809134006500244
+Step 11600 of 312832.
+Time taken : 2745.5ms | Tokens/s : 191.0k | Loss : 3.952
+Validation Loss: 4.027257442474365
+Step 12000 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.928
+Validation Loss: 4.026780128479004
+Step 12400 of 312832.
+Time taken : 2746.3ms | Tokens/s : 190.9k | Loss : 3.953
+Validation Loss: 3.9934632778167725
+Step 12800 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 4.012
+Validation Loss: 3.94277286529541
+Step 13200 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.877
+Validation Loss: 3.870516300201416
+Step 13600 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.939
+Validation Loss: 3.9438564777374268
+Step 14000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.916
+Validation Loss: 3.972443103790283
+Step 14400 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.904
+Validation Loss: 3.8948967456817627
+Step 14800 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.860
+Validation Loss: 3.8781113624572754
+Step 15200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.818
+Validation Loss: 3.8147568702697754
+Step 15600 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.864
+Validation Loss: 3.9075236320495605
+Step 16000 of 312832.
+Time taken : 2744.1ms | Tokens/s : 191.1k | Loss : 3.818
+Validation Loss: 3.836097478866577
+Step 16400 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.873
+Validation Loss: 3.8184804916381836
+Step 16800 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.892
+Validation Loss: 3.837803363800049
+Step 17200 of 312832.
+Time taken : 2746.2ms | Tokens/s : 190.9k | Loss : 3.868
+Validation Loss: 3.8137826919555664
+Step 17600 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.866
+Validation Loss: 3.935988664627075
+Step 18000 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.785
+Validation Loss: 3.8534295558929443
+Step 18400 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.849
+Validation Loss: 3.8133857250213623
+Step 18800 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.749
+Validation Loss: 3.7851717472076416
+Step 19200 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.889
+Validation Loss: 3.849006414413452
+Step 19600 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.825
+Validation Loss: 3.7486765384674072
+Step 20000 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.738
+Validation Loss: 3.7496092319488525
+Step 20400 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.758
+Validation Loss: 3.7657101154327393
+Step 20800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.796
+Validation Loss: 3.7288765907287598
+Step 21200 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.936
+Validation Loss: 3.7574453353881836
+Step 21600 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.735
+Validation Loss: 3.788416862487793
+Step 22000 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.741
+Validation Loss: 3.71993350982666
+Step 22400 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.747
+Validation Loss: 3.701686382293701
+Step 22800 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.693
+Validation Loss: 3.748121500015259
+Step 23200 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.755
+Validation Loss: 3.7122058868408203
+Step 23600 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.692
+Validation Loss: 3.685788631439209
+Step 24000 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.683
+Validation Loss: 3.801609516143799
+Step 24400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.697
+Validation Loss: 3.7318334579467773
+Step 24800 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.732
+Validation Loss: 3.6407625675201416
+Step 25200 of 312832.
+Time taken : 2745.6ms | Tokens/s : 191.0k | Loss : 3.673
+Validation Loss: 3.66951584815979
+Step 25600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.645
+Validation Loss: 3.6735827922821045
+Step 26000 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.730
+Validation Loss: 3.708479881286621
+Step 26400 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.650
+Validation Loss: 3.718674898147583
+Step 26800 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.668
+Validation Loss: 3.7697157859802246
+Step 27200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.728
+Validation Loss: 3.9725422859191895
+Step 27600 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.670
+Validation Loss: 3.634967803955078
+Step 28000 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.696
+Validation Loss: 3.6642792224884033
+Step 28400 of 312832.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.792
+Validation Loss: 3.6146445274353027
+Step 28800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.711
+Validation Loss: 3.705476760864258
+Step 29200 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.635
+Validation Loss: 3.546419620513916
+Step 29600 of 312832.
+Time taken : 2746.0ms | Tokens/s : 190.9k | Loss : 3.620
+Validation Loss: 3.666121482849121
+Step 30000 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.686
+Validation Loss: 3.6577162742614746
+Step 30400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.627
+Validation Loss: 3.692539930343628
+Step 30800 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.649
+Validation Loss: 3.6978704929351807
+Step 31200 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.613
+Validation Loss: 3.617068290710449
+Step 31600 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.595
+Validation Loss: 3.63529109954834
+Step 32000 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.674
+Validation Loss: 3.665722131729126
+Step 32400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.622
+Validation Loss: 3.592874765396118
+Step 32800 of 312832.
+Time taken : 2746.1ms | Tokens/s : 190.9k | Loss : 3.631
+Validation Loss: 3.615267515182495
+Step 33200 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.720
+Validation Loss: 3.659342050552368
+Step 33600 of 312832.
+Time taken : 2745.9ms | Tokens/s : 190.9k | Loss : 3.666
+Validation Loss: 3.7020156383514404
+Step 34000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.580
+Validation Loss: 3.6572227478027344
+Step 34400 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.608
+Validation Loss: 3.625462293624878
+Step 34800 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.603
+Validation Loss: 3.661642551422119
+Step 35200 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.622
+Validation Loss: 3.579749822616577
+Step 35600 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.574
+Validation Loss: 3.642670154571533
+Step 36000 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.611
+Validation Loss: 3.5999741554260254
+Step 36400 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.551
+Validation Loss: 3.6275768280029297
+Step 36800 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.557
+Validation Loss: 3.602708578109741
+Step 37200 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.560
+Validation Loss: 3.564136028289795
+Step 37600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.558
+Validation Loss: 3.5754072666168213
+Step 38000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.626
+Validation Loss: 3.625263214111328
+Step 38400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.598
+Validation Loss: 3.579627275466919
+Step 38800 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.623
+Validation Loss: 3.6000781059265137
+Step 39200 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.603
+Validation Loss: 3.627153158187866
+Step 39600 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.619
+Validation Loss: 3.611018180847168
+Step 40000 of 312832.
+Time taken : 2745.7ms | Tokens/s : 190.9k | Loss : 3.593
+Validation Loss: 3.602982997894287
+Step 40400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.582
+Validation Loss: 3.6275172233581543
+Step 40800 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.895
+Validation Loss: 3.5468759536743164
+Step 41200 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.646
+Validation Loss: 3.554072141647339
+Step 41600 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.617
+Validation Loss: 3.6451802253723145
+Step 42000 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.582
+Validation Loss: 3.5620148181915283
+Step 42400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.567
+Validation Loss: 3.6574020385742188
+Step 42800 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.616
+Validation Loss: 3.5749547481536865
+Step 43200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.588
+Validation Loss: 3.658205032348633
+Step 43600 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.601
+Validation Loss: 3.610189437866211
+Step 44000 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.622
+Validation Loss: 3.643989324569702
+Step 44400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.566
+Validation Loss: 3.5596811771392822
+Step 44800 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.550
+Validation Loss: 3.5806963443756104
+Step 45200 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.603
+Validation Loss: 3.553088426589966
+Step 45600 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.578
+Validation Loss: 3.601097583770752
+Step 46000 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.537
+Validation Loss: 3.5175633430480957
+Step 46400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.570
+Validation Loss: 3.6149559020996094
+Step 46800 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.580
+Validation Loss: 3.5043296813964844
+Step 47200 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.540
+Validation Loss: 3.5977776050567627
+Step 47600 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.547
+Validation Loss: 3.577885627746582
+Step 48000 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.6k | Loss : 3.532
+Validation Loss: 3.5474843978881836
+Step 48400 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.570
+Validation Loss: 3.496718645095825
+Step 48800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.432
+Validation Loss: 3.538973808288574
+Step 49200 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.552
+Validation Loss: 3.5435643196105957
+Step 49600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.628
+Validation Loss: 3.497506618499756
+Step 50000 of 312832.
+Time taken : 2751.9ms | Tokens/s : 190.5k | Loss : 3.651
+Validation Loss: 3.62376070022583
+Step 50400 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.548
+Validation Loss: 3.5669729709625244
+Step 50800 of 312832.
+Time taken : 2745.9ms | Tokens/s : 190.9k | Loss : 3.536
+Validation Loss: 3.5633628368377686
+Step 51200 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.519
+Validation Loss: 3.4798707962036133
+Step 51600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.496
+Validation Loss: 3.5528392791748047
+Step 52000 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.556
+Validation Loss: 3.5184268951416016
+Step 52400 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.587
+Validation Loss: 3.586804151535034
+Step 52800 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.451
+Validation Loss: 3.530244827270508
+Step 53200 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.605
+Validation Loss: 3.5928778648376465
+Step 53600 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.8k | Loss : 3.572
+Validation Loss: 3.2781643867492676
+Step 54000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.472
+Validation Loss: 3.577155113220215
+Step 54400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.523
+Validation Loss: 3.552237033843994
+Step 54800 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.494
+Validation Loss: 3.553231954574585
+Step 55200 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.565
+Validation Loss: 3.4831862449645996
+Step 55600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.539
+Validation Loss: 3.602245807647705
+Step 56000 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.611
+Validation Loss: 3.5455362796783447
+Step 56400 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.485
+Validation Loss: 3.509097099304199
+Step 56800 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.550
+Validation Loss: 3.457930326461792
+Step 57200 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.515
+Validation Loss: 3.5291075706481934
+Step 57600 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.518
+Validation Loss: 3.5024402141571045
+Step 58000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.510
+Validation Loss: 3.516789674758911
+Step 58400 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.506
+Validation Loss: 3.527475357055664
+Step 58800 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.495
+Validation Loss: 3.4742918014526367
+Step 59200 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.521
+Validation Loss: 3.5281383991241455
+Step 59600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.578
+Validation Loss: 3.690603733062744
+Step 60000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.642
+Validation Loss: 3.4985132217407227
+Step 60400 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.478
+Validation Loss: 3.5100395679473877
+Step 60800 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.501
+Validation Loss: 3.5134551525115967
+Step 61200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.605
+Validation Loss: 3.507131576538086
+Step 61600 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.564
+Validation Loss: 3.5352466106414795
+Step 62000 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.552
+Validation Loss: 3.472850799560547
+Step 62400 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.555
+Validation Loss: 3.534770965576172
+Step 62800 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.500
+Validation Loss: 3.5121312141418457
+Step 63200 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.437
+Validation Loss: 3.473907709121704
+Step 63600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.506
+Validation Loss: 3.4483602046966553
+Step 64000 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.536
+Validation Loss: 3.4860987663269043
+Step 64400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.543
+Validation Loss: 3.5076403617858887
+Step 64800 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.507
+Validation Loss: 3.4860706329345703
+Step 65200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.448
+Validation Loss: 3.4655325412750244
+Step 65600 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.458
+Validation Loss: 3.459829568862915
+Step 66000 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.515
+Validation Loss: 3.485306739807129
+Step 66400 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.512
+Validation Loss: 3.5478086471557617
+Step 66800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.485
+Validation Loss: 3.4606997966766357
+Step 67200 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.490
+Validation Loss: 3.4762051105499268
+Step 67600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.537
+Validation Loss: 3.475252389907837
+Step 68000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.579
+Validation Loss: 3.4562253952026367
+Step 68400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.463
+Validation Loss: 3.456015110015869
+Step 68800 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.439
+Validation Loss: 3.464526414871216
+Step 69200 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.482
+Validation Loss: 3.492255687713623
+Step 69600 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.477
+Validation Loss: 3.523710250854492
+Step 70000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.532
+Validation Loss: 3.4909238815307617
+Step 70400 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.542
+Validation Loss: 3.460956335067749
+Step 70800 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.540
+Validation Loss: 3.420783519744873
+Step 71200 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.558
+Validation Loss: 3.4850587844848633
+Step 71600 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.470
+Validation Loss: 3.431023597717285
+Step 72000 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.484
+Validation Loss: 3.5618088245391846
+Step 72400 of 312832.
+Time taken : 2746.3ms | Tokens/s : 190.9k | Loss : 3.480
+Validation Loss: 3.455345392227173
+Step 72800 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.471
+Validation Loss: 3.5073397159576416
+Step 73200 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.444
+Validation Loss: 3.5333940982818604
+Step 73600 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.497
+Validation Loss: 3.519447088241577
+Step 74000 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.519
+Validation Loss: 3.4371094703674316
+Step 74400 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.489
+Validation Loss: 3.503692626953125
+Step 74800 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.409
+Validation Loss: 3.465961456298828
+Step 75200 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.8k | Loss : 3.477
+Validation Loss: 3.4772071838378906
+Step 75600 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.483
+Validation Loss: 3.4696123600006104
+Step 76000 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.524
+Validation Loss: 3.4618921279907227
+Step 76400 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.456
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.632385730743408
+Step 76800 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.461
+Validation Loss: 3.4404473304748535
+Step 77200 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.506
+Validation Loss: 3.4889237880706787
+Step 77600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.472
+Validation Loss: 3.5181989669799805
+Step 78000 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.429
+Validation Loss: 3.429927110671997
+Step 78400 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.449
+Validation Loss: 3.4645984172821045
+Step 78800 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.426
+Validation Loss: 3.436917781829834
+Step 79200 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.521
+Validation Loss: 3.4957916736602783
+Step 79600 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.545
+Validation Loss: 3.4144058227539062
+Step 80000 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.416
+Validation Loss: 3.4968321323394775
+Step 80400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.550
+Validation Loss: 3.456089735031128
+Step 80800 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.425
+Validation Loss: 3.5066001415252686
+Step 81200 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.371
+Validation Loss: 3.3893117904663086
+Step 81600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.640
+Validation Loss: 3.4132187366485596
+Step 82000 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.474
+Validation Loss: 3.4421088695526123
+Step 82400 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.420
+Validation Loss: 3.4380128383636475
+Step 82800 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.487
+Validation Loss: 3.496584415435791
+Step 83200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.467
+Validation Loss: 3.4168014526367188
+Step 83600 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.511
+Validation Loss: 3.412862777709961
+Step 84000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.473
+Validation Loss: 3.41209077835083
+Step 84400 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.559
+Validation Loss: 3.42925763130188
+Step 84800 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.519
+Validation Loss: 3.4370999336242676
+Step 85200 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.392
+Validation Loss: 3.5028419494628906
+Step 85600 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.698
+Validation Loss: 3.43314266204834
+Step 86000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.510
+Validation Loss: 3.4425816535949707
+Step 86400 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.565
+Validation Loss: 3.4489660263061523
+Step 86800 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.528
+Validation Loss: 3.5403478145599365
+Step 87200 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.451
+Validation Loss: 3.440157175064087
+Step 87600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.434
+Validation Loss: 3.4381957054138184
+Step 88000 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.467
+Validation Loss: 3.5046353340148926
+Step 88400 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.483
+Validation Loss: 3.5231773853302
+Step 88800 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.483
+Validation Loss: 3.515285015106201
+Step 89200 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.440
+Validation Loss: 3.4527761936187744
+Step 89600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.466
+Validation Loss: 3.4069607257843018
+Step 90000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.394
+Validation Loss: 3.478557586669922
+Step 90400 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.422
+Validation Loss: 3.53520131111145
+Step 90800 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.447
+Validation Loss: 3.4511823654174805
+Step 91200 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.430
+Validation Loss: 3.438554525375366
+Step 91600 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.464
+Validation Loss: 3.391375780105591
+Step 92000 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.475
+Validation Loss: 3.4838638305664062
+Step 92400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.438
+Validation Loss: 3.445147752761841
+Step 92800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.450
+Validation Loss: 3.4319140911102295
+Step 93200 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.433
+Validation Loss: 3.4625372886657715
+Step 93600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.549
+Validation Loss: 3.4285006523132324
+Step 94000 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.426
+Validation Loss: 3.567342519760132
+Step 94400 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.422
+Validation Loss: 3.471595048904419
+Step 94800 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.410
+Validation Loss: 3.4321722984313965
+Step 95200 of 312832.
+Time taken : 2746.2ms | Tokens/s : 190.9k | Loss : 3.404
+Validation Loss: 3.440584897994995
+Step 95600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.407
+Validation Loss: 3.4988083839416504
+Step 96000 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.460
+Validation Loss: 3.414113759994507
+Step 96400 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.429
+Validation Loss: 3.408573865890503
+Step 96800 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.426
+Validation Loss: 3.4431204795837402
+Step 97200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.434
+Validation Loss: 3.3930015563964844
+Step 97600 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.560
+Validation Loss: 3.452069044113159
+Step 98000 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.477
+Validation Loss: 3.4676458835601807
+Step 98400 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.455
+Validation Loss: 3.4190149307250977
+Step 98800 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.459
+Validation Loss: 3.394897937774658
+Step 99200 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.506
+Validation Loss: 3.446615219116211
+Step 99600 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.440
+Validation Loss: 3.419940948486328
+Step 100000 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.439
+Validation Loss: 3.3896288871765137
+Step 100400 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.397
+Validation Loss: 3.5111782550811768
+Step 100800 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.446
+Validation Loss: 3.440246820449829
+Step 101200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.420
+Validation Loss: 3.3538429737091064
+Step 101600 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.398
+Validation Loss: 3.3887457847595215
+Step 102000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.437
+Validation Loss: 3.4044082164764404
+Step 102400 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.420
+Validation Loss: 3.4333927631378174
+Step 102800 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.442
+Validation Loss: 3.45385479927063
+Step 103200 of 312832.
+Time taken : 2746.1ms | Tokens/s : 190.9k | Loss : 3.369
+Validation Loss: 3.5068933963775635
+Step 103600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.413
+Validation Loss: 3.740468740463257
+Step 104000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.388
+Validation Loss: 3.37597918510437
+Step 104400 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.414
+Validation Loss: 3.41109037399292
+Step 104800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.397
+Validation Loss: 3.371565818786621
+Step 105200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.432
+Validation Loss: 3.4593489170074463
+Step 105600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.371
+Validation Loss: 3.3041539192199707
+Step 106000 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.6k | Loss : 3.367
+Validation Loss: 3.420325756072998
+Step 106400 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.433
+Validation Loss: 3.428438186645508
+Step 106800 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.421
+Validation Loss: 3.461062431335449
+Step 107200 of 312832.
+Time taken : 2751.0ms | Tokens/s : 190.6k | Loss : 3.379
+Validation Loss: 3.472686767578125
+Step 107600 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.458
+Validation Loss: 3.3873355388641357
+Step 108000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.431
+Validation Loss: 3.4063596725463867
+Step 108400 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.454
+Validation Loss: 3.4440200328826904
+Step 108800 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.445
+Validation Loss: 3.367720127105713
+Step 109200 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.425
+Validation Loss: 3.395003080368042
+Step 109600 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.379
+Validation Loss: 3.4447920322418213
+Step 110000 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.435
+Validation Loss: 3.493079662322998
+Step 110400 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.305
+Validation Loss: 3.4361753463745117
+Step 110800 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.504
+Validation Loss: 3.4230940341949463
+Step 111200 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.367
+Validation Loss: 3.4524033069610596
+Step 111600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.392
+Validation Loss: 3.3724238872528076
+Step 112000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.385
+Validation Loss: 3.438565969467163
+Step 112400 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.478
+Validation Loss: 3.39796781539917
+Step 112800 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.464
+Validation Loss: 3.4232561588287354
+Step 113200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.412
+Validation Loss: 3.4091618061065674
+Step 113600 of 312832.
+Time taken : 2746.1ms | Tokens/s : 190.9k | Loss : 3.372
+Validation Loss: 3.3617866039276123
+Step 114000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.494
+Validation Loss: 3.3806211948394775
+Step 114400 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.397
+Validation Loss: 3.427398204803467
+Step 114800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.391
+Validation Loss: 3.390929698944092
+Step 115200 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.426
+Validation Loss: 3.4024930000305176
+Step 115600 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.380
+Validation Loss: 3.4308111667633057
+Step 116000 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.8k | Loss : 3.417
+Validation Loss: 3.4231297969818115
+Step 116400 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.390
+Validation Loss: 3.417191743850708
+Step 116800 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.478
+Validation Loss: 3.4445900917053223
+Step 117200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.428
+Validation Loss: 3.361453056335449
+Step 117600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.407
+Validation Loss: 3.3719000816345215
+Step 118000 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.407
+Validation Loss: 3.4691760540008545
+Step 118400 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.380
+Validation Loss: 3.38456654548645
+Step 118800 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.420
+Validation Loss: 3.4836599826812744
+Step 119200 of 312832.
+Time taken : 2744.8ms | Tokens/s : 191.0k | Loss : 3.377
+Validation Loss: 3.4041171073913574
+Step 119600 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.402
+Validation Loss: 3.4862067699432373
+Step 120000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.390
+Validation Loss: 3.434208393096924
+Step 120400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.431
+Validation Loss: 3.471086263656616
+Step 120800 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.380
+Validation Loss: 3.394432544708252
+Step 121200 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.385
+Validation Loss: 3.4104561805725098
+Step 121600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.433
+Validation Loss: 3.394784688949585
+Step 122000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.368
+Validation Loss: 3.438018560409546
+Step 122400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.504
+Validation Loss: 3.3553686141967773
+Step 122800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.394
+Validation Loss: 3.4498400688171387
+Step 123200 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.404
+Validation Loss: 3.3463170528411865
+Step 123600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.8k | Loss : 3.391
+Validation Loss: 3.436479330062866
+Step 124000 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.357
+Validation Loss: 3.4260671138763428
+Step 124400 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.401
+Validation Loss: 3.3925681114196777
+Step 124800 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.427
+Validation Loss: 3.3385679721832275
+Step 125200 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.411
+Validation Loss: 3.3862762451171875
+Step 125600 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.341
+Validation Loss: 3.3968238830566406
+Step 126000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.369
+Validation Loss: 3.3469223976135254
+Step 126400 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.396
+Validation Loss: 3.4679698944091797
+Step 126800 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.673
+Validation Loss: 3.420649528503418
+Step 127200 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.576
+Validation Loss: 3.4102423191070557
+Step 127600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.496
+Validation Loss: 3.333843231201172
+Step 128000 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.398
+Validation Loss: 3.4105381965637207
+Step 128400 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.467
+Validation Loss: 3.376363515853882
+Step 128800 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.387
+Validation Loss: 3.441187858581543
+Step 129200 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.347
+Validation Loss: 3.3896923065185547
+Step 129600 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.337
+Validation Loss: 3.4471211433410645
+Step 130000 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.422
+Validation Loss: 3.1530845165252686
+Step 130400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.345
+Validation Loss: 3.430044651031494
+Step 130800 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.459
+Validation Loss: 3.4154093265533447
+Step 131200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.354
+Validation Loss: 3.4106318950653076
+Step 131600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.325
+Validation Loss: 3.342355489730835
+Step 132000 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.352
+Validation Loss: 3.46101450920105
+Step 132400 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.487
+Validation Loss: 3.408269166946411
+Step 132800 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.527
+Validation Loss: 3.374002695083618
+Step 133200 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.464
+Validation Loss: 3.3246853351593018
+Step 133600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.331
+Validation Loss: 3.3896384239196777
+Step 134000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.378
+Validation Loss: 3.3648481369018555
+Step 134400 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.340
+Validation Loss: 3.379253625869751
+Step 134800 of 312832.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.347
+Validation Loss: 3.39447021484375
+Step 135200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.327
+Validation Loss: 3.3371870517730713
+Step 135600 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.357
+Validation Loss: 3.3917410373687744
+Step 136000 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.375
+Validation Loss: 3.5632224082946777
+Step 136400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.414
+Validation Loss: 3.370175838470459
+Step 136800 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.402
+Validation Loss: 3.3751296997070312
+Step 137200 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.450
+Validation Loss: 3.3828999996185303
+Step 137600 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.399
+Validation Loss: 3.3730576038360596
+Step 138000 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.378
+Validation Loss: 3.40909481048584
+Step 138400 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.384
+Validation Loss: 3.3346707820892334
+Step 138800 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.367
+Validation Loss: 3.4066576957702637
+Step 139200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.352
+Validation Loss: 3.3831417560577393
+Step 139600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.340
+Validation Loss: 3.3479182720184326
+Step 140000 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.346
+Validation Loss: 3.318740129470825
+Step 140400 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.386
+Validation Loss: 3.3601150512695312
+Step 140800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.383
+Validation Loss: 3.3798561096191406
+Step 141200 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.380
+Validation Loss: 3.359104871749878
+Step 141600 of 312832.
+Time taken : 2746.0ms | Tokens/s : 190.9k | Loss : 3.355
+Validation Loss: 3.340243339538574
+Step 142000 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.423
+Validation Loss: 3.3380391597747803
+Step 142400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.339
+Validation Loss: 3.3605852127075195
+Step 142800 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.353
+Validation Loss: 3.4272680282592773
+Step 143200 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.337
+Validation Loss: 3.33695387840271
+Step 143600 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.409
+Validation Loss: 3.3526599407196045
+Step 144000 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.315
+Validation Loss: 3.3517370223999023
+Step 144400 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.394
+Validation Loss: 3.3338940143585205
+Step 144800 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.443
+Validation Loss: 3.333106756210327
+Step 145200 of 312832.
+Time taken : 2751.2ms | Tokens/s : 190.6k | Loss : 3.336
+Validation Loss: 3.345571756362915
+Step 145600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.346
+Validation Loss: 3.3738412857055664
+Step 146000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.365
+Validation Loss: 3.4120688438415527
+Step 146400 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.315
+Validation Loss: 3.3740029335021973
+Step 146800 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.326
+Validation Loss: 3.340473175048828
+Step 147200 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.336
+Validation Loss: 3.3052213191986084
+Step 147600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.386
+Validation Loss: 3.3702404499053955
+Step 148000 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.419
+Validation Loss: 3.3133652210235596
+Step 148400 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.387
+Validation Loss: 3.447737693786621
+Step 148800 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.438
+Validation Loss: 3.3378238677978516
+Step 149200 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.404
+Validation Loss: 3.392784833908081
+Step 149600 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.6k | Loss : 3.374
+Validation Loss: 3.4180386066436768
+Step 150000 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.401
+Validation Loss: 3.4056622982025146
+Step 150400 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.314
+Validation Loss: 3.322784900665283
+Step 150800 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.8k | Loss : 3.471
+Validation Loss: 3.3909313678741455
+Step 151200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.396
+Validation Loss: 3.349560499191284
+Step 151600 of 312832.
+Time taken : 2750.8ms | Tokens/s : 190.6k | Loss : 3.375
+Validation Loss: 3.364037275314331
+Step 152000 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.362
+Validation Loss: 3.3567285537719727
+Step 152400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.348
+Validation Loss: 3.346759080886841
+Step 152800 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.374
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.521594524383545
+Step 153200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.367
+Validation Loss: 3.3309543132781982
+Step 153600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.347
+Validation Loss: 3.375119686126709
+Step 154000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.388
+Validation Loss: 3.4102132320404053
+Step 154400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.335
+Validation Loss: 3.3270046710968018
+Step 154800 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.350
+Validation Loss: 3.3524420261383057
+Step 155200 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.326
+Validation Loss: 3.3336362838745117
+Step 155600 of 312832.
+Time taken : 2746.2ms | Tokens/s : 190.9k | Loss : 3.356
+Validation Loss: 3.3862175941467285
+Step 156000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.317
+Validation Loss: 3.306630849838257
+Step 156400 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.262
+Validation Loss: 3.3833067417144775
+Step 156800 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.271
+Validation Loss: 3.3481955528259277
+Step 157200 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.295
+Validation Loss: 3.3973331451416016
+Step 157600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.355
+Validation Loss: 3.279654026031494
+Step 158000 of 312832.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.430
+Validation Loss: 3.3043813705444336
+Step 158400 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.299
+Validation Loss: 3.3347091674804688
+Step 158800 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.340
+Validation Loss: 3.3336968421936035
+Step 159200 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.347
+Validation Loss: 3.3895559310913086
+Step 159600 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.416
+Validation Loss: 3.310572385787964
+Step 160000 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.320
+Validation Loss: 3.3068907260894775
+Step 160400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.292
+Validation Loss: 3.308053731918335
+Step 160800 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.280
+Validation Loss: 3.3252599239349365
+Step 161200 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.405
+Validation Loss: 3.332751512527466
+Step 161600 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.387
+Validation Loss: 3.3994412422180176
+Step 162000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.409
+Validation Loss: 3.3235905170440674
+Step 162400 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.319
+Validation Loss: 3.335620164871216
+Step 162800 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.398
+Validation Loss: 3.3413314819335938
+Step 163200 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.383
+Validation Loss: 3.4367663860321045
+Step 163600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.361
+Validation Loss: 3.3307623863220215
+Step 164000 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.371
+Validation Loss: 3.334977388381958
+Step 164400 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.342
+Validation Loss: 3.3981051445007324
+Step 164800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.270
+Validation Loss: 3.4208147525787354
+Step 165200 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.330
+Validation Loss: 3.410297393798828
+Step 165600 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.295
+Validation Loss: 3.351099967956543
+Step 166000 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.297
+Validation Loss: 3.297201633453369
+Step 166400 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.295
+Validation Loss: 3.3732337951660156
+Step 166800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.265
+Validation Loss: 3.435682535171509
+Step 167200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.301
+Validation Loss: 3.3454995155334473
+Step 167600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.324
+Validation Loss: 3.3343398571014404
+Step 168000 of 312832.
+Time taken : 2745.8ms | Tokens/s : 190.9k | Loss : 3.373
+Validation Loss: 3.28755259513855
+Step 168400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.356
+Validation Loss: 3.380429983139038
+Step 168800 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.370
+Validation Loss: 3.3438684940338135
+Step 169200 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.287
+Validation Loss: 3.329784870147705
+Step 169600 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.340
+Validation Loss: 3.3656766414642334
+Step 170000 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.372
+Validation Loss: 3.3237671852111816
+Step 170400 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.309
+Validation Loss: 3.466973066329956
+Step 170800 of 312832.
+Time taken : 2750.8ms | Tokens/s : 190.6k | Loss : 3.367
+Validation Loss: 3.366025447845459
+Step 171200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.287
+Validation Loss: 3.3261260986328125
+Step 171600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.342
+Validation Loss: 3.338860511779785
+Step 172000 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.412
+Validation Loss: 3.396794557571411
+Step 172400 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.346
+Validation Loss: 3.3157436847686768
+Step 172800 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.296
+Validation Loss: 3.305501699447632
+Step 173200 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.356
+Validation Loss: 3.344172954559326
+Step 173600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.341
+Validation Loss: 3.291238307952881
+Step 174000 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.357
+Validation Loss: 3.3563849925994873
+Step 174400 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.322
+Validation Loss: 3.3648440837860107
+Step 174800 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.260
+Validation Loss: 3.319389820098877
+Step 175200 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.300
+Validation Loss: 3.2928993701934814
+Step 175600 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.385
+Validation Loss: 3.3473944664001465
+Step 176000 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.368
+Validation Loss: 3.319488286972046
+Step 176400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.389
+Validation Loss: 3.2941153049468994
+Step 176800 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.285
+Validation Loss: 3.4119975566864014
+Step 177200 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.337
+Validation Loss: 3.3393030166625977
+Step 177600 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.327
+Validation Loss: 3.2537264823913574
+Step 178000 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.343
+Validation Loss: 3.2883076667785645
+Step 178400 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.317
+Validation Loss: 3.3065643310546875
+Step 178800 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.223
+Validation Loss: 3.3385965824127197
+Step 179200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.337
+Validation Loss: 3.35847544670105
+Step 179600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.368
+Validation Loss: 3.411139726638794
+Step 180000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.412
+Validation Loss: 3.6430606842041016
+Step 180400 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.334
+Validation Loss: 3.2799060344696045
+Step 180800 of 312832.
+Time taken : 2751.7ms | Tokens/s : 190.5k | Loss : 3.368
+Validation Loss: 3.317887306213379
+Step 181200 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.286
+Validation Loss: 3.276728868484497
+Step 181600 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.316
+Validation Loss: 3.363217830657959
+Step 182000 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.273
+Validation Loss: 3.20924711227417
+Step 182400 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.385
+Validation Loss: 3.332914352416992
+Step 182800 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.276
+Validation Loss: 3.3345682621002197
+Step 183200 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.290
+Validation Loss: 3.3676321506500244
+Step 183600 of 312832.
+Time taken : 2751.3ms | Tokens/s : 190.6k | Loss : 3.342
+Validation Loss: 3.377281665802002
+Step 184000 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.305
+Validation Loss: 3.293729305267334
+Step 184400 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.321
+Validation Loss: 3.3126885890960693
+Step 184800 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.333
+Validation Loss: 3.345248222351074
+Step 185200 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.359
+Validation Loss: 3.274998426437378
+Step 185600 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.308
+Validation Loss: 3.296160936355591
+Step 186000 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.318
+Validation Loss: 3.352839708328247
+Step 186400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.327
+Validation Loss: 3.404592514038086
+Step 186800 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.371
+Validation Loss: 3.3371083736419678
+Step 187200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.319
+Validation Loss: 3.325831413269043
+Step 187600 of 312832.
+Time taken : 2751.5ms | Tokens/s : 190.5k | Loss : 3.472
+Validation Loss: 3.358154535293579
+Step 188000 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.305
+Validation Loss: 3.278109550476074
+Step 188400 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.259
+Validation Loss: 3.3419532775878906
+Step 188800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.367
+Validation Loss: 3.3028695583343506
+Step 189200 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.317
+Validation Loss: 3.328624725341797
+Step 189600 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.353
+Validation Loss: 3.314939498901367
+Step 190000 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.306
+Validation Loss: 3.27284836769104
+Step 190400 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.304
+Validation Loss: 3.28607177734375
+Step 190800 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.284
+Validation Loss: 3.33542799949646
+Step 191200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.314
+Validation Loss: 3.29856014251709
+Step 191600 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.337
+Validation Loss: 3.3081612586975098
+Step 192000 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.293
+Validation Loss: 3.3419599533081055
+Step 192400 of 312832.
+Time taken : 2751.8ms | Tokens/s : 190.5k | Loss : 3.354
+Validation Loss: 3.330801486968994
+Step 192800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.324
+Validation Loss: 3.3290417194366455
+Step 193200 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.334
+Validation Loss: 3.354093313217163
+Step 193600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.270
+Validation Loss: 3.271519422531128
+Step 194000 of 312832.
+Time taken : 2751.4ms | Tokens/s : 190.6k | Loss : 3.304
+Validation Loss: 3.278836250305176
+Step 194400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.328
+Validation Loss: 3.377838134765625
+Step 194800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.313
+Validation Loss: 3.293316125869751
+Step 195200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.308
+Validation Loss: 3.3934106826782227
+Step 195600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.288
+Validation Loss: 3.3118109703063965
+Step 196000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.398
+Validation Loss: 3.3992793560028076
+Step 196400 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.282
+Validation Loss: 3.3403396606445312
+Step 196800 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.325
+Validation Loss: 3.37949800491333
+Step 197200 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.326
+Validation Loss: 3.3043296337127686
+Step 197600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.301
+Validation Loss: 3.315523624420166
+Step 198000 of 312832.
+Time taken : 2751.6ms | Tokens/s : 190.5k | Loss : 3.261
+Validation Loss: 3.3033361434936523
+Step 198400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.370
+Validation Loss: 3.34560227394104
+Step 198800 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.348
+Validation Loss: 3.2619924545288086
+Step 199200 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.274
+Validation Loss: 3.3562347888946533
+Step 199600 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.265
+Validation Loss: 3.256566286087036
+Step 200000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.358
+Validation Loss: 3.3430981636047363
+Step 200400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.296
+Validation Loss: 3.3352129459381104
+Step 200800 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.272
+Validation Loss: 3.2996721267700195
+Step 201200 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.292
+Validation Loss: 3.2515785694122314
+Step 201600 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.270
+Validation Loss: 3.2955808639526367
+Step 202000 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.275
+Validation Loss: 3.3048694133758545
+Step 202400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.277
+Validation Loss: 3.2530407905578613
+Step 202800 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.346
+Validation Loss: 3.377042055130005
+Step 203200 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.271
+Validation Loss: 3.328641891479492
+Step 203600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.252
+Validation Loss: 3.320713520050049
+Step 204000 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.315
+Validation Loss: 3.2420246601104736
+Step 204400 of 312832.
+Time taken : 2751.7ms | Tokens/s : 190.5k | Loss : 3.230
+Validation Loss: 3.320781946182251
+Step 204800 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.258
+Validation Loss: 3.281951904296875
+Step 205200 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.379
+Validation Loss: 3.353846788406372
+Step 205600 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.332
+Validation Loss: 3.301718235015869
+Step 206000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.286
+Validation Loss: 3.3580281734466553
+Step 206400 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.291
+Validation Loss: 3.072186231613159
+Step 206800 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.289
+Validation Loss: 3.342057466506958
+Step 207200 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.250
+Validation Loss: 3.3268160820007324
+Step 207600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.247
+Validation Loss: 3.3248908519744873
+Step 208000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.305
+Validation Loss: 3.2564969062805176
+Step 208400 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.271
+Validation Loss: 3.3812808990478516
+Step 208800 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.243
+Validation Loss: 3.3197388648986816
+Step 209200 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.331
+Validation Loss: 3.290351390838623
+Step 209600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.293
+Validation Loss: 3.23537540435791
+Step 210000 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.264
+Validation Loss: 3.305192232131958
+Step 210400 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.340
+Validation Loss: 3.279555559158325
+Step 210800 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.343
+Validation Loss: 3.2936577796936035
+Step 211200 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.262
+Validation Loss: 3.3097617626190186
+Step 211600 of 312832.
+Time taken : 2750.9ms | Tokens/s : 190.6k | Loss : 3.355
+Validation Loss: 3.2568225860595703
+Step 212000 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.8k | Loss : 3.262
+Validation Loss: 3.308533191680908
+Step 212400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.204
+Validation Loss: 3.4764506816864014
+Step 212800 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.290
+Validation Loss: 3.2886710166931152
+Step 213200 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.246
+Validation Loss: 3.29293155670166
+Step 213600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.323
+Validation Loss: 3.300684928894043
+Step 214000 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.288
+Validation Loss: 3.291252613067627
+Step 214400 of 312832.
+Time taken : 2751.8ms | Tokens/s : 190.5k | Loss : 3.286
+Validation Loss: 3.32818341255188
+Step 214800 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.208
+Validation Loss: 3.254074811935425
+Step 215200 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.253
+Validation Loss: 3.3248255252838135
+Step 215600 of 312832.
+Time taken : 2751.9ms | Tokens/s : 190.5k | Loss : 3.291
+Validation Loss: 3.299121618270874
+Step 216000 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.302
+Validation Loss: 3.2648611068725586
+Step 216400 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.236
+Validation Loss: 3.236342430114746
+Step 216800 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.314
+Validation Loss: 3.2765705585479736
+Step 217200 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.300
+Validation Loss: 3.299030065536499
+Step 217600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.273
+Validation Loss: 3.279510021209717
+Step 218000 of 312832.
+Time taken : 2744.7ms | Tokens/s : 191.0k | Loss : 3.233
+Validation Loss: 3.260526180267334
+Step 218400 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.364
+Validation Loss: 3.258293628692627
+Step 218800 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.249
+Validation Loss: 3.2790956497192383
+Step 219200 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.238
+Validation Loss: 3.3456103801727295
+Step 219600 of 312832.
+Time taken : 2745.9ms | Tokens/s : 190.9k | Loss : 3.238
+Validation Loss: 3.2585175037384033
+Step 220000 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.265
+Validation Loss: 3.2730493545532227
+Step 220400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.260
+Validation Loss: 3.2757201194763184
+Step 220800 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.234
+Validation Loss: 3.257314920425415
+Step 221200 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.265
+Validation Loss: 3.2558512687683105
+Step 221600 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.256
+Validation Loss: 3.270373582839966
+Step 222000 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.337
+Validation Loss: 3.2953524589538574
+Step 222400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.330
+Validation Loss: 3.3328857421875
+Step 222800 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.267
+Validation Loss: 3.296727180480957
+Step 223200 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.229
+Validation Loss: 3.25932240486145
+Step 223600 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.256
+Validation Loss: 3.228435516357422
+Step 224000 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.318
+Validation Loss: 3.2943198680877686
+Step 224400 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.334
+Validation Loss: 3.237694501876831
+Step 224800 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.351
+Validation Loss: 3.374089002609253
+Step 225200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.367
+Validation Loss: 3.264284372329712
+Step 225600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.225
+Validation Loss: 3.318234920501709
+Step 226000 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.257
+Validation Loss: 3.341081380844116
+Step 226400 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.275
+Validation Loss: 3.32789945602417
+Step 226800 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.233
+Validation Loss: 3.248879909515381
+Step 227200 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.271
+Validation Loss: 3.3132174015045166
+Step 227600 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.257
+Validation Loss: 3.2700157165527344
+Step 228000 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.230
+Validation Loss: 3.2902674674987793
+Step 228400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.231
+Validation Loss: 3.281020402908325
+Step 228800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.217
+Validation Loss: 3.2717151641845703
+Step 229200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.240
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.4481418132781982
+Step 229600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.278
+Validation Loss: 3.2551255226135254
+Step 230000 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.330
+Validation Loss: 3.303499937057495
+Step 230400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.291
+Validation Loss: 3.330883026123047
+Step 230800 of 312832.
+Time taken : 2745.8ms | Tokens/s : 190.9k | Loss : 3.254
+Validation Loss: 3.2505712509155273
+Step 231200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.227
+Validation Loss: 3.279432773590088
+Step 231600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.308
+Validation Loss: 3.2573633193969727
+Step 232000 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.225
+Validation Loss: 3.3152430057525635
+Step 232400 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.250
+Validation Loss: 3.233320713043213
+Step 232800 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.265
+Validation Loss: 3.309983253479004
+Step 233200 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.205
+Validation Loss: 3.2786574363708496
+Step 233600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.330
+Validation Loss: 3.3254129886627197
+Step 234000 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.228
+Validation Loss: 3.2052059173583984
+Step 234400 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.291
+Validation Loss: 3.234131097793579
+Step 234800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.245
+Validation Loss: 3.261734962463379
+Step 235200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.262
+Validation Loss: 3.262437105178833
+Step 235600 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.253
+Validation Loss: 3.316824436187744
+Step 236000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.249
+Validation Loss: 3.2367172241210938
+Step 236400 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.309
+Validation Loss: 3.2390339374542236
+Step 236800 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.323
+Validation Loss: 3.2292234897613525
+Step 237200 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.212
+Validation Loss: 3.2567689418792725
+Step 237600 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.241
+Validation Loss: 3.263012647628784
+Step 238000 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.246
+Validation Loss: 3.3337953090667725
+Step 238400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.211
+Validation Loss: 3.2540979385375977
+Step 238800 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.231
+Validation Loss: 3.261443853378296
+Step 239200 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.241
+Validation Loss: 3.2729265689849854
+Step 239600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.293
+Validation Loss: 3.368138074874878
+Step 240000 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.213
+Validation Loss: 3.2603886127471924
+Step 240400 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.308
+Validation Loss: 3.2650606632232666
+Step 240800 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.305
+Validation Loss: 3.3308396339416504
+Step 241200 of 312832.
+Time taken : 2751.2ms | Tokens/s : 190.6k | Loss : 3.224
+Validation Loss: 3.3526389598846436
+Step 241600 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.204
+Validation Loss: 3.3418056964874268
+Step 242000 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.150
+Validation Loss: 3.2806620597839355
+Step 242400 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.193
+Validation Loss: 3.228201150894165
+Step 242800 of 312832.
+Time taken : 2750.8ms | Tokens/s : 190.6k | Loss : 3.260
+Validation Loss: 3.3063676357269287
+Step 243200 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.282
+Validation Loss: 3.367741346359253
+Step 243600 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.245
+Validation Loss: 3.2773048877716064
+Step 244000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.235
+Validation Loss: 3.2629904747009277
+Step 244400 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.213
+Validation Loss: 3.2128071784973145
+Step 244800 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.273
+Validation Loss: 3.312729597091675
+Step 245200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.186
+Validation Loss: 3.273672103881836
+Step 245600 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.228
+Validation Loss: 3.2633707523345947
+Step 246000 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.361
+Validation Loss: 3.2970218658447266
+Step 246400 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.341
+Validation Loss: 3.258424758911133
+Step 246800 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.255
+Validation Loss: 3.4002323150634766
+Step 247200 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.221
+Validation Loss: 3.2950780391693115
+Step 247600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.301
+Validation Loss: 3.2598507404327393
+Step 248000 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.211
+Validation Loss: 3.271110773086548
+Step 248400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.170
+Validation Loss: 3.3313498497009277
+Step 248800 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.230
+Validation Loss: 3.2482616901397705
+Step 249200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.259
+Validation Loss: 3.2364375591278076
+Step 249600 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.239
+Validation Loss: 3.2727015018463135
+Step 250000 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.187
+Validation Loss: 3.2229583263397217
+Step 250400 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.278
+Validation Loss: 3.289203405380249
+Step 250800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.396
+Validation Loss: 3.2987401485443115
+Step 251200 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.243
+Validation Loss: 3.2534523010253906
+Step 251600 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.298
+Validation Loss: 3.2283835411071777
+Step 252000 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.179
+Validation Loss: 3.2795138359069824
+Step 252400 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.221
+Validation Loss: 3.2541584968566895
+Step 252800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.334
+Validation Loss: 3.226242780685425
+Step 253200 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.168
+Validation Loss: 3.3425116539001465
+Step 253600 of 312832.
+Time taken : 2746.6ms | Tokens/s : 190.9k | Loss : 3.257
+Validation Loss: 3.2700448036193848
+Step 254000 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.360
+Validation Loss: 3.180680751800537
+Step 254400 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.221
+Validation Loss: 3.2206428050994873
+Step 254800 of 312832.
+Time taken : 2750.5ms | Tokens/s : 190.6k | Loss : 3.220
+Validation Loss: 3.2417471408843994
+Step 255200 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.162
+Validation Loss: 3.271864891052246
+Step 255600 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.264
+Validation Loss: 3.289684295654297
+Step 256000 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.202
+Validation Loss: 3.3482062816619873
+Step 256400 of 312832.
+Time taken : 2749.9ms | Tokens/s : 190.7k | Loss : 3.234
+Validation Loss: 3.5846123695373535
+Step 256800 of 312832.
+Time taken : 2750.2ms | Tokens/s : 190.6k | Loss : 3.267
+Validation Loss: 3.214426040649414
+Step 257200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.239
+Validation Loss: 3.254687547683716
+Step 257600 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.250
+Validation Loss: 3.2139382362365723
+Step 258000 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.228
+Validation Loss: 3.294358730316162
+Step 258400 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.230
+Validation Loss: 3.1439905166625977
+Step 258800 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.219
+Validation Loss: 3.265183687210083
+Step 259200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.143
+Validation Loss: 3.2679662704467773
+Step 259600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.251
+Validation Loss: 3.3074116706848145
+Step 260000 of 312832.
+Time taken : 2751.1ms | Tokens/s : 190.6k | Loss : 3.242
+Validation Loss: 3.3106138706207275
+Step 260400 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.162
+Validation Loss: 3.2312283515930176
+Step 260800 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.239
+Validation Loss: 3.2492427825927734
+Step 261200 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.193
+Validation Loss: 3.284721851348877
+Step 261600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.195
+Validation Loss: 3.212005615234375
+Step 262000 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.271
+Validation Loss: 3.2354626655578613
+Step 262400 of 312832.
+Time taken : 2753.7ms | Tokens/s : 190.4k | Loss : 3.187
+Validation Loss: 3.2915334701538086
+Step 262800 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.201
+Validation Loss: 3.34342622756958
+Step 263200 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.160
+Validation Loss: 3.2722644805908203
+Step 263600 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.253
+Validation Loss: 3.262814998626709
+Step 264000 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.229
+Validation Loss: 3.2967021465301514
+Step 264400 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.210
+Validation Loss: 3.215489387512207
+Step 264800 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.161
+Validation Loss: 3.2816576957702637
+Step 265200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.185
+Validation Loss: 3.2393319606781006
+Step 265600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.228
+Validation Loss: 3.267279624938965
+Step 266000 of 312832.
+Time taken : 2751.5ms | Tokens/s : 190.5k | Loss : 3.275
+Validation Loss: 3.250936985015869
+Step 266400 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.240
+Validation Loss: 3.208181381225586
+Step 266800 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.224
+Validation Loss: 3.2226972579956055
+Step 267200 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.189
+Validation Loss: 3.275536060333252
+Step 267600 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.194
+Validation Loss: 3.239124059677124
+Step 268000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.312
+Validation Loss: 3.2485265731811523
+Step 268400 of 312832.
+Time taken : 2749.2ms | Tokens/s : 190.7k | Loss : 3.230
+Validation Loss: 3.279069423675537
+Step 268800 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.245
+Validation Loss: 3.271040439605713
+Step 269200 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.292
+Validation Loss: 3.266308069229126
+Step 269600 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.237
+Validation Loss: 3.2952117919921875
+Step 270000 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.224
+Validation Loss: 3.2066802978515625
+Step 270400 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.262
+Validation Loss: 3.2186336517333984
+Step 270800 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.258
+Validation Loss: 3.317383050918579
+Step 271200 of 312832.
+Time taken : 2750.3ms | Tokens/s : 190.6k | Loss : 3.346
+Validation Loss: 3.2330374717712402
+Step 271600 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.230
+Validation Loss: 3.3317208290100098
+Step 272000 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.241
+Validation Loss: 3.251262664794922
+Step 272400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.310
+Validation Loss: 3.3375790119171143
+Step 272800 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.222
+Validation Loss: 3.2791385650634766
+Step 273200 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.196
+Validation Loss: 3.315830945968628
+Step 273600 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.259
+Validation Loss: 3.244858980178833
+Step 274000 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.255
+Validation Loss: 3.256208658218384
+Step 274400 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.302
+Validation Loss: 3.246483564376831
+Step 274800 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.250
+Validation Loss: 3.284290313720703
+Step 275200 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.233
+Validation Loss: 3.1991522312164307
+Step 275600 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.198
+Validation Loss: 3.293412208557129
+Step 276000 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.238
+Validation Loss: 3.1968469619750977
+Step 276400 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.215
+Validation Loss: 3.2792177200317383
+Step 276800 of 312832.
+Time taken : 2747.6ms | Tokens/s : 190.8k | Loss : 3.365
+Validation Loss: 3.277813196182251
+Step 277200 of 312832.
+Time taken : 2749.1ms | Tokens/s : 190.7k | Loss : 3.161
+Validation Loss: 3.2398273944854736
+Step 277600 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.229
+Validation Loss: 3.1908915042877197
+Step 278000 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.236
+Validation Loss: 3.2365260124206543
+Step 278400 of 312832.
+Time taken : 2750.7ms | Tokens/s : 190.6k | Loss : 3.200
+Validation Loss: 3.244879722595215
+Step 278800 of 312832.
+Time taken : 2751.0ms | Tokens/s : 190.6k | Loss : 3.276
+Validation Loss: 3.187971591949463
+Step 279200 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.227
+Validation Loss: 3.3136074542999268
+Step 279600 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.269
+Validation Loss: 3.2648496627807617
+Step 280000 of 312832.
+Time taken : 2751.1ms | Tokens/s : 190.6k | Loss : 3.263
+Validation Loss: 3.259366035461426
+Step 280400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.236
+Validation Loss: 3.182908773422241
+Step 280800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.278
+Validation Loss: 3.262251615524292
+Step 281200 of 312832.
+Time taken : 2749.7ms | Tokens/s : 190.7k | Loss : 3.227
+Validation Loss: 3.2223002910614014
+Step 281600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.228
+Validation Loss: 3.2948763370513916
+Step 282000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.221
+Validation Loss: 3.2401623725891113
+Step 282400 of 312832.
+Time taken : 2750.1ms | Tokens/s : 190.6k | Loss : 3.186
+Validation Loss: 3.300123691558838
+Step 282800 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.269
+Validation Loss: 3.0183756351470947
+Step 283200 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.259
+Validation Loss: 3.27958083152771
+Step 283600 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.411
+Validation Loss: 3.2624917030334473
+Step 284000 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.220
+Validation Loss: 3.2638285160064697
+Step 284400 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.236
+Validation Loss: 3.1992368698120117
+Step 284800 of 312832.
+Time taken : 2747.5ms | Tokens/s : 190.8k | Loss : 3.317
+Validation Loss: 3.3188698291778564
+Step 285200 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.264
+Validation Loss: 3.2585678100585938
+Step 285600 of 312832.
+Time taken : 2750.4ms | Tokens/s : 190.6k | Loss : 3.278
+Validation Loss: 3.231598377227783
+Step 286000 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.255
+Validation Loss: 3.1772024631500244
+Step 286400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.306
+Validation Loss: 3.2464966773986816
+Step 286800 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.263
+Validation Loss: 3.2205493450164795
+Step 287200 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.228
+Validation Loss: 3.2357113361358643
+Step 287600 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.234
+Validation Loss: 3.253091812133789
+Step 288000 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.258
+Validation Loss: 3.1940531730651855
+Step 288400 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.7k | Loss : 3.206
+Validation Loss: 3.248934268951416
+Step 288800 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.233
+Validation Loss: 3.420786142349243
+Step 289200 of 312832.
+Time taken : 2746.4ms | Tokens/s : 190.9k | Loss : 3.283
+Validation Loss: 3.232985734939575
+Step 289600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.255
+Validation Loss: 3.2360169887542725
+Step 290000 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.200
+Validation Loss: 3.243631601333618
+Step 290400 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.210
+Validation Loss: 3.236381769180298
+Step 290800 of 312832.
+Time taken : 2748.2ms | Tokens/s : 190.8k | Loss : 3.233
+Validation Loss: 3.2707021236419678
+Step 291200 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.268
+Validation Loss: 3.1979918479919434
+Step 291600 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.284
+Validation Loss: 3.268173933029175
+Step 292000 of 312832.
+Time taken : 2747.9ms | Tokens/s : 190.8k | Loss : 3.241
+Validation Loss: 3.243492841720581
+Step 292400 of 312832.
+Time taken : 2746.5ms | Tokens/s : 190.9k | Loss : 3.431
+Validation Loss: 3.2071170806884766
+Step 292800 of 312832.
+Time taken : 2746.7ms | Tokens/s : 190.9k | Loss : 3.212
+Validation Loss: 3.1811342239379883
+Step 293200 of 312832.
+Time taken : 2747.3ms | Tokens/s : 190.8k | Loss : 3.282
+Validation Loss: 3.218475818634033
+Step 293600 of 312832.
+Time taken : 2749.6ms | Tokens/s : 190.7k | Loss : 3.294
+Validation Loss: 3.2434167861938477
+Step 294000 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.152
+Validation Loss: 3.2227272987365723
+Step 294400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.283
+Validation Loss: 3.2042388916015625
+Step 294800 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.240
+Validation Loss: 3.2005410194396973
+Step 295200 of 312832.
+Time taken : 2749.8ms | Tokens/s : 190.7k | Loss : 3.242
+Validation Loss: 3.2246768474578857
+Step 295600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.235
+Validation Loss: 3.2891507148742676
+Step 296000 of 312832.
+Time taken : 2749.4ms | Tokens/s : 190.7k | Loss : 3.252
+Validation Loss: 3.2044589519500732
+Step 296400 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.282
+Validation Loss: 3.215625524520874
+Step 296800 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.220
+Validation Loss: 3.2226946353912354
+Step 297200 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.252
+Validation Loss: 3.19937801361084
+Step 297600 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.256
+Validation Loss: 3.2013370990753174
+Step 298000 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.232
+Validation Loss: 3.2109808921813965
+Step 298400 of 312832.
+Time taken : 2748.4ms | Tokens/s : 190.8k | Loss : 3.221
+Validation Loss: 3.243450403213501
+Step 298800 of 312832.
+Time taken : 2747.8ms | Tokens/s : 190.8k | Loss : 3.205
+Validation Loss: 3.275808572769165
+Step 299200 of 312832.
+Time taken : 2748.3ms | Tokens/s : 190.8k | Loss : 3.230
+Validation Loss: 3.2460923194885254
+Step 299600 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.261
+Validation Loss: 3.2046127319335938
+Step 300000 of 312832.
+Time taken : 2747.7ms | Tokens/s : 190.8k | Loss : 3.252
+Validation Loss: 3.1775903701782227
+Step 300400 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.8k | Loss : 3.257
+Validation Loss: 3.2410831451416016
+Step 300800 of 312832.
+Time taken : 2748.9ms | Tokens/s : 190.7k | Loss : 3.269
+Validation Loss: 3.186774253845215
+Step 301200 of 312832.
+Time taken : 2748.5ms | Tokens/s : 190.8k | Loss : 3.201
+Validation Loss: 3.32059907913208
+Step 301600 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.248
+Validation Loss: 3.2120110988616943
+Step 302000 of 312832.
+Time taken : 2748.7ms | Tokens/s : 190.7k | Loss : 3.191
+Validation Loss: 3.267862319946289
+Step 302400 of 312832.
+Time taken : 2748.0ms | Tokens/s : 190.8k | Loss : 3.227
+Validation Loss: 3.2909491062164307
+Step 302800 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.250
+Validation Loss: 3.2718665599823
+Step 303200 of 312832.
+Time taken : 2749.5ms | Tokens/s : 190.7k | Loss : 3.262
+Validation Loss: 3.197248935699463
+Step 303600 of 312832.
+Time taken : 2750.0ms | Tokens/s : 190.6k | Loss : 3.243
+Validation Loss: 3.259444236755371
+Step 304000 of 312832.
+Time taken : 2750.6ms | Tokens/s : 190.6k | Loss : 3.300
+Validation Loss: 3.221127986907959
+Step 304400 of 312832.
+Time taken : 2745.7ms | Tokens/s : 191.0k | Loss : 3.252
+Validation Loss: 3.2386293411254883
+Step 304800 of 312832.
+Time taken : 2746.8ms | Tokens/s : 190.9k | Loss : 3.256
+Validation Loss: 3.23233962059021
+Step 305200 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.8k | Loss : 3.253
+Validation Loss: 3.2211661338806152
+Step 305600 of 312832.
+Time taken : 2746.9ms | Tokens/s : 190.9k | Loss : 3.199
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.400221586227417
+Step 306000 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.265
+Validation Loss: 3.206246852874756
+Step 306400 of 312832.
+Time taken : 2746.0ms | Tokens/s : 190.9k | Loss : 3.231
+Validation Loss: 3.2515509128570557
+Step 306800 of 312832.
+Time taken : 2748.8ms | Tokens/s : 190.7k | Loss : 3.251
+Validation Loss: 3.283133029937744
+Step 307200 of 312832.
+Time taken : 2745.7ms | Tokens/s : 190.9k | Loss : 3.253
+Validation Loss: 3.201209545135498
+Step 307600 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.273
+Validation Loss: 3.2303102016448975
+Step 308000 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.241
+Validation Loss: 3.20871639251709
+Step 308400 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.214
+Validation Loss: 3.265306234359741
+Step 308800 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.240
+Validation Loss: 3.184398889541626
+Step 309200 of 312832.
+Time taken : 2748.1ms | Tokens/s : 190.8k | Loss : 3.233
+Validation Loss: 3.2598321437835693
+Step 309600 of 312832.
+Time taken : 2747.1ms | Tokens/s : 190.9k | Loss : 3.395
+Validation Loss: 3.23287296295166
+Step 310000 of 312832.
+Time taken : 2747.0ms | Tokens/s : 190.9k | Loss : 3.194
+Validation Loss: 3.276799201965332
+Step 310400 of 312832.
+Time taken : 2748.6ms | Tokens/s : 190.7k | Loss : 3.161
+Validation Loss: 3.1601674556732178
+Step 310800 of 312832.
+Time taken : 2745.2ms | Tokens/s : 191.0k | Loss : 3.239
+Validation Loss: 3.1858503818511963
+Step 311200 of 312832.
+Time taken : 2747.2ms | Tokens/s : 190.8k | Loss : 3.276
+Validation Loss: 3.2163097858428955
+Step 311600 of 312832.
+Time taken : 2749.0ms | Tokens/s : 190.7k | Loss : 3.229
+Validation Loss: 3.217066764831543
+Step 312000 of 312832.
+Time taken : 2747.4ms | Tokens/s : 190.8k | Loss : 3.234
+Validation Loss: 3.27079439163208
+Step 312400 of 312832.
+Time taken : 2749.3ms | Tokens/s : 190.7k | Loss : 3.216
+Validation Loss: 3.192807912826538
+Rank 0 reached end of train dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+In rank: 0, epoch 1, Train Loss: 3.3038454055786133
+In rank: 0, time taken for epoch 1 :  54482.90197181702
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.2365176677703857
+In rank: 0, epoch 1, Validation Loss: 3.2365176677703857

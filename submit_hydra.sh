@@ -7,8 +7,8 @@ mkdir -p outputs/slurm_logs
 sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
-#SBATCH --gpus-per-node=A100:4
-#SBATCH --time=02:00:00
+#SBATCH --gpus-per-node=A100:1
+#SBATCH --time=16:00:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH --account=naiss2025-22-762
 
@@ -24,6 +24,6 @@ python3 -m pip install -e .
 export PYTHONUNBUFFERED=1
 
 # Run the Python script with the config file
-time torchrun --standalone --nproc_per_node=4 run_hydra.py -cn $@
+time torchrun --standalone --nproc_per_node=1 run_hydra.py -cn $@
 #### srun -u python3 -u run_hydra.py -cn $@
 EOF
