@@ -9,7 +9,13 @@ from functools import partial
 
 import torch
 
-from gptopt.optim.mach_polar import MachPolar5, MachPolar9, MachPolar17, MachPolar172
+from gptopt.optim.mach_polar import (
+    MachPolar5,
+    MachPolar9,
+    MachPolar17,
+    MachPolar23,
+    MachPolar172,
+)
 from gptopt.optim.polar_express import FastApplyPolarExpress, PolarExpress
 
 
@@ -215,6 +221,8 @@ class Muon(torch.optim.Optimizer):
             return MachPolar17
         elif polar_method == "machpolar172":
             return MachPolar172
+        elif polar_method == "machpolar23":
+            return MachPolar23
         elif polar_method == "fast_polarexpress":
             return partial(FastApplyPolarExpress, restart_interval=3, shift_eps=1e-3)
         elif polar_method == "svd-exact":
