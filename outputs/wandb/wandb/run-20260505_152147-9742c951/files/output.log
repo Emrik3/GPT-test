@@ -1,0 +1,240 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 4 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+Step 100 of 7628.
+Time taken : 735.0ms | Tokens/s : 713.4k | Loss : 7.177
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+Validation Loss: 7.219291687011719
+Step 200 of 7628.
+Time taken : 736.2ms | Tokens/s : 712.1k | Loss : 6.320
+Validation Loss: 6.32565450668335
+Step 300 of 7628.
+Time taken : 739.1ms | Tokens/s : 709.4k | Loss : 5.968
+Validation Loss: 6.007631301879883
+Step 400 of 7628.
+Time taken : 741.4ms | Tokens/s : 707.1k | Loss : 5.723
+Validation Loss: 5.706122398376465
+Step 500 of 7628.
+Time taken : 741.4ms | Tokens/s : 707.2k | Loss : 5.559
+Validation Loss: 5.542112350463867
+Step 600 of 7628.
+Time taken : 740.0ms | Tokens/s : 708.5k | Loss : 5.403
+Validation Loss: 5.373875141143799
+Step 700 of 7628.
+Time taken : 740.8ms | Tokens/s : 707.8k | Loss : 5.202
+Validation Loss: 5.1800737380981445
+Step 800 of 7628.
+Time taken : 741.6ms | Tokens/s : 707.0k | Loss : 5.197
+Validation Loss: 5.041894912719727
+Step 900 of 7628.
+Time taken : 741.5ms | Tokens/s : 707.1k | Loss : 4.913
+Validation Loss: 4.964146614074707
+Step 1000 of 7628.
+Time taken : 740.3ms | Tokens/s : 708.2k | Loss : 4.818
+Validation Loss: 4.781492710113525
+Step 1100 of 7628.
+Time taken : 741.0ms | Tokens/s : 707.5k | Loss : 4.702
+Validation Loss: 4.779233932495117
+Step 1200 of 7628.
+Time taken : 741.7ms | Tokens/s : 706.9k | Loss : 4.602
+Validation Loss: 4.539721488952637
+Step 1300 of 7628.
+Time taken : 741.3ms | Tokens/s : 707.3k | Loss : 4.570
+Validation Loss: 4.506226062774658
+Step 1400 of 7628.
+Time taken : 742.5ms | Tokens/s : 706.1k | Loss : 4.386
+Validation Loss: 4.419306755065918
+Step 1500 of 7628.
+Time taken : 740.2ms | Tokens/s : 708.3k | Loss : 4.398
+Validation Loss: 4.3676581382751465
+Step 1600 of 7628.
+Time taken : 741.7ms | Tokens/s : 706.9k | Loss : 4.257
+Validation Loss: 4.367258071899414
+Step 1700 of 7628.
+Time taken : 743.3ms | Tokens/s : 705.3k | Loss : 4.337
+Validation Loss: 4.234173774719238
+Step 1800 of 7628.
+Time taken : 742.8ms | Tokens/s : 705.8k | Loss : 4.259
+Validation Loss: 4.226683616638184
+Step 1900 of 7628.
+Time taken : 741.8ms | Tokens/s : 706.7k | Loss : 4.287
+Validation Loss: 4.169456481933594
+Step 2000 of 7628.
+Time taken : 741.3ms | Tokens/s : 707.2k | Loss : 4.225
+Validation Loss: 4.170646667480469
+Step 2100 of 7628.
+Time taken : 741.7ms | Tokens/s : 706.9k | Loss : 4.111
+Validation Loss: 4.127721786499023
+Step 2200 of 7628.
+Time taken : 741.9ms | Tokens/s : 706.7k | Loss : 4.086
+Validation Loss: 4.164355754852295
+Step 2300 of 7628.
+Time taken : 739.8ms | Tokens/s : 708.7k | Loss : 4.090
+Validation Loss: 4.085312843322754
+Step 2400 of 7628.
+Time taken : 742.8ms | Tokens/s : 705.9k | Loss : 4.040
+Validation Loss: 4.031578540802002
+Step 2500 of 7628.
+Time taken : 741.9ms | Tokens/s : 706.7k | Loss : 4.095
+Validation Loss: 4.055041313171387
+Step 2600 of 7628.
+Time taken : 744.1ms | Tokens/s : 704.6k | Loss : 4.048
+Validation Loss: 4.099917411804199
+Step 2700 of 7628.
+Time taken : 741.7ms | Tokens/s : 706.9k | Loss : 3.978
+Validation Loss: 4.014019012451172
+Step 2800 of 7628.
+Time taken : 741.8ms | Tokens/s : 706.8k | Loss : 4.038
+Validation Loss: 3.9956860542297363
+Step 2900 of 7628.
+Time taken : 743.1ms | Tokens/s : 705.5k | Loss : 3.930
+Validation Loss: 4.038229942321777
+Step 3000 of 7628.
+Time taken : 743.2ms | Tokens/s : 705.5k | Loss : 3.922
+Validation Loss: 4.035820007324219
+Step 3100 of 7628.
+Time taken : 743.3ms | Tokens/s : 705.4k | Loss : 4.019
+Validation Loss: 4.0037126541137695
+Step 3200 of 7628.
+Time taken : 743.6ms | Tokens/s : 705.1k | Loss : 4.022
+Validation Loss: 3.9491381645202637
+Step 3300 of 7628.
+Time taken : 742.7ms | Tokens/s : 706.0k | Loss : 3.873
+Validation Loss: 3.8735246658325195
+Step 3400 of 7628.
+Time taken : 742.8ms | Tokens/s : 705.8k | Loss : 3.926
+Validation Loss: 3.945282220840454
+Step 3500 of 7628.
+Time taken : 742.0ms | Tokens/s : 706.6k | Loss : 3.785
+Validation Loss: 3.9691667556762695
+Step 3600 of 7628.
+Time taken : 743.4ms | Tokens/s : 705.2k | Loss : 3.948
+Validation Loss: 3.888509750366211
+Step 3700 of 7628.
+Time taken : 743.7ms | Tokens/s : 704.9k | Loss : 3.833
+Validation Loss: 3.869516134262085
+Step 3800 of 7628.
+Time taken : 743.5ms | Tokens/s : 705.2k | Loss : 3.836
+Validation Loss: 3.8055362701416016
+Step 3900 of 7628.
+Time taken : 742.1ms | Tokens/s : 706.5k | Loss : 3.915
+Validation Loss: 3.893657684326172
+Step 4000 of 7628.
+Time taken : 743.1ms | Tokens/s : 705.5k | Loss : 3.878
+Validation Loss: 3.821791648864746
+Step 4100 of 7628.
+Time taken : 742.9ms | Tokens/s : 705.7k | Loss : 3.835
+Validation Loss: 3.803679943084717
+Step 4200 of 7628.
+Time taken : 742.0ms | Tokens/s : 706.6k | Loss : 3.792
+Validation Loss: 3.8186328411102295
+Step 4300 of 7628.
+Time taken : 743.5ms | Tokens/s : 705.2k | Loss : 3.724
+Validation Loss: 3.7930212020874023
+Step 4400 of 7628.
+Time taken : 743.1ms | Tokens/s : 705.5k | Loss : 3.835
+Validation Loss: 3.911560297012329
+Step 4500 of 7628.
+Time taken : 744.6ms | Tokens/s : 704.1k | Loss : 3.742
+Validation Loss: 3.8273863792419434
+Step 4600 of 7628.
+Time taken : 742.5ms | Tokens/s : 706.1k | Loss : 3.865
+Validation Loss: 3.7839436531066895
+Step 4700 of 7628.
+Time taken : 742.0ms | Tokens/s : 706.5k | Loss : 3.836
+Validation Loss: 3.754920482635498
+Step 4800 of 7628.
+Time taken : 742.0ms | Tokens/s : 706.6k | Loss : 3.760
+Validation Loss: 3.816356658935547
+Step 4900 of 7628.
+Time taken : 741.3ms | Tokens/s : 707.2k | Loss : 3.723
+Validation Loss: 3.7169923782348633
+Step 5000 of 7628.
+Time taken : 741.1ms | Tokens/s : 707.4k | Loss : 3.769
+Validation Loss: 3.7129883766174316
+Step 5100 of 7628.
+Time taken : 742.2ms | Tokens/s : 706.4k | Loss : 3.772
+Validation Loss: 3.7283358573913574
+Step 5200 of 7628.
+Time taken : 742.6ms | Tokens/s : 706.0k | Loss : 3.708
+Validation Loss: 3.689364433288574
+Step 5300 of 7628.
+Time taken : 743.5ms | Tokens/s : 705.2k | Loss : 3.708
+Validation Loss: 3.722877264022827
+Step 5400 of 7628.
+Time taken : 743.5ms | Tokens/s : 705.2k | Loss : 3.752
+Validation Loss: 3.7498416900634766
+Step 5500 of 7628.
+Time taken : 743.8ms | Tokens/s : 704.9k | Loss : 3.747
+Validation Loss: 3.6809277534484863
+Step 5600 of 7628.
+Time taken : 743.1ms | Tokens/s : 705.5k | Loss : 3.691
+Validation Loss: 3.656675338745117
+Step 5700 of 7628.
+Time taken : 743.3ms | Tokens/s : 705.4k | Loss : 3.696
+Validation Loss: 3.7024049758911133
+Step 5800 of 7628.
+Time taken : 743.9ms | Tokens/s : 704.8k | Loss : 3.610
+Validation Loss: 3.6674160957336426
+Step 5900 of 7628.
+Time taken : 743.0ms | Tokens/s : 705.6k | Loss : 3.744
+Validation Loss: 3.6378326416015625
+Step 6000 of 7628.
+Time taken : 743.4ms | Tokens/s : 705.3k | Loss : 3.668
+Validation Loss: 3.752521514892578
+Step 6100 of 7628.
+Time taken : 1278.9ms | Tokens/s : 410.0k | Loss : 3.630
+Validation Loss: 3.6805343627929688
+Step 6200 of 7628.
+Time taken : 742.8ms | Tokens/s : 705.8k | Loss : 3.633
+Validation Loss: 3.5836291313171387
+Step 6300 of 7628.
+Time taken : 742.5ms | Tokens/s : 706.1k | Loss : 3.626
+Validation Loss: 3.6224074363708496
+Step 6400 of 7628.
+Time taken : 742.2ms | Tokens/s : 706.4k | Loss : 3.602
+Validation Loss: 3.6179065704345703
+Step 6500 of 7628.
+Time taken : 744.5ms | Tokens/s : 704.2k | Loss : 3.609
+Validation Loss: 3.652279853820801
+Step 6600 of 7628.
+Time taken : 743.0ms | Tokens/s : 705.7k | Loss : 3.656
+Validation Loss: 3.6597793102264404
+Step 6700 of 7628.
+Time taken : 742.5ms | Tokens/s : 706.1k | Loss : 3.866
+Validation Loss: 3.711291790008545
+Step 6800 of 7628.
+Time taken : 744.8ms | Tokens/s : 703.9k | Loss : 3.612
+Validation Loss: 3.9225010871887207
+Step 6900 of 7628.
+Time taken : 742.8ms | Tokens/s : 705.8k | Loss : 3.660
+Validation Loss: 3.5766711235046387
+Step 7000 of 7628.
+Time taken : 744.1ms | Tokens/s : 704.6k | Loss : 3.610
+Validation Loss: 3.607154607772827
+Step 7100 of 7628.
+Time taken : 741.5ms | Tokens/s : 707.1k | Loss : 3.610
+Validation Loss: 3.5557284355163574
+Step 7200 of 7628.
+Time taken : 743.2ms | Tokens/s : 705.4k | Loss : 3.677
+Validation Loss: 3.646310806274414
+Step 7300 of 7628.
+Time taken : 744.4ms | Tokens/s : 704.3k | Loss : 3.594
+Validation Loss: 3.4904825687408447
+Step 7400 of 7628.
+Time taken : 744.5ms | Tokens/s : 704.2k | Loss : 3.581
+Validation Loss: 3.6026535034179688
+Step 7500 of 7628.
+Time taken : 743.7ms | Tokens/s : 705.0k | Loss : 3.665
+Validation Loss: 3.603494644165039
+Step 7600 of 7628.
+Time taken : 742.6ms | Tokens/s : 706.0k | Loss : 3.658
+Validation Loss: 3.642477035522461
+Rank 0 reached end of train dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+In rank: 0, epoch 1, Train Loss: 3.552367687225342
+In rank: 0, time taken for epoch 1 :  1474.0853831768036
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 3.6049509048461914
+In rank: 0, epoch 1, Validation Loss: 3.6049509048461914
