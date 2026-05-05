@@ -7,5 +7,6 @@ MUON="optimizer_params.name=muon +optimizer_params.args.ns_steps=5"
 #./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar5 $WANDB
 #./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar9 $WANDB
 #./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar17 $WANDB
-./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar172 $WANDB
+#./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar172 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar23 $WANDB
 
