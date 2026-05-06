@@ -2,7 +2,8 @@ WANDB="+logging_params.wandb.project=polar-express"
 COMMON="+training_data=fineweb gpt_model=gpt-small hydra.job.name=\"main_run\""
 MUON="optimizer_params.name=muon +optimizer_params.args.ns_steps=5"
 
-for wd in 0; do
+#Do now run with weight decay on
+for wd in 0.1; do
 
 for lr in 0.005; do
 for polar_method in Keller polarexpress machpolar5 machpolar9 machpolar17 machpolar172 machpolar23; do
