@@ -410,8 +410,6 @@ def MachPolar23(G: torch.Tensor, steps: int) -> torch.Tensor:
 
     A = X @ X.mT
     X = co[2][0] * X + co[2][1] * A @ X
-    A = X @ X.mT
-    X = co[3][0] * X + co[3][1] * A @ X
     if G.size(-2) > G.size(-1):
         X = X.mT
     return X
