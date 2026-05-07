@@ -200,25 +200,32 @@ co3 = [
 ]
 
 # safety factor for numerical stability (but exclude last polynomial)
-
-for i in range(len(co3) - 2):
-    for j in range(len(co3[i][2])):
-        co3[i][2][j] /= 1.01 ** (2 * j + 1)
+# TODO: Implement this saftey factor in a correct way, each X shoudl be devided by 1.01 to its power not the Q matrices as I am doing now
+"""for i in range(len(co3) - 2):
+    for j in range(len(co3[i][0])):
+        co3[i][0][j] /= 1.01 ** (2 * j + 1)
+        co3[i][1][j] /= 1.01 ** (2 * j + 1)
 co3[2][0] /= 1.01
 co3[2][1] /= 1.01**3
 
+"""
 
-for i in range(len(co17) - 1):
+for i in range(len(co17) - 2):
     for j in range(len(co17[i][2])):
-        co17[i][2][j] /= 1.01 ** (2 * j + 1)
+        # TODO: Fix this so it divides the values like this, becomes a weird loop but is then similar scaling as in PE.
+        co17[i][2][j] /= 1.01 ** (j + 2)
 
-for i in range(len(co9) - 1):
-    for j in range(len(co9[i][2])):
-        co9[i][2][j] /= 1.01 ** (2 * j + 1)
+"""
 
-for i in range(len(co5) - 1):
-    for j in range(len(co5[i][2])):
-        co5[i][2][j] /= 1.01 ** (2 * j + 1)
+for i in range(len(co9) - 2):
+    for j in range(len(co9[i][0])):
+        co9[i][0][j] /= 1.01 ** (2 * j + 1)
+        co9[i][1][j] /= 1.01 ** (2 * j + 1)
+
+for i in range(len(co5) - 2):
+    for j in range(len(co5[i][0])):
+        co5[i][0][j] /= 1.01 ** (2 * j + 1)
+        co5[i][1][j] /= 1.01 ** (2 * j + 1)"""
 
 """coeffs_list = [
     (a / 1.01, b / 1.01**3, c / 1.01**5) for (a, b, c) in coeffs_list[:-1]
