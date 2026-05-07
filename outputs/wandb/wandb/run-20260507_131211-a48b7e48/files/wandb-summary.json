@@ -1,0 +1,1 @@
+{"train/grad_norm":0.18413451313972473,"train/lr_0":0.001,"_timestamp":1.778153813875095e+09,"_step":1981,"val/step":7621,"train/step":7621,"train/loss":3.5684657096862793,"val/loss":3.622678756713867,"_wandb":{"runtime":1481},"_runtime":1481,"train/step_time":0.7235310077667236}
