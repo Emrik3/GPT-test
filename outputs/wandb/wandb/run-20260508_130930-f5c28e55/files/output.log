@@ -1,0 +1,45 @@
+Set pass_loss to False for optimizer Muon
+Accumulate gradient for 2 steps
+Will not save checkpoints as no directory is specified
+Epoch 1 of 1
+[rank0]:W0508 13:09:38.131000 2184086 .venv/lib/python3.13/site-packages/torch/_inductor/utils.py:1731] [0/0] Not enough SMs to use max_autotune_gemm mode
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+/cephyr/users/emrike/Alvis/GPT-test/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:2941: UserWarning: Tesla T4 does not support bfloat16 compilation natively, skipping
+  warnings.warn(
+Step 50 of 294.
+Time taken : 1167.8ms | Tokens/s : 1.8k | Loss : 7.328
+/cephyr/users/emrike/Alvis/GPT-test/gptopt/train_distributed.py:30: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  val_loss += torch.tensor(model(batch[0], batch[1], return_logits=False)[1], device=device)
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 7.007107257843018
+Step 100 of 294.
+Time taken : 1172.9ms | Tokens/s : 1.7k | Loss : 7.702
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 7.732276439666748
+Step 150 of 294.
+Time taken : 1190.7ms | Tokens/s : 1.7k | Loss : 8.625
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 8.835977554321289
+Step 200 of 294.
+Time taken : 1211.7ms | Tokens/s : 1.7k | Loss : 7.323
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 8.271490097045898
+Step 250 of 294.
+Time taken : 1221.6ms | Tokens/s : 1.7k | Loss : 8.375
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 8.249496459960938
+Rank 0 reached end of train dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+In rank: 0, epoch 1, Train Loss: 7.994842529296875
+In rank: 0, time taken for epoch 1 :  207.7659592628479
+Rank 0 reached end of val dataloader. Resetting to :  {'rank': 0, 'position': 0, 'shard': 0}
+Validation Loss: 7.9350690841674805
+In rank: 0, epoch 1, Validation Loss: 7.9350690841674805
