@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yaml
 from matplotlib.ticker import ScalarFormatter
+from mpl_toolkits.axes_grid1.inset_locator import mark_inset, zoomed_inset_axes
 
 from gptopt.plot_utils import (
     get_alpha_from_lr,
@@ -22,7 +23,7 @@ from gptopt.utils import get_default_config, load_config
 plt.rcParams["font.family"] = "serif"
 plt.rcParams["font.size"] = 12
 plt.rcParams["axes.linewidth"] = 1.5
-plt.rc("text", usetex=True)
+plt.rc("text", usetex=False)
 plt.rc("legend", fontsize=10)
 
 
@@ -62,12 +63,14 @@ def plot_final_loss_vs_lr(
     val=False,
     y_top_lim=None,
     y_bottom_lim=None,
+    # Zoom region - tune these to your data; set to None to skip inset
+    zoom_xlim=(0.004, 0.01),
+    zoom_ylim=(3.75, 3.85),
 ):
     """Plot final loss versus learning rate as lines for each method."""
     fig, ax = plt.subplots(figsize=(6, 4))
     methods = {}
 
-    # Group final losses and learning rates by method
     for output in outputs:
         name, lr = get_lr_and_name(output)
         lr = float(lr)
@@ -76,22 +79,17 @@ def plot_final_loss_vs_lr(
                 continue
             final_loss = output["logs"]["val_losses"][-1]
         else:
-            final_loss = output["logs"]["losses"][-1]  # Get the final loss
+            final_loss = output["logs"]["losses"][-1]
         if name not in methods:
             methods[name] = {"lrs": [], "losses": []}
         methods[name]["lrs"].append(lr)
         methods[name]["losses"].append(final_loss)
 
-    # Plot each method as a line
     for name, data in methods.items():
-        sorted_indices = sorted(
-            range(len(data["lrs"])), key=lambda i: data["lrs"][i]
-        )  # Sort by learning rate
+        sorted_indices = sorted(range(len(data["lrs"])), key=lambda i: data["lrs"][i])
         sorted_lrs = [data["lrs"][i] for i in sorted_indices]
         if len(set(sorted_lrs)) < len(sorted_lrs):
-            print(
-                f"Warning: Duplicate learning rates found for method {name}. This may affect the line plot."
-            )
+            print(f"Warning: Duplicate learning rates for method {name}.")
         sorted_losses = [data["losses"][i] for i in sorted_indices]
         ax.plot(
             sorted_lrs,
@@ -102,25 +100,74 @@ def plot_final_loss_vs_lr(
             linestyle=linestylemap.get(name, None),
             linewidth=2,
         )
+
     ax.set_xscale("log")
     ax.set_xlabel("Learning Rate")
     if val:
         ax.set_ylabel("Final Validation Loss")
-        plotfile = "figures/" + outfilename + "-lr-sens" + "-val" + ".pdf"
+        plotfile = "figures/" + outfilename + "-lr-sens-val.pdf"
     else:
         ax.set_ylabel("Final Loss")
-        plotfile = "figures/" + outfilename + "-lr-sens" + ".pdf"
+        plotfile = "figures/" + outfilename + "-lr-sens.pdf"
     ax.legend(loc="upper right", fontsize=10)
     ax.grid(axis="both", lw=0.2, ls="--", zorder=0)
     if y_top_lim is not None:
-        # ax.set_ylim(bottom=3.35, top=y_top_lim)
         ax.set_ylim(top=y_top_lim)
     if y_bottom_lim is not None:
         ax.set_ylim(bottom=y_bottom_lim)
-    # ax.set_ylim(bottom=3.0, top=4.5)
-    # ax.set_xlim(0.0003, 0.05)
+
     fig.subplots_adjust(top=0.95, bottom=0.15, left=0.15, right=0.95)
-    fig.savefig(plotfile, format="pdf", bbox_inches="tight")
+
+    # ---- Zoomed inset ----
+    if zoom_xlim is not None and zoom_ylim is not None:
+        # Force layout so get_position() returns final coords
+        fig.canvas.draw()
+        ax_pos = ax.get_position()
+
+        # Place inset in lower-left of the axes, fully inside figure bounds
+        inset_w = ax_pos.width * 0.36
+        inset_h = ax_pos.height * 0.40
+        inset_x = ax_pos.x0 + ax_pos.width * 0.05
+        inset_y = ax_pos.y0 + ax_pos.height * 0.07
+        axins = fig.add_axes([inset_x, inset_y, inset_w, inset_h])
+
+        x1, x2 = zoom_xlim
+        y1, y2 = zoom_ylim
+        axins.set_xscale("log")
+        axins.set_xlim(x1, x2)
+        axins.set_ylim(y1, y2)
+        axins.set_xticks([])
+        axins.set_yticks([])
+        axins.tick_params(
+            which="both", left=False, bottom=False, labelleft=False, labelbottom=False
+        )
+        for spine in axins.spines.values():
+            spine.set_linewidth(0.8)
+            spine.set_edgecolor("0.4")
+        axins.patch.set_facecolor("white")
+        axins.patch.set_alpha(1.0)
+        axins.grid(axis="both", lw=0.15, ls="--", zorder=0, alpha=0.5)
+
+        for name, data in methods.items():
+            sorted_indices = sorted(
+                range(len(data["lrs"])), key=lambda i: data["lrs"][i]
+            )
+            axins.plot(
+                [data["lrs"][i] for i in sorted_indices],
+                [data["losses"][i] for i in sorted_indices],
+                color=colormap.get(name, None),
+                linestyle=linestylemap.get(name, None),
+                linewidth=1.5,
+                alpha=0.9,
+            )
+
+        # loc1=2, loc2=1: upper corners of inset connect to zoom box
+        # → connector lines go upward, staying inside the figure
+        mark_inset(ax, axins, loc1=2, loc2=1, fc="none", ec="0.40", lw=0.7)
+
+    # Do NOT use bbox_inches="tight" — it expands the figure to include
+    # any connector lines that extend outside the axes, causing a ~38000px tall PDF
+    fig.savefig(plotfile, format="pdf")
 
 
 def main(
@@ -130,26 +177,27 @@ def main(
         smoothen_dict(output["logs"], num_points=100, beta=0.05)
 
     colormap = {
-        "MachPolar5": None,
-        "MachPolar9": None,
-        "muon-MachPolar17": "#FF6B35",
-        "muon-MachPolar172": "#339C9C",
+        "muon-MachPolar5": "#A65900",
+        "muon-MachPolar9": "#A65900",
+        "muon-MachPolar17": "#A65900",
+        "muon-MachPolar172": "#A65900",
         "muon-MachPolar23": "#A65900",
         "sgd-sch": "#B3CBB9",
-        "adam": "#00518F",
-        "adamw": "#0D4A21",  # Oragne'#FF6B35',
-        "adam-sch": "#FF6B35",
+        "adam": "#0D4A21",
+        "adamw": "#0D4A21",
+        "adam-sch": "#0D4A21",
         "momo": "#61ACE5",
         "muon-PolarExp": "#78001A",
         "muon-You": "#8A2BE2",  # Added a new color for "muon" (blue-violet)
-        "muon-Jordan": "#C7EBBA",
+        "muon-Jordan": "#4DA060",
     }
     linestylemap = {
         "momo": None,
-        "MachPolar5": None,
-        "MachPolar9": None,
-        "MachPolar17": None,
-        "MachPolar172": None,
+        "muon-MachPolar5": None,
+        "muon-MachPolar9": None,
+        "muon-MachPolar17": None,
+        "muon-MachPolar172": None,
+        "muon-MachPolar23": None,
         "sgd-sch": "--",
         "muon-PolarExp": None,
         "adam": None,
@@ -335,7 +383,7 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/main_run/2026-05-06"
+    results_folder = "outputs/hydra-results/main_run/2026-04-29"
     lims = dict(y_top_lim_lrs=4.6, y_top_vs_time=4.6)
     exclude_runs = [
         "logs_jobid_87335a44.json",
