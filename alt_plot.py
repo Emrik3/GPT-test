@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import yaml
+
 from gptopt.plot_utils import (
     get_alpha_from_lr,
     get_lr_and_name,
@@ -28,7 +29,7 @@ colormap = {
     "adam-sch": "#FF6B35",
     "momo": "#61ACE5",
     "muon-polarexpress": "k",
-    "muon-machpolar": "#B3CBB9",
+    "muon-machpolar": "#8A2BE2",
     "muon-You": "#8A2BE2",  # Added a new color for "muon" (blue-violet)
     "muon-Jordan": "#FF0000",
 }
@@ -403,7 +404,13 @@ if __name__ == "__main__":
     plt.rc("legend", fontsize=10)
 
     parser = argparse.ArgumentParser(description="Plotting outputs.")
-    # parser.add_argument('--experiment_name', type=str, nargs='?', help='Path to results folder', default="ns-steps")
+    parser.add_argument(
+        "--experiment_name",
+        type=str,
+        nargs="?",
+        help="Path to results folder",
+        default="ns-steps",
+    )
     parser.add_argument(
         "--figures_dir",
         type=str,

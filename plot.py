@@ -331,7 +331,7 @@ if __name__ == "__main__":
     # parser = argparse.ArgumentParser(description='Plotting gpt_distill outputs.')
     # parser.add_argument('--results_folder', type=str, nargs='?', help='Path to results folder', default=None)
 
-    # results_folder = "outputs/hydra-results/main_run"
+    # results_folder = "outputs/hydra-results/test_run17179"
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)

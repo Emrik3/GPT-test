@@ -1,39 +1,39 @@
 # config.yaml
 optimizer_params:
-  - name: adamw
-    # lr: [0.00005]
-    lr: [0.0005, 0.001, 0.005, 0.01, 0.02]
-    weight_decay: 0.1
-    lr_schedule: constant-linear
-    warm_up_fraction: 0.4
+#  - name: adamw
+#    lr: [0.00005]
+#    # lr: [0.0005, 0.001, 0.005, 0.01, 0.02]
+#    weight_decay: 0.1
+#    lr_schedule: constant-linear
+#    warm_up_fraction: 0.4
 
-  - name: muon-you
-    # lr: [ 0.05]
-    lr: [0.005, 0.01, 0.02]
-    weight_decay: 0.1
-    lr_schedule: constant-linear
-    warm_up_fraction: 0.4
-    ns_steps: 5
+#  - name: muon-you
+#    lr: [ 0.05]
+#    # lr: [0.005, 0.01, 0.02]
+#    weight_decay: 0.1
+#    lr_schedule: constant-linear
+#    warm_up_fraction: 0.4
+#    ns_steps: 5
 
-  - name: muon-jordan
-    # lr: [ 0.05]
-    lr: [0.005, 0.01, 0.02]
-    weight_decay: 0.1
-    lr_schedule: constant-linear
-    warm_up_fraction: 0.4
-    ns_steps: 5
+#  - name: muon-jordan
+#    lr: [ 0.05]
+#    # lr: [0.005, 0.01, 0.02]
+#    weight_decay: 0.1
+#    lr_schedule: constant-linear
+#    warm_up_fraction: 0.4
+#    ns_steps: 5
 
   - name: muon-polarexpress
-    # lr: [ 0.02]
-    lr: [0.005, 0.01, 0.05]
+    lr: [ 0.02]
+    # lr: [0.005, 0.01, 0.05]
     weight_decay: 0.1
     lr_schedule: constant-linear
     warm_up_fraction: 0.4
     ns_steps: 5
 
   - name: muon-machpolar
-    # lr: [ 0.02]
-    lr: [0.005, 0.01, 0.05]
+    lr: [ 0.02]
+    # lr: [0.005, 0.01, 0.05]
     weight_decay: 0.1
     lr_schedule: constant-linear
     warm_up_fraction: 0.4
@@ -59,7 +59,7 @@ logging_params:
   load_ckpt_step: 0
   keep_last: 2
   ckpt_dir: "outputs/checkpoints"
-  results_dir: "outputs/results"
+  results_dir: "outputs/results2"
   wandb:
     project: "polar-express"
     dir: "outputs/wandb"
