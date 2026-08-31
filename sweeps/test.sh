@@ -2,8 +2,11 @@ WANDB="+logging_params.wandb.project=polar-express"
 COMMON="+training_data=shakespeare"
 MUON="optimizer_params.name=muon +optimizer_params.args.ns_steps=5"
 
-#./submit_hydra.sh test_hydra $COMMON optimizer_params.name=adamw $WANDB
-./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=Keller optimizer_params.args.lr=0.002 $WANDB
-#./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=Jiacheng $WANDB
-./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=polarexpress optimizer_params.args.lr=0.002 $WANDB
-./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar optimizer_params.args.lr=0.002 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=Keller $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=polarexpress $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar5 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar9 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar17 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar172 $WANDB
+./submit_hydra.sh test_hydra $COMMON $MUON +optimizer_params.args.polar_method=machpolar23 $WANDB
+

@@ -1,0 +1,8 @@
+- +training_data=fineweb
+- gpt_model=gpt-small
+- optimizer_params.name=muon
+- +optimizer_params.args.ns_steps=5
+- +optimizer_params.args.polar_method=machpolar172
+- optimizer_params.args.lr=0.001
+- optimizer_params.args.weight_decay=0.0
+- +logging_params.wandb.project=polar-express
