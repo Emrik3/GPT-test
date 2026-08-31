@@ -200,7 +200,6 @@ co3 = [
 ]
 
 # safety factor for numerical stability (but exclude last polynomial)
-# TODO: Implement this saftey factor in a correct way, each X shoudl be devided by 1.01 to its power not the Q matrices as I am doing now
 for i in range(len(co3) - 2):
     for j in range(len(co3[i][0])):
         co3[i][2][j] /= 1.01 ** (j+2)
@@ -209,7 +208,6 @@ co3[2][1] /= 1.01**3
 
 for i in range(len(co17) - 2):
     for j in range(len(co17[i][2])):
-        # TODO: Fix this so it divides the values like this, becomes a weird loop but is then similar scaling as in PE.
         co17[i][2][j] /= 1.01 ** (j + 2)
 
 
