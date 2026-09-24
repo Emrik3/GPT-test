@@ -1,0 +1,6 @@
+- +training_data=fineweb
+- gpt_model=gpt-small
+- optimizer_params.name=adamw
+- optimizer_params.args.lr=0.0005
+- optimizer_params.args.weight_decay=0.1
+- +logging_params.wandb.project=polar-express

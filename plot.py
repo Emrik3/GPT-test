@@ -130,28 +130,33 @@ def main(
         smoothen_dict(output["logs"], num_points=100, beta=0.05)
 
     colormap = {
-        "sgd-m": "#B3CBB9",
+        "MachPolar5": "#1C434C",
+        "MachPolar9": "#A5A5A5",
+        "muon-MachPolar17": "#FF6B35",
+        "muon-MachPolar172": "#339C9C",
+        "muon-MachPolar23": "#A65900",
         "sgd-sch": "#B3CBB9",
         "adam": "#00518F",
-        "adamw": "#00518F",  # Oragne'#FF6B35',
+        "adamw": "#0D4A21",  # Oragne'#FF6B35',
         "adam-sch": "#FF6B35",
         "momo": "#61ACE5",
-        "muon-PolarExp": "k",
-        "MachPolar": "#8A2BE2",
+        "muon-PolarExp": "#78001A",
         "muon-You": "#8A2BE2",  # Added a new color for "muon" (blue-violet)
-        "muon-Jordan": "#FF0000",
+        "muon-Jordan": "#4DA060",
     }
     linestylemap = {
         "momo": None,
-        "sgd-m": None,
+        "MachPolar5": None,
+        "MachPolar9": None,
+        "MachPolar17": None,
+        "MachPolar172": None,
         "sgd-sch": "--",
         "muon-PolarExp": None,
-        "MachPolar": None,
         "adam": None,
         "adamw": None,
         "adam-sch": "--",
         "muon-You": ":",
-        "muon-Jordan": "-.",
+        "muon-Jordan": None,
     }
 
     # Collect learning rate ranges for each method
@@ -276,8 +281,10 @@ def main(
     ax.tick_params(axis="both", which="major", labelsize=8)  # Set tick label font size
     ax.set_xlabel("Time (s)", fontsize=10)  # Set x-axis label font size
     ax.set_ylabel("Loss", fontsize=10)
-    # ax.legend(loc='lower center', bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
-    # ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=10)  # Legend placed next to the figure
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.5), ncol=4, fontsize=10)
+    ax.legend(
+        loc="center left", bbox_to_anchor=(1, 0.5), fontsize=10
+    )  # Legend placed next to the figure
     # ax.set_yscale('log')
     # ax.set_xscale('log')
     fig.subplots_adjust(
@@ -328,9 +335,16 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/main_run_test/"
-    lims = dict(y_top_lim_lrs=4, y_top_vs_time=4.5, y_bottom_lim_lrs=3.5)
-    exclude_runs = ["logs_jobid_29220878.json", "logs_jobid_f1cda670.json"]
+    results_folder = "outputs/hydra-results/main_run/2026-05-06"
+    lims = dict(y_top_lim_lrs=4.6, y_top_vs_time=4.6)
+    exclude_runs = [
+        "logs_jobid_87335a44.json",
+        "logs_jobid_e279af21.json",
+        "logs_jobid_1b192fba.json",
+        "logs_jobid_41c4f70d.json",
+        "logs_jobid_4975d367.json",
+        "logs_jobid_fd0e0465.json",
+    ]
     outputs = load_output_folder(results_folder, exclude_runs=exclude_runs)
     print("Total num experiments:", len(outputs))
 

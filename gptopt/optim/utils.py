@@ -179,7 +179,7 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "rms_scaling": opt_config.get("rms_scaling", True),
             "polar_method": "polarexpress",
         }
-    elif name == "muon-machpolar":
+    elif name == "muon-machpolar5":
         opt_obj = Muon
         hyperp = {
             "lr": lr,
@@ -189,7 +189,34 @@ def get_optimizer(opt_config: dict, lr=1e-3) -> Tuple[torch.optim.Optimizer, dic
             "nesterov": True,
             "ns_steps": opt_config.get("ns_steps", 3),
             "rms_scaling": opt_config.get("rms_scaling", True),
-            "polar_method": "machpolar",
+            "polar_method": "machpolar5",
+            "polar_params": opt_config.get("polar_params", {}),
+        }
+    elif name == "muon-machpolar9":
+        opt_obj = Muon
+        hyperp = {
+            "lr": lr,
+            "weight_decay": opt_config.get("weight_decay", 0),
+            "adamw_betas": opt_config.get("betas", (0.95, 0.95)),
+            "momentum": opt_config.get("momentum", 0.95),
+            "nesterov": True,
+            "ns_steps": opt_config.get("ns_steps", 3),
+            "rms_scaling": opt_config.get("rms_scaling", True),
+            "polar_method": "machpolar9",
+            "polar_params": opt_config.get("polar_params", {}),
+        }
+    elif name == "muon-machpolar17":
+        opt_obj = Muon
+        hyperp = {
+            "lr": lr,
+            "weight_decay": opt_config.get("weight_decay", 0),
+            "adamw_betas": opt_config.get("betas", (0.95, 0.95)),
+            "momentum": opt_config.get("momentum", 0.95),
+            "nesterov": True,
+            "ns_steps": opt_config.get("ns_steps", 3),
+            "rms_scaling": opt_config.get("rms_scaling", True),
+            "polar_method": "machpolar17",
+            "polar_params": opt_config.get("polar_params", {}),
         }
 
     else:
