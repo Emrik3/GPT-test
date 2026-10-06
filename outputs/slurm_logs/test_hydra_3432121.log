@@ -1,0 +1,191 @@
+=== Loading modules ===
+=== Setting up Python environment ===
+=== Installing dependencies ===
+Requirement already satisfied: pandas in ./.venv/lib/python3.13/site-packages (3.0.6)
+Requirement already satisfied: matplotlib in ./.venv/lib/python3.13/site-packages (3.11.2)
+Requirement already satisfied: scikit-learn in ./.venv/lib/python3.13/site-packages (1.9.1)
+Requirement already satisfied: requests in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (2.32.4)
+Requirement already satisfied: transformers in ./.venv/lib/python3.13/site-packages (5.18.0)
+Requirement already satisfied: datasets in ./.venv/lib/python3.13/site-packages (5.1.0)
+Requirement already satisfied: accelerate in ./.venv/lib/python3.13/site-packages (1.15.0)
+Requirement already satisfied: tiktoken in ./.venv/lib/python3.13/site-packages (0.14.0)
+Requirement already satisfied: zstandard in ./.venv/lib/python3.13/site-packages (0.25.0)
+Requirement already satisfied: wandb in ./.venv/lib/python3.13/site-packages (0.30.0)
+Requirement already satisfied: hydra-core in ./.venv/lib/python3.13/site-packages (1.3.7)
+Requirement already satisfied: regex in ./.venv/lib/python3.13/site-packages (2026.9.29)
+Requirement already satisfied: numpy>=1.26.0 in ./.venv/lib/python3.13/site-packages (from pandas) (2.5.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/lib/python3.13/site-packages (from matplotlib) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in ./.venv/lib/python3.13/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in ./.venv/lib/python3.13/site-packages (from matplotlib) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/lib/python3.13/site-packages (from matplotlib) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python/3.13.5-GCCcore-14.3.0/lib/python3.13/site-packages (from matplotlib) (25.0)
+Requirement already satisfied: pillow>=9 in ./.venv/lib/python3.13/site-packages (from matplotlib) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from matplotlib) (3.2.3)
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.13/site-packages (from scikit-learn) (1.18.1)
+Requirement already satisfied: joblib>=1.4.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from scikit-learn) (1.5.1)
+Requirement already satisfied: narwhals>=2.0.1 in ./.venv/lib/python3.13/site-packages (from scikit-learn) (2.26.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from requests) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.13/site-packages (from requests) (3.20)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from requests) (2025.7.14)
+Requirement already satisfied: huggingface-hub<3.0,>=1.31.0 in ./.venv/lib/python3.13/site-packages (from transformers) (1.33.0)
+Requirement already satisfied: pyyaml>=5.1 in ./.venv/lib/python3.13/site-packages (from transformers) (6.0.3)
+Requirement already satisfied: tokenizers<0.24.0,>=0.23.1 in ./.venv/lib/python3.13/site-packages (from transformers) (0.23.2)
+Requirement already satisfied: typer in ./.venv/lib/python3.13/site-packages (from transformers) (0.27.2)
+Requirement already satisfied: safetensors>=0.8.0 in ./.venv/lib/python3.13/site-packages (from transformers) (0.8.0)
+Requirement already satisfied: tqdm>=4.60 in ./.venv/lib/python3.13/site-packages (from transformers) (4.70.1)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in ./.venv/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (8.5.0)
+Requirement already satisfied: filelock>=3.10.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (3.18.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (2025.7.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.6.0 in ./.venv/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (1.6.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./.venv/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (0.28.1)
+Requirement already satisfied: typing-extensions>=4.1.0 in ./.venv/lib/python3.13/site-packages (from huggingface-hub<3.0,>=1.31.0->transformers) (4.16.0)
+Requirement already satisfied: anyio in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface-hub<3.0,>=1.31.0->transformers) (4.15.1)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.13/site-packages (from httpx<1,>=0.23.0->huggingface-hub<3.0,>=1.31.0->transformers) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.13/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<3.0,>=1.31.0->transformers) (0.16.0)
+Requirement already satisfied: pyarrow>=24.0.0 in ./.venv/lib/python3.13/site-packages (from datasets) (25.0.1)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in ./.venv/lib/python3.13/site-packages (from datasets) (0.4.1)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.13/site-packages (from datasets) (4.0.1)
+Requirement already satisfied: multiprocess<0.70.20 in ./.venv/lib/python3.13/site-packages (from datasets) (0.70.19)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.13/site-packages (from fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (3.14.4)
+Requirement already satisfied: psutil in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from accelerate) (7.0.0)
+Requirement already satisfied: torch>=2.0.0 in ./.venv/lib/python3.13/site-packages (from accelerate) (2.14.1)
+Requirement already satisfied: opentelemetry-api>=1.43.0 in ./.venv/lib/python3.13/site-packages (from wandb) (1.45.0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-http>=1.43.0 in ./.venv/lib/python3.13/site-packages (from wandb) (1.45.0)
+Requirement already satisfied: opentelemetry-sdk>=1.43.0 in ./.venv/lib/python3.13/site-packages (from wandb) (1.45.0)
+Requirement already satisfied: platformdirs in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from wandb) (4.3.8)
+Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,<8,>=5 in ./.venv/lib/python3.13/site-packages (from wandb) (7.36.2)
+Requirement already satisfied: pydantic<3,>=2.6 in ./.venv/lib/python3.13/site-packages (from wandb) (2.13.5)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.13/site-packages (from pydantic<3,>=2.6->wandb) (0.8.0)
+Requirement already satisfied: pydantic-core==2.46.5 in ./.venv/lib/python3.13/site-packages (from pydantic<3,>=2.6->wandb) (2.46.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.13/site-packages (from pydantic<3,>=2.6->wandb) (0.4.4)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in ./.venv/lib/python3.13/site-packages (from hydra-core) (2.3.1)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in ./.venv/lib/python3.13/site-packages (from hydra-core) (4.9.3)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (6.9.1)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (0.5.4)
+Requirement already satisfied: yarl<2.0,>=1.25.1 in ./.venv/lib/python3.13/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets) (1.25.1)
+Requirement already satisfied: googleapis-common-protos~=1.52 in ./.venv/lib/python3.13/site-packages (from opentelemetry-exporter-otlp-proto-http>=1.43.0->wandb) (1.75.5)
+Requirement already satisfied: opentelemetry-exporter-http-transport==0.66b0 in ./.venv/lib/python3.13/site-packages (from opentelemetry-exporter-http-transport[urllib3]==0.66b0->opentelemetry-exporter-otlp-proto-http>=1.43.0->wandb) (0.66b0)
+Requirement already satisfied: opentelemetry-exporter-otlp-common==0.66b0 in ./.venv/lib/python3.13/site-packages (from opentelemetry-exporter-otlp-proto-http>=1.43.0->wandb) (0.66b0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-common==1.45.0 in ./.venv/lib/python3.13/site-packages (from opentelemetry-exporter-otlp-proto-http>=1.43.0->wandb) (1.45.0)
+Requirement already satisfied: opentelemetry-proto==1.45.0 in ./.venv/lib/python3.13/site-packages (from opentelemetry-exporter-otlp-proto-http>=1.43.0->wandb) (1.45.0)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.66b0 in ./.venv/lib/python3.13/site-packages (from opentelemetry-sdk>=1.43.0->wandb) (0.66b0)
+Requirement already satisfied: six>=1.5 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Requirement already satisfied: setuptools>=77.0.3 in /software/sse2/el9_gh200/easybuild/prefix/software/Python/3.13.5-GCCcore-14.3.0/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (80.9.0)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (3.7)
+Requirement already satisfied: jinja2 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (3.1.6)
+Requirement already satisfied: cuda-toolkit==13.0.3 in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.0.3.0)
+Requirement already satisfied: cuda-bindings<14,>=13.0.3 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (13.4.3)
+Requirement already satisfied: nvidia-cudnn-cu13==9.24.0.43 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (9.24.0.43)
+Requirement already satisfied: nvidia-cusparselt-cu13==0.8.1 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (0.8.1)
+Requirement already satisfied: nvidia-nccl-cu13==2.30.7 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (2.30.7)
+Requirement already satisfied: nvidia-nvshmem-cu13==3.4.5 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (3.4.5)
+Requirement already satisfied: triton~=3.8.0 in ./.venv/lib/python3.13/site-packages (from torch>=2.0.0->accelerate) (3.8.0)
+Requirement already satisfied: nvidia-cublas==13.1.1.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.1.1.3)
+Requirement already satisfied: nvidia-cuda-nvrtc==13.0.88.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.0.88)
+Requirement already satisfied: nvidia-cuda-runtime==13.0.96.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.0.96)
+Requirement already satisfied: nvidia-cufft==12.0.0.61.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (12.0.0.61)
+Requirement already satisfied: nvidia-nvjitlink<14,>=13.0.88 in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.4.92)
+Requirement already satisfied: nvidia-cufile==1.15.1.6.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (1.15.1.6)
+Requirement already satisfied: nvidia-cuda-cupti==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.0.85)
+Requirement already satisfied: nvidia-curand==10.4.0.35.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (10.4.0.35)
+Requirement already satisfied: nvidia-cusolver==12.0.4.66.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (12.0.4.66)
+Requirement already satisfied: nvidia-cusparse==12.6.3.3.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (12.6.3.3)
+Requirement already satisfied: nvidia-nvtx==13.0.85.* in ./.venv/lib/python3.13/site-packages (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate) (13.0.85)
+Requirement already satisfied: cuda-pathfinder>=1.4.2 in ./.venv/lib/python3.13/site-packages (from cuda-bindings<14,>=13.0.3->torch>=2.0.0->accelerate) (1.8.3)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.13/site-packages (from sympy>=1.13.3->torch>=2.0.0->accelerate) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from jinja2->torch>=2.0.0->accelerate) (3.0.2)
+Requirement already satisfied: shellingham>=1.3.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from typer->transformers) (1.5.4)
+Requirement already satisfied: rich>=13.8.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from typer->transformers) (14.1.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./.venv/lib/python3.13/site-packages (from typer->transformers) (0.0.5)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from rich>=13.8.0->typer->transformers) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from rich>=13.8.0->typer->transformers) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers) (0.1.2)
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+Obtaining file:///nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Installing collected packages: gptopt
+  Attempting uninstall: gptopt
+    Found existing installation: gptopt 0.1
+    Uninstalling gptopt-0.1:
+      Successfully uninstalled gptopt-0.1
+  DEPRECATION: Legacy editable install of gptopt==0.1 from file:///nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test (setup.py develop) is deprecated. pip 25.3 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for gptopt
+Successfully installed gptopt-0.1
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+=== Testing environment ===
+PyTorch: 2.14.1+cu130
+regex: 2026.9.29
+Transformers: 5.18.0
+=== Running ===
+Traceback (most recent call last):
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/run_hydra.py", line 16, in <module>
+    from gptopt.optim.utils import get_optimizer_factory, get_scheduler
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/gptopt/optim/utils.py", line 10, in <module>
+    from .muon import Muon
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/gptopt/optim/muon.py", line 12, in <module>
+    from gptopt.optim.mach_polar import (
+    ...<5 lines>...
+    )
+ImportError: cannot import name 'MachPolar5' from 'gptopt.optim.mach_polar' (/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/gptopt/optim/mach_polar.py)
+E1006 15:25:54.504000 2839657 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 0 (pid: 2839912) of binary: /nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/bin/python
+Traceback (most recent call last):
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+    ~~~^^^^^^
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+        self._config,
+    ...<2 lines>...
+        health_check_server=self._health_check_server,
+    )
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+    ...<2 lines>...
+    )
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_hydra.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-06_15:25:54
+  host      : n190
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2839912) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+
+real	0m57.988s
+user	0m7.332s
+sys	0m7.673s

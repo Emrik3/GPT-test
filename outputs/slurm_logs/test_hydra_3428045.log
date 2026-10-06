@@ -1,0 +1,109 @@
+Obtaining file:///nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: torch in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (2.8.0)
+Requirement already satisfied: pandas in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (2.3.3)
+Requirement already satisfied: matplotlib in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (3.9.4)
+Requirement already satisfied: scikit-learn in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (1.6.1)
+Requirement already satisfied: requests in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (2.32.5)
+Requirement already satisfied: transformers in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (4.57.6)
+Requirement already satisfied: datasets in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (4.5.0)
+Requirement already satisfied: accelerate in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (1.10.1)
+Requirement already satisfied: tiktoken in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (0.14.0)
+Requirement already satisfied: zstandard in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (0.25.0)
+Requirement already satisfied: wandb in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (0.26.1)
+Requirement already satisfied: hydra-core in ./.venv/lib/python3.9/site-packages (from gptopt==0.1) (1.3.7)
+Requirement already satisfied: pyyaml in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (6.0.3)
+Requirement already satisfied: safetensors>=0.4.3 in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (0.7.0)
+Requirement already satisfied: numpy<3.0.0,>=1.17 in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (2.0.2)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (26.3)
+Requirement already satisfied: huggingface_hub>=0.21.0 in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (0.36.2)
+Requirement already satisfied: psutil in ./.venv/lib/python3.9/site-packages (from accelerate->gptopt==0.1) (7.2.2)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (4.16.0)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (1.14.0)
+Requirement already satisfied: filelock in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (3.19.1)
+Requirement already satisfied: fsspec in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (2025.10.0)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (3.1.6)
+Requirement already satisfied: networkx in ./.venv/lib/python3.9/site-packages (from torch->gptopt==0.1) (3.2.1)
+Requirement already satisfied: httpx<1.0.0 in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (0.28.1)
+Requirement already satisfied: tqdm>=4.66.3 in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (4.70.1)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (0.4.0)
+Requirement already satisfied: multiprocess<0.70.19 in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (0.70.18)
+Requirement already satisfied: pyarrow>=21.0.0 in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (21.0.0)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.9/site-packages (from datasets->gptopt==0.1) (4.0.1)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv/lib/python3.9/site-packages (from requests->gptopt==0.1) (2.6.3)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.9/site-packages (from requests->gptopt==0.1) (3.20)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.9/site-packages (from requests->gptopt==0.1) (3.5.2)
+Requirement already satisfied: certifi>=2017.4.17 in ./.venv/lib/python3.9/site-packages (from requests->gptopt==0.1) (2026.7.22)
+Requirement already satisfied: omegaconf<2.4,>=2.2 in ./.venv/lib/python3.9/site-packages (from hydra-core->gptopt==0.1) (2.3.1)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in ./.venv/lib/python3.9/site-packages (from hydra-core->gptopt==0.1) (4.9.3)
+Requirement already satisfied: fonttools>=4.22.0 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (4.60.2)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (1.4.7)
+Requirement already satisfied: importlib-resources>=3.2.0 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (6.5.2)
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (1.3.0)
+Requirement already satisfied: pillow>=8 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (11.3.0)
+Requirement already satisfied: cycler>=0.10 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (0.12.1)
+Requirement already satisfied: python-dateutil>=2.7 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (2.9.0.post0)
+Requirement already satisfied: pyparsing>=2.3.1 in ./.venv/lib/python3.9/site-packages (from matplotlib->gptopt==0.1) (3.3.3)
+Requirement already satisfied: pytz>=2020.1 in ./.venv/lib/python3.9/site-packages (from pandas->gptopt==0.1) (2026.5)
+Requirement already satisfied: tzdata>=2022.7 in ./.venv/lib/python3.9/site-packages (from pandas->gptopt==0.1) (2026.5)
+Requirement already satisfied: threadpoolctl>=3.1.0 in ./.venv/lib/python3.9/site-packages (from scikit-learn->gptopt==0.1) (3.7.0)
+Requirement already satisfied: scipy>=1.6.0 in ./.venv/lib/python3.9/site-packages (from scikit-learn->gptopt==0.1) (1.13.1)
+Requirement already satisfied: joblib>=1.2.0 in ./.venv/lib/python3.9/site-packages (from scikit-learn->gptopt==0.1) (1.5.3)
+Requirement already satisfied: regex in ./.venv/lib/python3.9/site-packages (from tiktoken->gptopt==0.1) (2026.1.15)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in ./.venv/lib/python3.9/site-packages (from transformers->gptopt==0.1) (0.22.2)
+Requirement already satisfied: pydantic<3 in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (2.13.5)
+Requirement already satisfied: platformdirs in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (4.4.0)
+Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,<8,>4.21.0 in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (6.33.6)
+Requirement already satisfied: sentry-sdk>=2.0.0 in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (2.71.0)
+Requirement already satisfied: eval-type-backport in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (0.4.0)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (3.2.0)
+Requirement already satisfied: click>=8.0.1 in ./.venv/lib/python3.9/site-packages (from wandb->gptopt==0.1) (8.1.8)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.9/site-packages (from fsspec->torch->gptopt==0.1) (3.13.5)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv/lib/python3.9/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (4.0.12)
+Requirement already satisfied: anyio in ./.venv/lib/python3.9/site-packages (from httpx<1.0.0->datasets->gptopt==0.1) (4.12.1)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.9/site-packages (from httpx<1.0.0->datasets->gptopt==0.1) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.9/site-packages (from httpcore==1.*->httpx<1.0.0->datasets->gptopt==0.1) (0.16.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./.venv/lib/python3.9/site-packages (from huggingface_hub>=0.21.0->accelerate->gptopt==0.1) (1.6.0)
+Requirement already satisfied: zipp>=3.1.0 in ./.venv/lib/python3.9/site-packages (from importlib-resources>=3.2.0->matplotlib->gptopt==0.1) (3.23.1)
+Requirement already satisfied: pydantic-core==2.46.5 in ./.venv/lib/python3.9/site-packages (from pydantic<3->wandb->gptopt==0.1) (2.46.5)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.9/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.7.0)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.9/site-packages (from pydantic<3->wandb->gptopt==0.1) (0.4.2)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib->gptopt==0.1) (1.17.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.9/site-packages (from sympy>=1.13.3->torch->gptopt==0.1) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.9/site-packages (from jinja2->torch->gptopt==0.1) (3.0.4)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (5.0.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (1.22.0)
+Requirement already satisfied: attrs>=17.3.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (26.1.0)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (0.4.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (6.7.1)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (2.6.1)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.9/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec->torch->gptopt==0.1) (1.8.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv/lib/python3.9/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->gptopt==0.1) (5.0.3)
+Requirement already satisfied: exceptiongroup>=1.0.2 in ./.venv/lib/python3.9/site-packages (from anyio->httpx<1.0.0->datasets->gptopt==0.1) (1.3.1)
+Installing collected packages: gptopt
+  Attempting uninstall: gptopt
+    Found existing installation: gptopt 0.1
+    Uninstalling gptopt-0.1:
+      Successfully uninstalled gptopt-0.1
+  Running setup.py develop for gptopt
+Successfully installed gptopt-0.1
+WARNING: You are using pip version 21.3.1; however, version 26.0.1 is available.
+You should consider upgrading via the '/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/bin/python3 -m pip install --upgrade pip' command.
+Traceback (most recent call last):
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/bin/torchrun", line 5, in <module>
+    from torch.distributed.run import main
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib64/python3.9/site-packages/torch/__init__.py", line 415, in <module>
+    _load_global_deps()
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib64/python3.9/site-packages/torch/__init__.py", line 371, in _load_global_deps
+    raise err
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib64/python3.9/site-packages/torch/__init__.py", line 320, in _load_global_deps
+    ctypes.CDLL(global_deps_lib_path, mode=ctypes.RTLD_GLOBAL)
+  File "/usr/lib64/python3.9/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib64/python3.9/site-packages/torch/lib/libtorch_global_deps.so: cannot open shared object file: No such file or directory
+
+real	0m0.104s
+user	0m0.022s
+sys	0m0.030s

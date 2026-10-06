@@ -1,0 +1,81 @@
+Requirement already satisfied: regex in /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages (2025.7.31)
+Collecting regex
+  Using cached regex-2026.9.29-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (40 kB)
+Using cached regex-2026.9.29-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (805 kB)
+Installing collected packages: regex
+  Attempting uninstall: regex
+    Found existing installation: regex 2025.7.31
+    Not uninstalling regex at /software/sse2/el9_gh200/easybuild/prefix/software/Python-bundle-PyPI/2025.07-GCCcore-14.3.0/lib/python3.13/site-packages, outside environment /nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv
+    Can't uninstall 'regex'. No files were found to uninstall.
+Successfully installed regex-2026.9.29
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+/software/sse2/el9_gh200/easybuild/prefix/software/protobuf-python/6.31.1-GCCcore-14.3.0/lib/python3.13/site-packages/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+Traceback (most recent call last):
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/run_hydra.py", line 15, in <module>
+    from gptopt.model import load_model
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/gptopt/model.py", line 1, in <module>
+    from transformers import GPT2Tokenizer, GPT2LMHeadModel, GPT2Config, AutoTokenizer, AutoModelForCausalLM
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/transformers/__init__.py", line 30, in <module>
+    from . import dependency_versions_check
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/transformers/dependency_versions_check.py", line 56, in <module>
+    require_version_core(deps[pkg])
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/transformers/utils/versions.py", line 116, in require_version_core
+    return require_version(requirement, hint)
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/transformers/utils/versions.py", line 110, in require_version
+    _compare_versions(op, got_ver, want_ver, requirement, pkg, hint)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/transformers/utils/versions.py", line 43, in _compare_versions
+    raise ImportError(
+        f"{requirement} is required for a normal functioning of this module, but found {pkg}=={got_ver}.{hint}"
+    )
+ImportError: regex>=2025.10.22 is required for a normal functioning of this module, but found regex==2025.7.31.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+E1006 15:02:58.612000 991950 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 0 (pid: 992091) of binary: /nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/bin/python
+Traceback (most recent call last):
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/lib/python3.13/site-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+    ~~~^^^^^^
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/lib/python3.13/site-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+    ...<2 lines>...
+    )
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_hydra.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-06_15:02:58
+  host      : n498
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 992091)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+
+real	0m24.474s
+user	0m3.927s
+sys	0m6.167s

@@ -1,0 +1,5 @@
+/var/lib/slurm/slurmd/job3429745/slurm_script: line 18: torchrun: command not found
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s

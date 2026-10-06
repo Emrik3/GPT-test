@@ -7,22 +7,60 @@ mkdir -p outputs/slurm_logs
 sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
-#SBATCH --gpus-per-node=A100:4 # need to recofig login to correct one for wandb
-#SBATCH --time=01:10:00
+#SBATCH --gpus=1
+#SBATCH -N 1
+#SBATCH -t 00:30:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
-#SBATCH --account=naiss2025-22-762
+#SBATCH -A naiss2026-4-1701-gpu
+#SBATCH -p gpu
 
-export OMP_NUM_THREADS=1
+set -e
 
-# Activate environment
+echo "=== Loading modules ==="
+
+module load GPU/buildtool-easybuild/5.2.1-hpca3ef7d197
+module load GCC/14.3.0
+module load OpenMPI/5.0.8
+module load PyTorch/2.9.1-CUDA-12.9.1
+
+echo "=== Setting up Python environment ==="
+
+if [ ! -d .venv ]; then
+    python -m venv --system-site-packages .venv
+fi
+
 source .venv/bin/activate
 
-# Install the necessary packages
-python3 -m pip install -e .
+export PYTHONPATH="\$PWD/.venv/lib/python3.13/site-packages"
+
+echo "=== Installing dependencies ==="
+
+python -m pip install \
+    pandas \
+    matplotlib \
+    scikit-learn \
+    requests \
+    transformers \
+    datasets \
+    accelerate \
+    tiktoken \
+    zstandard \
+    wandb \
+    hydra-core \
+    regex
+
+python -m pip install -e . --no-deps
+
+echo "=== Testing environment ==="
+
+python -c "import torch; print('PyTorch:', torch.__version__)"
+python -c "import regex; print('regex:', regex.__version__)"
+python -c "import transformers; print('Transformers:', transformers.__version__)"
+
+echo "=== Running ==="
 
 export PYTHONUNBUFFERED=1
+export OMP_NUM_THREADS=1
 
-# Run the Python script with the config file
 time torchrun --standalone --nproc_per_node=1 run_hydra.py -cn $@
-#### srun -u python3 -u run_hydra.py -cn $@
 EOF

@@ -1,0 +1,14 @@
+Requirement already satisfied: regex in ./.venv/lib/python3.13/site-packages (2026.9.29)
+
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+2026.9.29
+/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.venv/lib/python3.13/site-packages/regex/__init__.py
+Traceback (most recent call last):
+  File "/software/sse2/el9_gh200/easybuild/prefix/software/PyTorch/2.9.1-foss-2025b-CUDA-12.9.1/bin/torchrun", line 5, in <module>
+    from torch.distributed.run import main
+ModuleNotFoundError: No module named 'torch'
+
+real	0m0.052s
+user	0m0.000s
+sys	0m0.042s
