@@ -65,34 +65,15 @@ def plot_final_loss_vs_lr(
 ):
     """Plot final loss versus learning rate as lines for each method."""
     fig, ax = plt.subplots(figsize=(6, 4))
-    methods = {}
+    methods = collect_final_losses(outputs, val=val)
 
-    # Group final losses and learning rates by method
-    for output in outputs:
-        name, lr = get_lr_and_name(output)
-        lr = float(lr)
-        if val:
-            if "val_losses" not in output["logs"]:
-                continue
-            final_loss = output["logs"]["val_losses"][-1]
-        else:
-            final_loss = output["logs"]["losses"][-1]  # Get the final loss
-        if name not in methods:
-            methods[name] = {"lrs": [], "losses": []}
-        methods[name]["lrs"].append(lr)
-        methods[name]["losses"].append(final_loss)
-
-    # Plot each method as a line
-    for name, data in methods.items():
-        sorted_indices = sorted(
-            range(len(data["lrs"])), key=lambda i: data["lrs"][i]
-        )  # Sort by learning rate
-        sorted_lrs = [data["lrs"][i] for i in sorted_indices]
+    for name, pairs in methods.items():
+        sorted_lrs = [lr for lr, _ in pairs]
+        sorted_losses = [loss for _, loss in pairs]
         if len(set(sorted_lrs)) < len(sorted_lrs):
             print(
                 f"Warning: Duplicate learning rates found for method {name}. This may affect the line plot."
             )
-        sorted_losses = [data["losses"][i] for i in sorted_indices]
         ax.plot(
             sorted_lrs,
             sorted_losses,
@@ -104,6 +85,7 @@ def plot_final_loss_vs_lr(
         )
     ax.set_xscale("log")
     ax.set_xlabel("Learning Rate")
+
     if val:
         ax.set_ylabel("Final Validation Loss")
         plotfile = "figures/" + outfilename + "-lr-sens" + "-val" + ".pdf"
@@ -212,8 +194,13 @@ def main(
         y_top_lim=y_top_lim_lrs,
         y_bottom_lim=y_bottom_lim_lrs,
     )
+    save_final_loss_vs_lr_csv(outputs, outfilename, val=False)
+    save_final_loss_vs_lr_csv(outputs, outfilename, val=True)
     # Plot loss
     selected_outputs = list(best_outputs.values())
+    save_curves_csv(selected_outputs, best_lr, outfilename, "val_losses", "epoch")
+    save_curves_csv(selected_outputs, best_lr, outfilename, "losses", "epoch")
+    save_curves_csv(selected_outputs, best_lr, outfilename, "losses", "time")
     get_alpha_from_lr = lambda lr, lr_range: 0.85
     initial_loss = (
         selected_outputs[0]["logs"]["val_losses"][0]
@@ -326,6 +313,92 @@ def main(
     # fig.subplots_adjust(top=0.99, bottom=0.155, left=0.12, right=0.99)
     # fig.savefig('figures/step_size-' + outfilename + '.pdf', format='pdf', bbox_inches='tight')
 
+import csv
+import re
+
+
+def collect_final_losses(outputs, val=False):
+    """Group (lr, final loss) pairs by method, sorted by learning rate."""
+    methods = {}
+    for output in outputs:
+        name, lr = get_lr_and_name(output)
+        lr = float(lr)
+        if val:
+            if "val_losses" not in output["logs"]:
+                continue
+            final_loss = output["logs"]["val_losses"][-1]
+        else:
+            final_loss = output["logs"]["losses"][-1]
+        methods.setdefault(name, []).append((lr, final_loss))
+    return {name: sorted(pairs) for name, pairs in methods.items()}
+
+
+def save_final_loss_vs_lr_csv(outputs, outfilename, val=False):
+    """Save the data behind plot_final_loss_vs_lr to CSV files.
+
+    Writes one combined long-format file (method, lr, loss) and one file per
+    method (lr, loss), which is convenient for pgfplots.
+    """
+    methods = collect_final_losses(outputs, val=val)
+    suffix = "-lr-sens" + ("-val" if val else "")
+    base = "figures/" + outfilename + suffix
+    loss_col = "final_val_loss" if val else "final_loss"
+
+    # Combined file
+    with open(base + ".csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["method", "lr", loss_col])
+        for name, pairs in methods.items():
+            for lr, loss in pairs:
+                writer.writerow([name, lr, loss])
+
+    # One file per method
+    for name, pairs in methods.items():
+        safe_name = re.sub(r"[^A-Za-z0-9_.-]", "_", name)
+        with open(f"{base}-{safe_name}.csv", "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["lr", loss_col])
+            writer.writerows(pairs)
+
+def save_curves_csv(selected_outputs, best_lr, outfilename, key, xlabel="epoch"):
+    """Save loss curves (best LR per method) to one CSV per method.
+
+    key: "val_losses" or "losses".
+    xlabel: "epoch" or "time".
+    """
+    suffix = "-val-curve" if key == "val_losses" else "-loss-curve"
+    suffix += "-" + xlabel
+    for output in selected_outputs:
+        name, _ = get_lr_and_name(output)
+        if key not in output["logs"]:
+            continue
+        y = np.asarray(output["logs"][key], dtype=float)
+
+        if xlabel == "epoch":
+            num_epochs = output["config"]["training_data"]["training_params"]["num_epochs"]
+            # ASSUMPTION: points are evenly spaced over the run
+            x = np.linspace(0, num_epochs, len(y))
+        else:
+            # ASSUMPTION: adjust this key list to whatever plot_data reads
+            time_key = next(
+                (k for k in ("times", "time", "cumulative_time", "timings")
+                 if k in output["logs"]),
+                None,
+            )
+            if time_key is None:
+                print(f"No time key found in logs for {name}; skipping time CSV.")
+                continue
+            x = np.asarray(output["logs"][time_key], dtype=float)
+            if len(x) != len(y):
+                x = np.linspace(x[0], x[-1], len(y))
+
+        safe_name = re.sub(r"[^A-Za-z0-9_.-]", "_", name)
+        path = f"figures/{outfilename}{suffix}-{safe_name}.csv"
+        with open(path, "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([xlabel, "loss", "lr"])
+            for xi, yi in zip(x, y):
+                writer.writerow([xi, yi, best_lr[name][0]])
 
 if __name__ == "__main__":
     # parser = argparse.ArgumentParser(description='Plotting gpt_distill outputs.')
@@ -335,8 +408,8 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/main_run/2026-05-06"
-    lims = dict(y_top_lim_lrs=4.6, y_top_vs_time=4.6)
+    results_folder = "outputs/hydra-results/main_run/2026-04-29"
+    lims = dict(y_top_vs_time=7)
     exclude_runs = [
         "logs_jobid_87335a44.json",
         "logs_jobid_e279af21.json",
