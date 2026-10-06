@@ -6,7 +6,7 @@ from collections import defaultdict
 import torch
 import torch.distributed as dist
 
-from gptopt.optim.mach_polar import MachPolar
+from gptopt.optim.mach_polar import MachPolar17
 from gptopt.optim.muon import svd_exact_polar, zeropower_via_newtonschulz5
 from gptopt.optim.polar_express import PolarExpress
 from gptopt.utils import get_worker_info, load_checkpoint, save_checkpoint
