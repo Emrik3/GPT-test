@@ -46,50 +46,81 @@ def write_datafile(filename, toks):
         f.write(toks_np.tobytes())
 
 
-def process_and_save_docs(dataset, filepath, encoding, shard_size=int(1e8), nprocs=1):
-    # tokenize all documents and write output shards, each of shard_size tokens (last shard has remainder)
-    # TODO: break the pool and loop over assignment of tokens into shards into two functions
+def process_and_save_docs(
+    dataset, filepath, encoding, shard_size=int(1e8), nprocs=1, max_tokens=None
+):
+    # tokenize all documents and write output shards, each of shard_size tokens
+    # last shard has remainder
 
-    # how many processes to use for pool
-    if nprocs == 0 : nprocs = max(1, os.cpu_count() - 2)
+    if nprocs == 0:
+        nprocs = max(1, os.cpu_count() - 2)
     print("Number of processes used  : ", nprocs)
-    
-    # pool.imap expects function with single input
-    tokenizer = partial(tokenize, enc=encoding)    
+
+    tokenizer = partial(tokenize, enc=encoding)
 
     with mp.Pool(nprocs) as pool:
         shard_index = 0
-        # preallocate buffer to hold current shard
         all_tokens_np = np.empty((shard_size,), dtype=np.uint16)
         token_count = 0
+        total_tokens = 0
         progress_bar = None
+
         for tokens in pool.imap(tokenizer, dataset, chunksize=16):
+
+            # Stop once max_tokens has been reached
+            if max_tokens is not None:
+                remaining = max_tokens - total_tokens
+                if remaining <= 0:
+                    break
+                tokens = tokens[:remaining]
+
             # if there is space left, add tokens to current shard
             if token_count + len(tokens) < shard_size:
-                # simply append tokens to current shard
                 all_tokens_np[token_count:token_count+len(tokens)] = tokens
                 token_count += len(tokens)
-                # update progress bar
+                total_tokens += len(tokens)
+
                 if progress_bar is None:
-                    progress_bar = tqdm(total=shard_size, unit="tokens", desc=f"Shard {shard_index}")
+                    progress_bar = tqdm(
+                        total=shard_size,
+                        unit="tokens",
+                        desc=f"Shard {shard_index}"
+                    )
                 progress_bar.update(len(tokens))
+
             else:
                 # write the current shard and start a new one
                 split = "val" if shard_index == 0 else "train"
-                filename = os.path.join(filepath, f"{split}_{shard_index:06d}.bin")
-                # split the document into whatever fits in this shard; the remainder goes to next one
+                filename = os.path.join(
+                    filepath, f"{split}_{shard_index:06d}.bin"
+                )
+
                 remainder = shard_size - token_count
                 progress_bar.update(remainder)
-                all_tokens_np[token_count:token_count+remainder] = tokens[:remainder]
+
+                all_tokens_np[
+                    token_count:token_count+remainder
+                ] = tokens[:remainder]
+
                 write_datafile(filename, all_tokens_np)
+
                 shard_index += 1
+                total_tokens += remainder
                 progress_bar = None
-                # populate the next shard with the leftovers of the current doc
-                all_tokens_np[0:len(tokens)-remainder] = tokens[remainder:]
-                token_count = len(tokens)-remainder
+
+                # populate the next shard with leftovers
+                leftover = tokens[remainder:]
+                all_tokens_np[0:len(leftover)] = leftover
+                token_count = len(leftover)
+                total_tokens += len(leftover)
+
+            if max_tokens is not None and total_tokens >= max_tokens:
+                break
 
         # write any remaining tokens as the last shard
         if token_count != 0:
             split = "val" if shard_index == 0 else "train"
-            filename = os.path.join(filepath, f"{split}_{shard_index:06d}.bin")
+            filename = os.path.join(
+                filepath, f"{split}_{shard_index:06d}.bin"
+            )
             write_datafile(filename, all_tokens_np[:token_count])

@@ -29,6 +29,12 @@ parser.add_argument(
 parser.add_argument(
     "-n", "--nprocs", type=int, default=0, help="number of processes, default N-2"
 )
+parser.add_argument(
+    "--max_tokens",
+    type=int,
+    default=None,
+    help="Maximum number of tokens to process",
+)
 args = parser.parse_args()
 
 name = args.name
@@ -75,6 +81,7 @@ elif "fineweb" in name:
         encoding=enc,
         shard_size=args.shard_size,
         nprocs=args.nprocs,
-    )
+        max_tokens=args.max_tokens,
+)
 
 print(f"{name} data processed and saved in {dataset_path}")
