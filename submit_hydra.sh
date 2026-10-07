@@ -51,16 +51,12 @@ python -m pip install \
 
 python -m pip install -e . --no-deps
 
-echo "=== Testing environment ==="
-
-python -c "import torch; print('PyTorch:', torch.__version__)"
-python -c "import regex; print('regex:', regex.__version__)"
-python -c "import transformers; print('Transformers:', transformers.__version__)"
-
 echo "=== Running ==="
 
 export PYTHONUNBUFFERED=1
 export OMP_NUM_THREADS=1
+export HYDRA_FULL_ERROR=1
+export WANDB_MODE=disabled
 
 time torchrun --standalone --nproc_per_node=1 run_hydra.py -cn $@
 EOF
