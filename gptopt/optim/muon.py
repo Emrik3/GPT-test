@@ -9,9 +9,7 @@ from functools import partial
 
 import torch
 
-from gptopt.optim.mach_polar import (
-    MachPolar17,
-)
+from gptopt.optim.mach_polar import MachPolar17
 from gptopt.optim.polar_express import FastApplyPolarExpress, PolarExpress
 
 
