@@ -7,9 +7,9 @@ mkdir -p outputs/slurm_logs
 sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
-#SBATCH --gpus=1
+#SBATCH --gpus=4
 #SBATCH -N 1
-#SBATCH -t 00:30:00
+#SBATCH -t 02:00:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH -A naiss2026-4-1701-gpu
 #SBATCH -p gpu
@@ -25,17 +25,16 @@ module load PyTorch/2.9.1-CUDA-12.9.1
 
 echo "=== Setting up Python environment ==="
 
-if [ ! -d .venv ]; then
-    python -m venv --system-site-packages .venv
-fi
-
-source .venv/bin/activate
-
 export PYTHONPATH="\$PWD/.venv/lib/python3.13/site-packages"
 
 echo "=== Installing dependencies ==="
-
-python -m pip install \
+(
+  flock 9
+  if [ ! -d .venv ]; then
+      python -m venv --system-site-packages .venv
+  fi
+  source .venv/bin/activate
+  python -m pip install \
     pandas \
     matplotlib \
     scikit-learn \
@@ -49,11 +48,10 @@ python -m pip install \
     hydra-core \
     regex
 
-(
-  flock 9
   pip install -e . --quiet
 ) 9>/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.pip_install.lock
 
+source .venv/bin/activate
 
 echo "=== Running ==="
 
@@ -62,5 +60,5 @@ export OMP_NUM_THREADS=1
 export HYDRA_FULL_ERROR=1
 export WANDB_MODE=disabled
 
-time torchrun --standalone --nproc_per_node=1 run_hydra.py -cn $@
+time torchrun --standalone --nproc_per_node=4 run_hydra.py -cn $@
 EOF
