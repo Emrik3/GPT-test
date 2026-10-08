@@ -49,7 +49,11 @@ python -m pip install \
     hydra-core \
     regex
 
-python -m pip install -e . --no-deps
+(
+  flock 9
+  pip install -e . --quiet
+) 9>/nobackup/proj/disk/naiss2026-4-1701/personal/emrik/GPT-test/.pip_install.lock
+
 
 echo "=== Running ==="
 
