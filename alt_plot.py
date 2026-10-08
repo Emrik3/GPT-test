@@ -29,7 +29,7 @@ colormap = {
     "adam-sch": "#FF6B35",
     "momo": "#61ACE5",
     "muon-polarexpress": "k",
-    "muon-machpolar": "#8A2BE2",
+    "muon-machpolar17": "#8A2BE2",
     "muon-You": "#8A2BE2",  # Added a new color for "muon" (blue-violet)
     "muon-Jordan": "#FF0000",
 }
@@ -39,7 +39,7 @@ linestylemap = {
     "sgd-m": None,
     "sgd-sch": "--",
     "muon-polarexpress": None,
-    "muon-machpolar": None,
+    "muon-machpolar17": None,
     "adam": None,
     "adamw": None,
     "adam-sch": "--",
@@ -142,7 +142,7 @@ def make_summary_df(run_data):
         inplace=True,
     )
     df["Polar Method"] = df["Polar Method"].map(
-        {"polarexpress": "PolarExpress", "svd-exact": "SVD"}.get
+        {"polarexpress": "PolarExpress", "svd-exact": "SVD", "machpolar17": "MachPolar17"}.get
     )
     df.sort_values(
         by=["Optimizer", "Polar Method", "Iterations", "Learning Rate"], inplace=True
@@ -172,7 +172,7 @@ def loss_curve(selected_run_data, outfolder, metric="val_losses"):
             color="g"
             if issvd
             else polar_colors[sorted_ns_steps.index(opt_conf["ns_steps"])],
-            label="SVD" if issvd else f"PolarExpress {opt_conf['ns_steps']}",
+            label="SVD" if issvd else f"MachPolar17 {opt_conf['ns_steps']}",
             linestyle=":" if issvd else "-",
         )
     ax.set_xscale("log")
@@ -421,4 +421,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(experiment_name="ns-steps", figures_dir=args.figures_dir)
-    main2(experiment_name="supression", figures_dir=args.figures_dir)
+    #main2(experiment_name="supression", figures_dir=args.figures_dir)
