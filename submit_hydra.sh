@@ -9,7 +9,7 @@ sbatch <<EOF
 #SBATCH -J ${CONFIG_NAME}
 #SBATCH --gpus=4
 #SBATCH -N 1
-#SBATCH -t 02:00:00
+#SBATCH -t 00:20:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH -A naiss2026-4-1701-gpu
 #SBATCH -p gpu
