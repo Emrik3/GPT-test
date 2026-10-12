@@ -420,5 +420,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    main(experiment_name="ns-steps", figures_dir=args.figures_dir)
+    main(experiment_name=args.experiment_name, figures_dir=args.figures_dir)
     #main2(experiment_name="supression", figures_dir=args.figures_dir)
