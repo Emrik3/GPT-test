@@ -141,9 +141,16 @@ def make_summary_df(run_data):
         },
         inplace=True,
     )
-    df["Polar Method"] = df["Polar Method"].map(
-        {"polarexpress": "PolarExpress", "svd-exact": "SVD", "machpolar17": "MachPolar17"}.get
-    )
+    polar_names = {
+        "polarexpress": "PolarExpress",
+        "svd-exact": "SVD",
+        "machpolar17": "MachPolar17",
+        "jordan": "Jordan",
+    }
+    raw = df["Polar Method"]
+    # known names get pretty labels, unknown strings pass through unchanged,
+    # and runs with no polar_method at all (e.g. Jordan's Muon) become "Jordan"
+    df["Polar Method"] = raw.map(polar_names).fillna(raw).fillna("Jordan")
     df.sort_values(
         by=["Optimizer", "Polar Method", "Iterations", "Learning Rate"], inplace=True
     )
@@ -237,6 +244,7 @@ def main(experiment_name, figures_dir):
         print(sum_df)
         final_loss_barplot(run_data, group_out_path)
         loss_curve(run_data, group_out_path)
+        save_loss_csvs(run_data, group_out_path) 
 
 
 def supression_plots(run_data, outfolder):
@@ -394,6 +402,31 @@ def main2(experiment_name, figures_dir):
         print(sum_df)
         supression_plots(run_data, group_out_path)
 
+MATMULS_PER_ITER = {"MachPolar17": 5, "PolarExpress": 3, "Keller": 3}
+
+def save_loss_csvs(run_data, outfolder):
+    """One CSV per polar method: iterations, matmuls, final val loss, step time."""
+    outfolder.mkdir(parents=True, exist_ok=True)
+    df = make_summary_df(run_data)
+    for method, sub in df.groupby("Polar Method"):
+        out = (
+            sub.groupby("Iterations", dropna=False)[
+                ["Final Validation Loss", "Median Training Step Time (s)"]
+            ]
+            .mean()
+            .reset_index()
+            .rename(
+                columns={
+                    "Iterations": "iterations",
+                    "Final Validation Loss": "final_val_loss",
+                    "Median Training Step Time (s)": "median_step_time_s",
+                }
+            )
+            .sort_values("iterations")
+        )
+        if method in MATMULS_PER_ITER:
+            out.insert(1, "matmuls", out["iterations"] * MATMULS_PER_ITER[method])
+        out.to_csv(outfolder / f"{method}.csv", index=False)
 
 if __name__ == "__main__":
     plt.rcParams["font.family"] = "serif"
