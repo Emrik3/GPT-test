@@ -10,9 +10,11 @@ import numpy as np
 import yaml
 from matplotlib.ticker import ScalarFormatter
 
+from collections import defaultdict
+import matplotlib.colors as mcolors
+import gptopt.plot_utils as plot_utils
 from gptopt.plot_utils import (
     get_alpha_from_lr,
-    get_lr_and_name,
     plot_data,
     plot_step_size_and_lr,
     smoothen_dict,
@@ -24,6 +26,48 @@ plt.rcParams["font.size"] = 12
 plt.rcParams["axes.linewidth"] = 1.5
 plt.rc("text", usetex=True)
 plt.rc("legend", fontsize=10)
+
+_orig_get_lr_and_name = plot_utils.get_lr_and_name
+
+
+def get_name_parts(output):
+    """Return (base_name, ns_steps or None, lr)."""
+    base, lr = _orig_get_lr_and_name(output)
+    args = output["config"].get("optimizer_params", {}).get("args", {})
+    ns = args.get("ns_steps")
+    return base, (int(ns) if ns is not None else None), lr
+
+
+def get_lr_and_name(output):
+    """Like the original, but runs with different ns_steps get distinct names."""
+    base, ns, lr = get_name_parts(output)
+    name = base if ns is None else f"{base} ({ns} steps)"
+    return name, lr
+
+
+# plot_data / others in plot_utils call get_lr_and_name internally, so patch it there too
+plot_utils.get_lr_and_name = get_lr_and_name
+
+
+def expand_style_maps(outputs, colormap, linestylemap):
+    """Give each (method, ns_steps) pair its own color shade, same linestyle as the base."""
+    steps_by_base = defaultdict(set)
+    for o in outputs:
+        base, ns, _ = get_name_parts(o)
+        if ns is not None:
+            steps_by_base[base].add(ns)
+
+    cmap, lmap = dict(colormap), dict(linestylemap)
+    for base, steps in steps_by_base.items():
+        steps = sorted(steps)
+        rgb = np.array(mcolors.to_rgb(colormap.get(base, "#444444")))
+        for i, ns in enumerate(steps):
+            # fewest steps = lightest, most steps = full base color
+            frac = 0.6 * (1 - i / max(len(steps) - 1, 1))
+            full = f"{base} ({ns} steps)"
+            cmap[full] = mcolors.to_hex(rgb + (1 - rgb) * frac)
+            lmap[full] = linestylemap.get(base)
+    return cmap, lmap
 
 
 def load_outputs(output_dir):
@@ -140,6 +184,7 @@ def main(
         "muon-You": ":",
         "muon-Jordan": None,
     }
+    colormap, linestylemap = expand_style_maps(outputs, colormap, linestylemap)
 
     # Collect learning rate ranges for each method
     lr_ranges = {}
@@ -408,7 +453,7 @@ if __name__ == "__main__":
     # lims = dict(y_top_lim_lrs=3.7, y_top_vs_time=4.5)
     # results_folder = "outputs/hydra-results/10b_data"
     # lims = dict(y_top_vs_time=3.5)
-    results_folder = "outputs/hydra-results/main_run/2026-04-29"
+    results_folder = "outputs/hydra-results/main_run_wdoff/2026-10-08"
     lims = dict(y_top_vs_time=7)
     exclude_runs = [
         "logs_jobid_87335a44.json",
