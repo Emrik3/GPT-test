@@ -7,9 +7,9 @@ mkdir -p outputs/slurm_logs
 sbatch <<EOF
 #!/bin/bash
 #SBATCH -J ${CONFIG_NAME}
-#SBATCH --gpus=4
+#SBATCH --gpus=1
 #SBATCH -N 1
-#SBATCH -t 00:20:00
+#SBATCH -t 00:10:00
 #SBATCH -o outputs/slurm_logs/${CONFIG_NAME}_%j.log
 #SBATCH -A naiss2026-4-1701-gpu
 #SBATCH -p gpu
@@ -60,5 +60,5 @@ export OMP_NUM_THREADS=1
 export HYDRA_FULL_ERROR=1
 export WANDB_MODE=disabled
 
-time torchrun --standalone --nproc_per_node=4 run_hydra.py -cn $@
+time torchrun --standalone --nproc_per_node=1 run_hydra.py -cn $@
 EOF
