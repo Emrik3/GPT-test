@@ -146,6 +146,7 @@ def make_summary_df(run_data):
         "svd-exact": "SVD",
         "machpolar17": "MachPolar17",
         "jordan": "Jordan",
+        "machpolar17hybrid": "MachPolar17Hybrid",
     }
     raw = df["Polar Method"]
     # known names get pretty labels, unknown strings pass through unchanged,
@@ -402,7 +403,7 @@ def main2(experiment_name, figures_dir):
         print(sum_df)
         supression_plots(run_data, group_out_path)
 
-MATMULS_PER_ITER = {"MachPolar17": 5, "PolarExpress": 3, "Keller": 3}
+MATMULS_PER_ITER = {"MachPolar17": 5, "PolarExpress": 3, "Keller": 3, "MachPolar17Hybrid": 5}
 
 def save_loss_csvs(run_data, outfolder):
     """One CSV per polar method: iterations, matmuls, final val loss, step time."""

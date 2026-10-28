@@ -9,8 +9,8 @@ optimizer_params:
   args:
     lr: 0.001
     weight_decay: 0.1
-    ns_steps: 3
-    polar_method: machpolar17
+    ns_steps: 4
+    polar_method: machpolar17hybrid
 lr_schedule:
   name: constant-linear
   warm_up_fraction: 0.4
