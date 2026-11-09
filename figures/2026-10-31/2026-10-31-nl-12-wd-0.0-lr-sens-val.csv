@@ -1,0 +1,13 @@
+method,lr,final_val_loss
+muon-Jordan (5 steps),0.002,3.9395608073383332
+muon-Jordan (5 steps),0.005,3.845958502115695
+muon-Jordan (5 steps),0.01,3.872972593761507
+muon-PolarExp (5 steps),0.002,3.9216213726276807
+muon-PolarExp (5 steps),0.005,3.836707053261785
+muon-PolarExp (5 steps),0.01,3.870235677717257
+muon-MachPolar17 (2 steps),0.002,3.9083079839999666
+muon-MachPolar17 (2 steps),0.005,3.834213820738094
+muon-MachPolar17 (2 steps),0.01,3.8780651677103024
+muon-MachPolar17 (3 steps),0.002,7.176885707802086
+muon-MachPolar17 (3 steps),0.005,7.132655994265479
+muon-MachPolar17 (3 steps),0.01,3.8707166803172273

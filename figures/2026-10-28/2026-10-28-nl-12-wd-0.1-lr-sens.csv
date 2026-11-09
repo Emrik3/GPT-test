@@ -1,0 +1,6 @@
+method,lr,final_loss
+muon-MachPolar17 (4 steps),0.001,5.437453459728444
+muon-MachPolar17 (5 steps),0.001,7.198805954500158
+muon-MachPolar17 (6 steps),0.001,6.6722633368013184
+muon-MachPolar17 (3 steps),0.001,5.398669636129672
+muon-MachPolar17 (2 steps),0.001,5.3870032135556105

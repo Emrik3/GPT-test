@@ -16,7 +16,7 @@ def MachPolar17(G: torch.Tensor, steps: int) -> torch.Tensor:
         X = X.mT  # this reduces FLOPs
     X = X / (X.norm(dim=(-2, -1), keepdim=True) * 1.01 + 1e-7)
 
-    for i in range(0, steps):
+    for i in range(steps):
         t = min(i, len(coeff_list) - 1)
         a0, a1, a2, b0, b1, b2, c0, c1, c2, c3, c4 = coeff_list[t]
         S1 = X @ X.mT
